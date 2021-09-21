@@ -55,11 +55,11 @@ $ rails s
 
 ## [カタログ設計とテーブル定義書 / Catalog design & Table definition](https://docs.google.com/spreadsheets/d/1ENKwAzdYHMGjMbthwnVfu-RVuUPE5uRBg9CM09zGx9c/edit?usp=sharing)
 
-## [ER図 / Entity Relationship Diagram　]
+## [ER図 / Entity Relationship Diagram]
 ![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/ER.png)
 
 ## [画面遷移図 / Screen transition diagram]
-![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/Screen_Trandition.png)
+![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/Screen_Transition.png)
 
 ## [ワイヤーフレーム / Wire frame]
 ![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/wire_flame.png)
