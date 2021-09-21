@@ -48,10 +48,11 @@ $ rails s
 ## [カタログ設計とテーブル定義書 / Catalog design & Table definition](https://docs.google.com/spreadsheets/d/1ENKwAzdYHMGjMbthwnVfu-RVuUPE5uRBg9CM09zGx9c/edit?usp=sharing)
 
 ## [ERD]()
-![image](https://image.diveintocode.jp/7822fc74-738a-41c0-8058-a972378f8645.png)
+![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/ER.png)
 
 ## [画面遷移図 / Screen transition diagram]()
-![image](https://image.diveintocode.jp/6eecb6d4-2f81-4a70-b457-2672306a1f1a.png)
+![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/Screen_Trandition.png)
+
 
 ## [ワイヤーフレーム / Wire frame]
-![image](https://image.diveintocode.jp/451b60f6-294b-437f-ad4f-242e54059a00.png)
+![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/wire_flame.png)
