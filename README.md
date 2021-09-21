@@ -66,4 +66,5 @@ $ rails s
 ![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/Screen_Transition.png)
 
 ### ワイヤーフレーム / Wire frame
+https://shared-assets.adobe.com/link/ea5c967c-ed7b-40ef-40ae-1b8aee92661b
 ![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/wire_flame.png)
