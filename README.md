@@ -43,6 +43,8 @@ ontrips
 ## カリキュラム外の技術 / Skills(out of the curriculum)
 - ransack
 - Chartkick
+- gmaps4rails
+- redcarpet
 
 ## 実行手順 / Procedure
 ```
@@ -53,13 +55,15 @@ $ rails db:create db:migrate
 $ rails s
 ```
 
-## [カタログ設計とテーブル定義書 / Catalog design & Table definition](https://docs.google.com/spreadsheets/d/1ENKwAzdYHMGjMbthwnVfu-RVuUPE5uRBg9CM09zGx9c/edit?usp=sharing)
+## 要件定義 / requirements definition
 
-## [ER図 / Entity Relationship Diagram]
+### [カタログ設計とテーブル定義書 / Catalog design & Table definition](https://docs.google.com/spreadsheets/d/1ENKwAzdYHMGjMbthwnVfu-RVuUPE5uRBg9CM09zGx9c/edit?usp=sharing)
+
+### ER図 / Entity Relationship Diagram
 ![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/ER.png)
 
-## [画面遷移図 / Screen transition diagram]
+### 画面遷移図 / Screen transition diagram
 ![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/Screen_Transition.png)
 
-## [ワイヤーフレーム / Wire frame]
+### ワイヤーフレーム / Wire frame
 ![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/wire_flame.png)
