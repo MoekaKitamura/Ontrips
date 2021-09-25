@@ -8,7 +8,7 @@ ontrips
 
 ## 製品概要 / Overview
 新しい旅の形 〜旅の目的に"交流"を〜 🌏
-  旅行者が一緒に観光する仲間を探し、また、現地の方とも繋がれるアプリ
+旅行者が一緒に観光する仲間を探し、また、現地の方とも繋がれるアプリ
 
 問題提議 : 日本の海外旅行人口の減少
 理由として挙げられるのが、怖い、治安の不安、一緒に行く人がいない、誘って予定合わせるのが面倒・・・誰かと一緒に行きたいけど一緒に行ってくれる友達がいない・・・など
@@ -26,7 +26,7 @@ ontrips
 もちろん、海外に行く機会がない方は、国内旅行でも利用できます。
 このアプリで、旅仲間を見つけ、世界中を旅しよう！！✈️🌏
 
-## 開発言語 / language
+## 開発言語 / Language
 - OS: Linux
 - Ruby 2.6.5
 - Ruby on Rails 5.2.5
@@ -55,16 +55,21 @@ $ rails db:create db:migrate
 $ rails s
 ```
 
-## 要件定義 / requirements definition
+## 要件定義 / Requirements Definition
 
-### [カタログ設計とテーブル定義書 / Catalog design & Table definition](https://docs.google.com/spreadsheets/d/1ENKwAzdYHMGjMbthwnVfu-RVuUPE5uRBg9CM09zGx9c/edit?usp=sharing)
+### カタログ設計とテーブル定義書 / Catalog Design & Table Definition
+[Google Sheets](https://docs.google.com/spreadsheets/d/1ENKwAzdYHMGjMbthwnVfu-RVuUPE5uRBg9CM09zGx9c/edit?usp=sharing)
 
 ### ER図 / Entity Relationship Diagram
+draw.io
 ![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/ER.png)
 
-### 画面遷移図 / Screen transition diagram
+### 画面遷移図 / Screen Transition Diagram
+draw.io
 ![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/Screen_Transition.png)
 
-### ワイヤーフレーム / Wire frame
-https://shared-assets.adobe.com/link/ea5c967c-ed7b-40ef-40ae-1b8aee92661b
-![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/wire_flame.png)
+### ワイヤーフレーム / Wire Frame
+Adobe Illustrator
+[ontrips wire flame.ai](https://drive.google.com/file/d/1ODgBU3sj-Ptkc6HOdOdmbEYe3GugPAxk/view?usp=sharing)
+[Adobe Creative Cloud](https://shared-assets.adobe.com/link/ea5c967c-ed7b-40ef-40ae-1b8aee92661b)
+![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/wire_frame.png)
