@@ -58,18 +58,19 @@ $ rails s
 ## 要件定義 / Requirements Definition
 
 ### カタログ設計とテーブル定義書 / Catalog Design & Table Definition
-[Google Sheets](https://docs.google.com/spreadsheets/d/1ENKwAzdYHMGjMbthwnVfu-RVuUPE5uRBg9CM09zGx9c/edit?usp=sharing)
+使用ソフト: [Google Sheets](https://docs.google.com/spreadsheets/d/1ENKwAzdYHMGjMbthwnVfu-RVuUPE5uRBg9CM09zGx9c/edit?usp=sharing)
 
 ### ER図 / Entity Relationship Diagram
-draw.io
+使用ソフト: draw.io
 ![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/ER.png)
 
 ### 画面遷移図 / Screen Transition Diagram
-draw.io
+使用ソフト: draw.io
 ![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/Screen_Transition.png)
 
 ### ワイヤーフレーム / Wire Frame
-Adobe Illustrator
-[ontrips wire flame.ai](https://drive.google.com/file/d/1ODgBU3sj-Ptkc6HOdOdmbEYe3GugPAxk/view?usp=sharing)
-[Adobe Creative Cloud](https://shared-assets.adobe.com/link/ea5c967c-ed7b-40ef-40ae-1b8aee92661b)
+使用ソフト: Adobe Illustrator
+- [ontrips wire flame.ai](https://drive.google.com/file/d/1ODgBU3sj-Ptkc6HOdOdmbEYe3GugPAxk/view?usp=sharing)
+- [Adobe Acrobat Reader DCで確認](https://github.com/MoekaKitamura/Original_app/blob/master/docs/wire_frame.ai)
+- [Adobe Creative Cloudへ保存](https://shared-assets.adobe.com/link/ea5c967c-ed7b-40ef-40ae-1b8aee92661b)
 ![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/wire_frame.png)
