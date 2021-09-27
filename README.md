@@ -67,7 +67,4 @@ $ rails s
 
 ### ワイヤーフレーム / Wire Frame
 使用ソフト: Adobe Illustrator
-- [元ファイル(wire_frame.ai)](https://github.com/MoekaKitamura/Original_app/blob/master/docs/wire_frame.ai)
-  Download → Illustrator もしくは、Adobe Acrobat Reader DCで確認
-- [Adobe Creative Cloud](https://shared-assets.adobe.com/link/ea5c967c-ed7b-40ef-40ae-1b8aee92661b)
 ![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/wire_frame.png)
