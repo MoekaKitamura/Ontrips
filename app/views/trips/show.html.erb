@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @trip.title %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @trip.country %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @trip.city %>
+</p>
+
+<p>
+  <strong>Start on:</strong>
+  <%= @trip.start_on %>
+</p>
+
+<p>
+  <strong>Finish on:</strong>
+  <%= @trip.finish_on %>
+</p>
+
+<p>
+  <strong>Flexible:</strong>
+  <%= @trip.flexible %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @trip.description %>
+</p>
+
+<p>
+  <strong>Goal:</strong>
+  <%= @trip.goal %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @trip.user %>
+</p>
+
+<%= link_to 'Edit', edit_trip_path(@trip) %> |
+<%= link_to 'Back', trips_path %>
