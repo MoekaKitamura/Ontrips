@@ -55,7 +55,8 @@ $ rails s
 ## 要件定義 / Requirements Definition
 
 ### カタログ設計とテーブル定義書 / Catalog Design & Table Definition
-使用ソフト: [Google Sheets](https://docs.google.com/spreadsheets/d/1ENKwAzdYHMGjMbthwnVfu-RVuUPE5uRBg9CM09zGx9c/edit?usp=sharing)
+使用ソフト: Google Sheets
+https://docs.google.com/spreadsheets/d/1ENKwAzdYHMGjMbthwnVfu-RVuUPE5uRBg9CM09zGx9c/edit?usp=sharing
 
 ### ER図 / Entity Relationship Diagram
 使用ソフト: draw.io
