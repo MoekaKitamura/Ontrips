@@ -28,6 +28,11 @@
     <% if alert %>
       <p class="alert alert-error"><%= alert %></p>
     <% end %>
+
+    <% if user_signed_in? %>
+      <div>あなたの名前:<%= current_user.name %></div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
