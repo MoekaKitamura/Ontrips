@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  country: 1
+  city: 1
+  start_on: 2021-09-29
+  finish_on: 2021-09-29
+  flexible: false
+  description: MyText
+  goal: false
+  user: one
+
+two:
+  title: MyString
+  country: 1
+  city: 1
+  start_on: 2021-09-29
+  finish_on: 2021-09-29
+  flexible: false
+  description: MyText
+  goal: false
+  user: two

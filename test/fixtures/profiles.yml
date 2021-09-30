@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  icon: MyString
+  gender: 1
+  birthday: 2021-09-30
+  home_country: 1
+  home_city: 1
+  first_language: 1
+  second_language: 1
+  introduction: MyText
+  user: one
+
+two:
+  icon: MyString
+  gender: 1
+  birthday: 2021-09-30
+  home_country: 1
+  home_city: 1
+  first_language: 1
+  second_language: 1
+  introduction: MyText
+  user: two
