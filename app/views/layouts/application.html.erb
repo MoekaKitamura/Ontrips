@@ -10,12 +10,14 @@
   </head>
 
   <body>
+  <header>
+  <%= image_tag "logo.png", width: 150 %>
     <% if user_signed_in? %>
-      <%= link_to "ブログ投稿", blogs_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <%= link_to "プロフィール", profiles_path %>
-      <%= link_to "旅一覧", trips_path %>
-      <%= link_to "トーク一覧", talks_path %>
+      <%= link_to "Blog", blogs_path %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <%= link_to "Profile", profiles_path %>
+      <%= link_to "Trip", trips_path %>
+      <%= link_to "Talk", talks_path %>
 
     <% else %>
       <%= link_to "新規登録", new_user_registration_path %>
@@ -25,7 +27,7 @@
     <% if current_user.try(:admin?) %>
       <%= link_to "管理画面", rails_admin_path %>
     <% end %>
-
+</header>
     <% if notice %>
     <p class="alert alert-notice"><%= notice %></p>
     <% end %>

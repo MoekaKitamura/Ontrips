@@ -11,6 +11,7 @@ class TripsController < ApplicationController
   def show
     @favorite = current_user.favorites.find_by(trip_id: @trip.id)
     @member = current_user.members.find_by(trip_id: @trip.id)
+    @members = @trip.members
     @comments = @trip.comments
     @comment = @trip.comments.build
   end
