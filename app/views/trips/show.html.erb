@@ -47,20 +47,22 @@
 
 <% unless @trip.user_id == current_user.id %>
   <% if @favorite.present? %>
-    <%= link_to 'いいね解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-primary' %>
+    <%= link_to 'お気に入り済み', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-primary' %>
   <% else %>
-    <%= link_to 'いいねする', favorites_path(trip_id: @trip.id), method: :post, class: 'btn btn-danger' %>
+    <%= link_to 'お気に入りする', favorites_path(trip_id: @trip.id), method: :post, class: 'btn btn-danger' %>
   <% end %>
 <% end %>
+<%= @trip.favorites.count %>人がお気に入り
 
 <% unless @trip.user_id == current_user.id %>
   <% if @member.present? %>
-    <%= link_to '参加解除する', member_path(id: @member.id), method: :delete, class: 'btn btn-primary' %>
+    <%= link_to '参加中！！', member_path(id: @member.id), method: :delete, class: 'btn btn-primary' %>
   <% else %>
-    <%= link_to '旅人として参加する', members_path(trip_id: @trip.id, as: 1), method: :post, class: 'btn btn-danger' %>
-    <%= link_to '現地人として参加する', members_path(trip_id: @trip.id, as: 2), method: :post, class: 'btn btn-danger' %>
+    <%= link_to '一緒に旅をする', members_path(trip_id: @trip.id, as: 1), method: :post, class: 'btn btn-danger' %>
+    <%= link_to 'ローカルとして参加', members_path(trip_id: @trip.id, as: 2), method: :post, class: 'btn btn-danger' %>
   <% end %>
 <% end %>
+<%= @members.count %>人が参加中(visiter:<%= @members.where(as: 1).count %>,local:<%= @members.where(as: 2).count %>)
 
 <!-- コメント一覧-->
 <div class="comment_area">

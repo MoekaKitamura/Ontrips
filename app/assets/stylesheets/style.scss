@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+
+// @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+body{
+  // font-family: 'Bradley Hand','Hannotate SC',sans-serif;
+  // font-family: 'Skia','Hannotate SC',sans-serif;
+  font-family: 'Noto Sans JP',sans-serif;
+  // font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+}
+
+// header{
+//   @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+//   font-family: 'Kalam', cursive;
+//   font-size: 30px;
+// }
+// header{
+//   @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+//   font-family: 'Handlee', cursive;
+//   font-size: 40px;
+// }
+header{
+  @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Handlee&display=swap');
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 40px;
+}
