@@ -1,0 +1,14 @@
+<h1>Talks</h1>
+
+<table class="table table-hover">
+  <tbody>
+    <% @talks.each do |talk| %>
+      <td>
+        <% if talk.target_user(current_user).present? %>
+          <%# <%= image_tag talk.target_user(current_user).image_name.url , class: "icon" %>
+          <%= link_to talk.target_user(current_user).name, talk_messages_path(talk)%>
+        <% end %>
+      </td>
+    <% end %>
+  </tbody>
+</table>

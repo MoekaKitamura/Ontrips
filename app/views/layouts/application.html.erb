@@ -15,6 +15,7 @@
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <%= link_to "プロフィール", profiles_path %>
       <%= link_to "旅一覧", trips_path %>
+      <%= link_to "トーク一覧", talks_path %>
 
     <% else %>
       <%= link_to "新規登録", new_user_registration_path %>

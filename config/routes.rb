@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :talks do
+    resources :messages
+  end
   resources :members, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
   resources :profiles
