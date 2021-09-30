@@ -62,5 +62,17 @@
   <% end %>
 <% end %>
 
+<!-- コメント一覧-->
+<div class="comment_area">
+  <p>Comments</p>
+  <!-- このcomments_areaというHTMLのidを取得して、このdivの中にあるHTMLの要素をJavaScript（Ajax）で書き換え -->
+  <div id="comments_area">
+    <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender パーシャルを表示 comments/_index.html.erb -->
+    <%= render partial: 'comments/index', locals: { comments: @comments, trip: @trip } %>
+  </div>
+  <!-- コメント入力欄をブログの詳細ページに表示するためのrender パーシャルを表示 comments/_form.html.erb -->
+  <%= render partial: 'comments/form', locals: { comment: @comment, trip: @trip } %>
+</div>
+
 <%= link_to 'Edit', edit_trip_path(@trip) %> |
 <%= link_to 'Back', trips_path %>

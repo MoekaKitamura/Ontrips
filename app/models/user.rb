@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_one :profiles, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :members, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
 end
