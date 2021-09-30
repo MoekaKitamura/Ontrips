@@ -10,6 +10,7 @@ class TripsController < ApplicationController
   # GET /trips/1
   def show
     @favorite = current_user.favorites.find_by(trip_id: @trip.id)
+    @member = current_user.members.find_by(trip_id: @trip.id)
   end
 
   # GET /trips/new

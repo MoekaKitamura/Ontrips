@@ -53,5 +53,14 @@
   <% end %>
 <% end %>
 
+<% unless @trip.user_id == current_user.id %>
+  <% if @member.present? %>
+    <%= link_to '参加解除する', member_path(id: @member.id), method: :delete, class: 'btn btn-primary' %>
+  <% else %>
+    <%= link_to '旅人として参加する', members_path(trip_id: @trip.id, as: 1), method: :post, class: 'btn btn-danger' %>
+    <%= link_to '現地人として参加する', members_path(trip_id: @trip.id, as: 2), method: :post, class: 'btn btn-danger' %>
+  <% end %>
+<% end %>
+
 <%= link_to 'Edit', edit_trip_path(@trip) %> |
 <%= link_to 'Back', trips_path %>
