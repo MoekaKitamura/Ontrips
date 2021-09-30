@@ -42,8 +42,16 @@
 
 <p>
   <strong>User:</strong>
-  <%= @trip.user %>
+  <%= @trip.user.name %>
 </p>
+
+<% unless @trip.user_id == current_user.id %>
+  <% if @favorite.present? %>
+    <%= link_to 'いいね解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-primary' %>
+  <% else %>
+    <%= link_to 'いいねする', favorites_path(trip_id: @trip.id), method: :post, class: 'btn btn-danger' %>
+  <% end %>
+<% end %>
 
 <%= link_to 'Edit', edit_trip_path(@trip) %> |
 <%= link_to 'Back', trips_path %>

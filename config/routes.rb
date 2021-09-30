@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :favorites, only: [:create, :destroy]
+  resources :profiles
   resources :trips
   resources :blogs
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

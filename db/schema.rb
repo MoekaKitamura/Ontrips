@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_29_145231) do
+ActiveRecord::Schema.define(version: 2021_09_30_023311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,30 @@ ActiveRecord::Schema.define(version: 2021_09_29_145231) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_blogs_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "trip_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trip_id"], name: "index_favorites_on_trip_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "icon"
+    t.integer "gender"
+    t.date "birthday"
+    t.integer "home_country"
+    t.integer "home_city"
+    t.integer "first_language"
+    t.integer "second_language"
+    t.text "introduction"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "trips", force: :cascade do |t|
@@ -64,5 +88,8 @@ ActiveRecord::Schema.define(version: 2021_09_29_145231) do
   end
 
   add_foreign_key "blogs", "users"
+  add_foreign_key "favorites", "trips"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "profiles", "users"
   add_foreign_key "trips", "users"
 end

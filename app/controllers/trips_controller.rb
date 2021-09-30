@@ -9,6 +9,7 @@ class TripsController < ApplicationController
 
   # GET /trips/1
   def show
+    @favorite = current_user.favorites.find_by(trip_id: @trip.id)
   end
 
   # GET /trips/new
@@ -54,6 +55,6 @@ class TripsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def trip_params
-      params.require(:trip).permit(:title, :country, :city, :start_on, :finish_on, :flexible, :description, :goal, :user_id)
+      params.require(:trip).permit(:title, :country, :city, :start_on, :finish_on, :flexible, :description, :goal)
     end
 end
