@@ -20,12 +20,12 @@
       <%= link_to "Talk", talks_path %>
 
     <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
+      <%= link_to "Sign up", new_user_registration_path %>
+      <%= link_to "Log in", new_user_session_path %>
     <% end %>
 
     <% if current_user.try(:admin?) %>
-      <%= link_to "管理画面", rails_admin_path %>
+      <%= link_to "Admin", rails_admin_path %>
     <% end %>
 </header>
     <% if notice %>
