@@ -27,7 +27,9 @@
 
 <p>
   <strong>Flexible:</strong>
-  <%= @trip.flexible %>
+  <% if @trip.flexible %>
+    日程変更可能
+  <% end %>
 </p>
 
 <p>
@@ -37,7 +39,11 @@
 
 <p>
   <strong>Goal:</strong>
-  <%= @trip.goal %>
+  <% if @trip.goal %>
+    終了
+  <% else %>
+    募集中
+  <% end %>
 </p>
 
 <p>
@@ -45,6 +51,7 @@
   <%= @trip.user.name %>
 </p>
 
+<!---favorite--->
 <% unless @trip.user_id == current_user.id %>
   <% if @favorite.present? %>
     <%= link_to 'お気に入り済み', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-primary' %>
@@ -54,6 +61,7 @@
 <% end %>
 <%= @trip.favorites.count %>人がお気に入り
 
+<!---member--->
 <% unless @trip.user_id == current_user.id %>
   <% if @member.present? %>
     <%= link_to '参加中！！', member_path(id: @member.id), method: :delete, class: 'btn btn-primary' %>
@@ -63,6 +71,12 @@
   <% end %>
 <% end %>
 <%= @members.count %>人が参加中(visiter:<%= @members.where(as: 1).count %>,local:<%= @members.where(as: 2).count %>)
+
+<% @members.each do |member| %>
+  <%= link_to profile_path(member.user.id) do %>
+    <%= member.user.name %>
+  <% end %>
+<% end %>
 
 <!-- コメント一覧-->
 <div class="comment_area">
