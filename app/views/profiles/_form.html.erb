@@ -18,32 +18,32 @@
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.select :gender,Profile.genders.keys, {include_blank: '選択してください'}%>
+    <%= form.select :gender,Profile.genders.keys, {include_blank: '----------'}%>
   </div>
 
   <div class="field">
     <%= form.label :birthday %>
-    <%= form.date_select :birthday %>
+    <%= form.date_select :birthday, { include_blank: '----------', start_year: 1921, end_year: 2010} %>
   </div>
 
   <div class="field">
     <%= form.label :home_country %>
-    <%= form.select :home_country,Profile.home_countries.keys, {include_blank: '選択してください'}%>
+    <%= form.select :home_country,Profile.home_countries.keys, {include_blank: '----------'}%>
   </div>
 
   <div class="field">
     <%= form.label :home_city %>
-    <%= form.select :home_city,Profile.home_cities.keys, {include_blank: '選択してください'}%>
+    <%= form.select :home_city,Profile.home_cities.keys, {include_blank: '----------'}%>
   </div>
 
   <div class="field">
     <%= form.label :first_language %>
-    <%= form.select :first_language,Profile.first_languages.keys, {include_blank: '選択してください'}%>
+    <%= form.select :first_language,Profile.first_languages.keys, {include_blank: '----------'}%>
   </div>
 
   <div class="field">
     <%= form.label :second_language %>
-    <%= form.select :second_language,Profile.second_languages.keys, {include_blank: '選択してください'}%>
+    <%= form.select :second_language,Profile.second_languages.keys, {include_blank: '----------'}%>
   </div>
 
   <div class="field">
