@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.number_field :gender %>
+    <%= form.select :gender,Profile.genders.keys, {include_blank: '選択してください'}%>
   </div>
 
   <div class="field">
@@ -28,32 +28,27 @@
 
   <div class="field">
     <%= form.label :home_country %>
-    <%= form.number_field :home_country %>
+    <%= form.select :home_country,Profile.home_countries.keys, {include_blank: '選択してください'}%>
   </div>
 
   <div class="field">
     <%= form.label :home_city %>
-    <%= form.number_field :home_city %>
+    <%= form.select :home_city,Profile.home_cities.keys, {include_blank: '選択してください'}%>
   </div>
 
   <div class="field">
     <%= form.label :first_language %>
-    <%= form.number_field :first_language %>
+    <%= form.select :first_language,Profile.first_languages.keys, {include_blank: '選択してください'}%>
   </div>
 
   <div class="field">
     <%= form.label :second_language %>
-    <%= form.number_field :second_language %>
+    <%= form.select :second_language,Profile.second_languages.keys, {include_blank: '選択してください'}%>
   </div>
 
   <div class="field">
     <%= form.label :introduction %>
     <%= form.text_area :introduction %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div class="actions">
