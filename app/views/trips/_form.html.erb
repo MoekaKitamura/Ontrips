@@ -18,22 +18,23 @@
 
   <div class="field">
     <%= form.label :country %>
-    <%= form.number_field :country %>
+    <%= form.select :country,Trip.countries.keys, {include_blank: '選択してください'}%>
   </div>
 
   <div class="field">
     <%= form.label :city %>
-    <%= form.number_field :city %>
+    <%= form.select :city,Trip.cities.keys, {include_blank: '選択してください'}%>
+
   </div>
 
   <div class="field">
     <%= form.label :start_on %>
-    <%= form.date_select :start_on %>
+    <%= form.date_field :start_on %>
   </div>
 
   <div class="field">
     <%= form.label :finish_on %>
-    <%= form.date_select :finish_on %>
+    <%= form.date_field :finish_on %>
   </div>
 
   <div class="field">
