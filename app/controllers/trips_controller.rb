@@ -14,6 +14,7 @@ class TripsController < ApplicationController
     @members = @trip.members
     @comments = @trip.comments
     @comment = @trip.comments.build
+    @similar = Trip.where(country: @trip.country).where.not(id: @trip.id)
   end
 
   def change_goal

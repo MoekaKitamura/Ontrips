@@ -88,6 +88,15 @@
   <% end %>
 <% end %>
 
+<!-- 似ている掲示板-->
+<h4>You might also like </h4>
+<p><%= @trip.country %>行きの他の旅行</p>
+<% @similar.each do |similar| %>
+  <%= link_to trip_path(similar.id) do %>
+    <%= similar.title %>
+  <% end %> /
+<% end %>
+
 <!-- コメント一覧-->
 <div class="comment_area">
   <p>Comments</p>
