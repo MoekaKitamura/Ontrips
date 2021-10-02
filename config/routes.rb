@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :profiles
   resources :trips do
     resources :comments
+    member do
+      post :change_goal
+    end
   end
   resources :blogs
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

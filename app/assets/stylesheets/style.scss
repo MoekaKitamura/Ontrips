@@ -26,3 +26,14 @@ header{
   font-family: 'Cabin Sketch', cursive;
   font-size: 40px;
 }
+
+
+
+div.finished{
+  @if goal{
+    background: rgb(155, 155, 155);
+  }
+  @else{
+    background: #fff;
+  }
+}

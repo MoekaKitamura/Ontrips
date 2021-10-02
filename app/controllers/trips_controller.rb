@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  before_action :set_trip, only: [:show, :edit, :update, :destroy]
+  before_action :set_trip, only: [:show, :edit, :update, :destroy, :change_goal]
   before_action :authenticate_user!
 
   # GET /trips
@@ -14,6 +14,12 @@ class TripsController < ApplicationController
     @members = @trip.members
     @comments = @trip.comments
     @comment = @trip.comments.build
+  end
+
+  def change_goal
+    #旅行を終了する
+    @trip.update(goal: params[:goal])
+    redirect_to @trip, notice: 'ステータスを変更しました。'
   end
 
   # GET /trips/new

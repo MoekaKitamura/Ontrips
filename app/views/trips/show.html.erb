@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<div class="<%= "finished" if @trip.goal %>">
 <p>
   <strong>Title:</strong>
   <%= @trip.title %>
@@ -54,9 +55,9 @@
 <!---favorite--->
 <% unless @trip.user_id == current_user.id %>
   <% if @favorite.present? %>
-    <%= link_to 'お気に入り済み', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-primary' %>
+    <%= link_to 'お気に入り済み', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
   <% else %>
-    <%= link_to 'お気に入りする', favorites_path(trip_id: @trip.id), method: :post, class: 'btn btn-danger' %>
+    <%= link_to 'お気に入りする', favorites_path(trip_id: @trip.id), method: :post, class: 'btn btn-primary' %>
   <% end %>
 <% end %>
 <%= @trip.favorites.count %>人がお気に入り
@@ -64,10 +65,10 @@
 <!---member--->
 <% unless @trip.user_id == current_user.id %>
   <% if @member.present? %>
-    <%= link_to '参加中！！', member_path(id: @member.id), method: :delete, class: 'btn btn-primary' %>
+    <%= link_to '参加中！！', member_path(id: @member.id), method: :delete, class: 'btn btn-danger' %>
   <% else %>
-    <%= link_to '一緒に旅をする', members_path(trip_id: @trip.id, as: 1), method: :post, class: 'btn btn-danger' %>
-    <%= link_to 'ローカルとして参加', members_path(trip_id: @trip.id, as: 2), method: :post, class: 'btn btn-danger' %>
+    <%= link_to '一緒に旅をする', members_path(trip_id: @trip.id, as: 1), method: :post, class: 'btn btn-primary' %>
+    <%= link_to 'ローカルとして参加', members_path(trip_id: @trip.id, as: 2), method: :post, class: 'btn btn-primary' %>
   <% end %>
 <% end %>
 <%= @members.count %>人が参加中(visiter:<%= @members.where(as: 1).count %>,local:<%= @members.where(as: 2).count %>)
@@ -75,6 +76,15 @@
 <% @members.each do |member| %>
   <%= link_to profile_path(member.user.id) do %>
     <%= member.user.name %>
+  <% end %>
+<% end %>
+
+<!---goal--->
+<% if @trip.user.id == current_user.id %>
+  <% if @trip.goal %>
+    <%= link_to "再開する", change_goal_trip_path(goal: false), method: :post, class: 'btn btn-sm btn-danger' %>
+  <% else %>
+    <%= link_to "終了する", change_goal_trip_path(goal: true), method: :post, class: 'btn btn-sm btn-primary' %>
   <% end %>
 <% end %>
 
@@ -92,3 +102,4 @@
 
 <%= link_to 'Edit', edit_trip_path(@trip) %> |
 <%= link_to 'Back', trips_path %>
+</div>
