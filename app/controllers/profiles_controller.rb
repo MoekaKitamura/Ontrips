@@ -4,7 +4,9 @@ class ProfilesController < ApplicationController
 
   # GET /profiles
   def index
-    @profiles = Profile.all
+    @q = Profile.ransack(params[:q])
+    @profiles = @q.result(distinct: true)
+    # @profiles = Profile.all
   end
 
   # GET /profiles/1
