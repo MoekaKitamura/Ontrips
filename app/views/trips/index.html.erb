@@ -2,9 +2,6 @@
 
 <h1>Trips</h1>
 <%= search_form_for @q do |f| %>
-  <%= f.label :title, 'タイトルで検索' %>
-  <%= f.search_field :title_cont %>
-<br>
   <%= f.label :country, '国名で検索' %>
   <%= f.select :country_eq ,Trip.countries, {include_blank: '----------'} %>
 <br>
