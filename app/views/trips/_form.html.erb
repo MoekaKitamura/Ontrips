@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :country %>
-    <%= form.select :country,Trip.countries.keys, {include_blank: '選択してください'}%>
+    <%= form.select :country,Trip.countries.keys, {include_blank: '----------'}%>
   </div>
 
   <div class="field">
     <%= form.label :city %>
-    <%= form.select :city,Trip.cities.keys, {include_blank: '選択してください'}%>
+    <%= form.select :city,Trip.cities.keys, {include_blank: '----------'}%>
 
   </div>
 

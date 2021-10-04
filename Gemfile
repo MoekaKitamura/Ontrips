@@ -25,6 +25,8 @@ gem 'devise-i18n'  #ロケール設定
 gem 'rails_admin', '~> 2.0' #管理画面を作成
 gem 'cancancan' #アクセス権限の設定
 
+gem 'ransack'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
