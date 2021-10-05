@@ -2,6 +2,16 @@
 
 <h1>Profiles</h1>
 
+<%= search_form_for @q do |f| %>
+  <%= f.label :home_country, '国名で検索' %>
+  <%= f.select :home_country_eq ,Profile.home_countries, {include_blank: '----------'} %>
+<br>
+  <%= f.label :first_language_or_second_language, '言語で検索' %>
+  <%= f.select :first_language_or_second_language_eq ,Profile.first_languages, {include_blank: '----------'} %>
+
+  <%= f.submit '検索' %>
+<% end %>
+
 <table>
   <thead>
     <tr>

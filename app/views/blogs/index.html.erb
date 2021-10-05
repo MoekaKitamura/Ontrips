@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Blogs</h1>
+<%= search_form_for @q do |f| %>
+  <%= f.label :title_or_content, 'キーワードで検索' %>
+  <%= f.search_field :title_or_content_cont, class: "form-control", :placeholder => "あいまいなワードで検索"%> 
 
+  <%= f.submit '検索' %>
+<% end %>
 <table>
   <thead>
     <tr>

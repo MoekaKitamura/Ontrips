@@ -4,7 +4,9 @@ class TripsController < ApplicationController
 
   # GET /trips
   def index
-    @trips = Trip.all
+    @q = Trip.ransack(params[:q])
+    @trips = @q.result(distinct: true)
+    # @trips = Trip.all
   end
 
   # GET /trips/1

@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Trips</h1>
+<%= search_form_for @q do |f| %>
+  <%= f.label :country, '国名で検索' %>
+  <%= f.select :country_eq ,Trip.countries, {include_blank: '----------'} %>
+<br>
+  <%= f.label :start_on, '期間で検索' %>
+  <%= f.date_field :start_on_gteq %>〜
+  <%= f.date_field :finish_on_lteq %>
+
+  <%= f.submit '検索' %>
+<% end %>
 
 <table>
   <thead>
