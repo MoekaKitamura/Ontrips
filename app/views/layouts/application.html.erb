@@ -11,7 +11,9 @@
 
   <body>
   <header>
-  <%= image_tag "logo.png", width: 150 %>
+  <%= link_to trips_path do %>
+    <%= image_tag "logo.png", width: 150 %>
+  <% end %>
     <% if user_signed_in? %>
       <%= link_to "Blog", blogs_path %>
       <%= link_to "Log out", destroy_user_session_path, method: :delete %>
