@@ -27,6 +27,9 @@ gem 'cancancan' #アクセス権限の設定
 
 gem 'ransack'
 
+gem 'jquery-rails'
+gem 'kaminari'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
