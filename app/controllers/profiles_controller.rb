@@ -51,8 +51,8 @@ class ProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
-      # @profile = Profile.find(params[:id])
-      @profile = Profile.find_by(user_id:params[:id])
+      @profile = Profile.find(params[:id])
+      # @profile = Profile.find_by(user_id:params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

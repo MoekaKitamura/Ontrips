@@ -6,10 +6,11 @@ class User < ApplicationRecord
 
   has_many :blogs, dependent: :destroy 
   has_many :trips, dependent: :destroy
-  has_one :profiles, dependent: :destroy
+  has_one :profile, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :members, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   def self.guest
     find_or_create_by(email: 'guest@example.com') do |user|
