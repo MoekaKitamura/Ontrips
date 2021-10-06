@@ -3,7 +3,7 @@
 body {
   background-color: #fff;
   color: #333;
-  margin: 33px;
+  margin-top: 33px;
   font-family: 'Noto Sans JP',sans-serif;
   font-size: 16px;
   line-height: 18px;
@@ -85,3 +85,39 @@ article{
 nav.pagination {
   display: none;
 } 
+
+// -------------footer--
+footer{
+  height: 120px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  // display: table;
+}
+
+footer p{
+  color: #666;
+  text-align: center;
+  vertical-align: bottom;
+  margin-top: 100px;
+  margin-left: 0;
+  // display: table-cell;
+}
+
+.footer-logo{
+  float: left;
+}
+.footer-list{
+  float: right;
+}
+.footer-list li{
+  padding-bottom: 20px;
+  font-size: 0.9em;
+}
+
+.container{
+  position: relative;
+  padding-bottom: 120px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
