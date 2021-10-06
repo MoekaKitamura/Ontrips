@@ -1,4 +1,4 @@
-<p><%= t('.greeting', receiver: @email) %></p>
+<p><%= t('こんにちは', receiver: @email) %></p>
 
 <% if @resource.try(:unconfirmed_email?) %>
   <p><%= t('.message_unconfirmed', email: @resource.unconfirmed_email) %></p>
