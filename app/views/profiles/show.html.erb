@@ -17,11 +17,12 @@
 
 <p>
   <strong>Birthday:</strong>
-  <%= @profile.birthday %>
+  <% if  @profile.birthday.present? %> 
+    <%= @profile.birthday %>
 </p>
 
-<%= (Date.today.strftime('%Y%m%d').to_i - @profile.birthday.strftime('%Y%m%d').to_i) / 10000 %>歳
-
+  <%= (Date.today.strftime('%Y%m%d').to_i - @profile.birthday.strftime('%Y%m%d').to_i) / 10000 %>歳
+  <% end %>
 <p>
   <strong>Home country:</strong>
   <%= @profile.home_country %>
