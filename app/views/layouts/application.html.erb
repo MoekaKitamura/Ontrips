@@ -18,27 +18,27 @@
       <% if user_signed_in? %>
         <ul class="menu">
           <li class="menu__single">
-              <a href="#" class="init-bottom">User</a>
+              <a href="#" class="init-bottom"><i class="fas fa-user"></i> User</a>
               <ul class="menu__second-level">
                   <li><%= link_to "All Users", profiles_path %></li>
               </ul>
           </li>
           <li class="menu__single">
-              <a href="#" class="init-bottom">Trip</a>
+              <a href="#" class="init-bottom"><i class="fas fa-plane"></i> Trip</a>
               <ul class="menu__second-level">
                   <li><%= link_to "All Trips", trips_path %></li>
                   <li><%= link_to "Start Trips", new_trip_path %></li>
               </ul>
           </li>
           <li class="menu__single">
-              <a href="#" class="init-bottom">Blog</a>
+              <a href="#" class="init-bottom"><i class="fas fa-sticky-note"></i> Blog</a>
               <ul class="menu__second-level">
                   <li><%= link_to "All Blogs", blogs_path %></li>
                   <li><%= link_to "Post Blog", new_blog_path %></li>
               </ul>
           </li>
           <li class="menu__single">
-              <a href="#" class="init-bottom">Account</a>
+              <a href="#" class="init-bottom"><i class="fas fa-cog"></i> Account</a>
               <ul class="menu__second-level">
                   <li><%= link_to "Talk", talks_path %></li>
                   <li><%= link_to "Profiles", profile_path(current_user.id) %></li>
