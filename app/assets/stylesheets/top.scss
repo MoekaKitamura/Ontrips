@@ -1,0 +1,123 @@
+@charset "utf-8";
+/*======表示するテキストが切り替わるボタン=======*/
+.btntextchange{
+    /*テキストの基点とするためrelativeを指定*/
+  position: relative;
+    /*ボタンの形状*/
+  border: 1px solid #555;
+  border-radius:25px;
+    min-width:210px;
+  padding: 20px;
+    text-align: center;
+  display: inline-block;
+    text-decoration: none;
+    color: #333;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all .2s;
+}
+
+/*hoverした際の変化*/
+.btntextchange:hover{
+  background:#333;
+  color:#fff;
+}
+
+.btntextchange span{
+    /*絶対配置でテキストの位置を決める*/
+  position: absolute;
+  left: 50%;
+  top:50%;
+    transform:translate(-50%,-50%);
+    /*アニメーションの指定*/
+    transition: all .5s;
+  /*ブロック要素にしてテキスト折り返しなし*/  
+  display: block;
+  white-space: nowrap;
+}
+
+/*差し替わるテキストの設定*/
+.btntextchange span:nth-child(2){
+  opacity:0;/*透過0に*/
+}
+
+/*hoverするとテキストが入れ替わる設定*/
+.btntextchange:hover span:nth-child(1){
+  opacity:0;/*透過0に*/
+}
+
+.btntextchange:hover span:nth-child(2){
+  opacity:1;/*不透明に*/
+}
+
+/*========= レイアウトのためのCSS ===============*/
+
+body{
+    vertical-align:middle; 
+    padding: 100px 0;
+    text-align: center;
+}
+
+p{
+    margin: 0 0 10px 0;
+}
+
+/*========= 手書きアニメLoadingのためのCSS ===============*/
+
+/* Loading背景画面設定　*/
+#splash {
+  /*fixedで全面に固定*/
+position: fixed;
+width: 100%;
+height: 100%;
+z-index: 999;
+background:#333;
+text-align:center;
+color:#fff;
+}
+
+/* Loading画像中央配置　*/
+#splash_logo {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+/* Loading アイコンの大きさ設定　*/
+#splash_logo svg{
+width:300px;
+}
+
+/*========= SVG操作手書き風にするためのCSS ===============*/
+
+#mask .st0{
+  fill:none;
+  stroke:#fff;
+  stroke-width:90;/*線の太さを指定する*/
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+  stroke-dasharray: 1500; /* 線の間隔を指定する */
+  stroke-dashoffset:1500; /* 線の位置を指定する */
+}
+
+/*========= レイアウトのためのCSS ===============*/
+
+#container{
+  width:100%;
+  height: 100vh;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+a{
+  color: #333;
+}
+
+a:hover{
+   text-decoration: none;   
+}

@@ -1,0 +1,25 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+
+<div class="animate__animated animate__bounce animate__slow animate__delay-2s">
+  <br><h4>新しい旅の形 〜旅の目的に"交流"を〜 🌏</h4>
+</div>
+
+
+ <%# <a href="#" class="btntextchange"><span>About</span><span>私たちについて</span></a> %>
+<%= link_to new_user_session_path, class:"btntextchange" do %>
+  <span>Log in</span><span>ログイン</span>
+<% end %>
+<%= link_to new_user_registration_path, class:"btntextchange" do %>
+  <span>Sign up</span><span>新規登録</span>
+<% end %>
+<%= link_to users_guest_sign_in_path, class:"btntextchange", method: :post do %>
+  <span>Guest</span><span>ゲストログイン</span>
+<% end %>
+
+<div class="scrolldown4"><span>Scroll</span></div>
+
