@@ -10,28 +10,47 @@
   </head>
 
   <body>
-  <header>
-  <%= link_to trips_path do %>
-    <%= image_tag "logo.png", width: 150 %>
-  <% end %>
-    <% if user_signed_in? %>
-      <%= link_to "Blog", blogs_path %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-      <%= link_to "Profile", profiles_path %>
-      <%= link_to "Trip", trips_path %>
-      <%= link_to "Talk", talks_path %>
-
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %>
-      <%= link_to "Log in", new_user_session_path %>
-    <% end %>
-
-    <% if current_user.try(:admin?) %>
-      <%= link_to "Admin", rails_admin_path %>
-    <% end %>
-</header>
+  <div class="container">
+    <header> 
+      <%= link_to tops_index_path do %>
+        <%= image_tag "logo.png", width: 150 %>
+      <% end %>
+      <% if user_signed_in? %>
+        <ul class="menu">
+          <li class="menu__single">
+              <a href="#" class="init-bottom"><i class="fas fa-user"></i> User</a>
+              <ul class="menu__second-level">
+                  <li><%= link_to "All Users", profiles_path %></li>
+              </ul>
+          </li>
+          <li class="menu__single">
+              <a href="#" class="init-bottom"><i class="fas fa-plane"></i> Trip</a>
+              <ul class="menu__second-level">
+                  <li><%= link_to "All Trips", trips_path %></li>
+                  <li><%= link_to "Start Trips", new_trip_path %></li>
+              </ul>
+          </li>
+          <li class="menu__single">
+              <a href="#" class="init-bottom"><i class="fas fa-sticky-note"></i> Blog</a>
+              <ul class="menu__second-level">
+                  <li><%= link_to "All Blogs", blogs_path %></li>
+                  <li><%= link_to "Post Blog", new_blog_path %></li>
+              </ul>
+          </li>
+          <li class="menu__single">
+              <a href="#" class="init-bottom"><i class="fas fa-cog"></i> Account</a>
+              <ul class="menu__second-level">
+                  <li><%= link_to "Talk", talks_path %></li>
+                  <li><%= link_to "Profiles", profile_path(current_user.id) %></li>
+                  <li><% if current_user.try(:admin?) %><%= link_to "Admin", rails_admin_path %><% end %></li>
+                  <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+              </ul>
+          </li>
+        </ul>
+      <% end %>
+    </header>
     <% if notice %>
-    <p class="alert alert-notice"><%= notice %></p>
+      <p class="alert alert-notice"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert alert-error"><%= alert %></p>
@@ -42,5 +61,16 @@
     <% end %>
 
     <%= yield %>
+    <footer>
+    <div class="footer-logo">ontrips</div>
+    <div class="footer-list">
+      <ul>
+        <li><%= link_to 'お問い合わせ', trips_path %></li>
+        <li><%= link_to 'プライバシーポリシー', new_trip_path %></li>
+      </ul>
+    </div>
+    <p>Copyright ©︎ 2021 Ontrips All Rights Reserved.</p>
+    </footer>
+  </div>
   </body>
 </html>

@@ -1,33 +1,74 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
-// @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
-
-body{
-  // font-family: 'Bradley Hand','Hannotate SC',sans-serif;
-  // font-family: 'Skia','Hannotate SC',sans-serif;
+body {
+  background-color: #fff;
+  color: #333;
+  margin-top: 33px;
   font-family: 'Noto Sans JP',sans-serif;
-  // font-family: 'Nunito', sans-serif;
   font-size: 16px;
+  line-height: 18px;
+  min-height: 100%;
+  text-align: center;
 }
 
-// header{
-//   @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
-//   font-family: 'Kalam', cursive;
-//   font-size: 30px;
-// }
-// header{
-//   @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
-//   font-family: 'Handlee', cursive;
-//   font-size: 40px;
-// }
-header{
-  @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Handlee&display=swap');
-  font-family: 'Cabin Sketch', cursive;
-  font-size: 40px;
+p{
+  margin: 0 0 10px 0;
 }
 
+a {
+  color: #000;
+}
 
+li{
+  list-style: none;
+}
+
+p.login {
+  text-align: right;
+  margin: 10px 20px;
+}
+
+.field, .actions {
+    margin-bottom: 20px;
+}
+
+#notice {
+  color: green;
+  padding-left: 50px;
+}
+
+.field_with_errors {
+  padding: 5px;
+  background-color: red;
+  display: table;
+  margin-right: 20px;
+}
+
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  background-color: #f0f0f0;
+  margin-right: 20px;
+}
+#error_explanation h2{
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+}
+
+#error_explanation ul li {
+    font-size: 12px;
+    list-style: square;
+    text-align: left;
+    padding-top: 5px;
+  }
 
 div.finished{
   @if goal{
@@ -46,3 +87,39 @@ article{
 nav.pagination {
   display: none;
 } 
+
+// -------------footer--
+footer{
+  height: 120px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  // display: table;
+}
+
+footer p{
+  color: #666;
+  text-align: center;
+  vertical-align: bottom;
+  margin-top: 100px;
+  margin-left: 0;
+  // display: table-cell;
+}
+
+.footer-logo{
+  float: left;
+}
+.footer-list{
+  float: right;
+}
+.footer-list li{
+  padding-bottom: 20px;
+  font-size: 0.9em;
+}
+
+.container{
+  position: relative;
+  padding-bottom: 120px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
