@@ -1,0 +1,96 @@
+.talking__user{
+  // display: block;
+  background: rgb(250, 219, 219);
+  border: solid 1px black;
+  margin: 10px;
+  padding: 20px;
+  text-align: left;
+}
+
+.talking__user img{
+  border-radius: 50%;
+  margin-right: 30px;
+  width: 60px;
+  height: 60px;
+}
+
+.talking__user .btn-danger{
+  border-radius: 50%;
+  text-align: right;
+}
+
+
+/*===================
+iPhoneのメッセージ風
+=====================*/
+/*フレームとフォント*/
+.message__area {
+  width: 100%;
+  padding: 10px 0;
+  border: 1px #ddd solid;
+  background: white;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.4;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.message__list{
+  min-height: 50px;
+  margin: 10px;
+  background-color: brown;
+}
+
+/*フキダシ共通*/
+.message__area .fukidasi {
+  position: relative;
+  display: inline-block;
+  max-width: 192px;
+  margin: 1px 10px 6px;
+  padding: 9px 14px;
+  border-radius: 19px;
+  overflow-wrap: break-word;
+  clear: both;
+  box-sizing: content-box;/*はてな用*/
+}
+/*フキダシ左*/
+.message__area .fukidasi.left {
+  float: left;
+  background: #e9e9ed;
+}
+/*フキダシ右*/
+.message__area .fukidasi.right {
+  float: right;
+  background: #2793fa;
+  color: white;
+}
+/*しっぽ共通*/
+.message__area .fukidasi::after {
+  position: absolute;
+  content: "";
+  width: 17px;
+  height: 17px;
+  bottom: 0;
+}
+/*しっぽ左*/
+.message__area .fukidasi.left::after {
+  left: -6px;
+  border-radius: 0px 0  17px 0px/ 0px 0 13px 0; 
+  box-shadow: -14px 2px 0 -3px #e9e9ed inset; 
+}
+/*しっぽ右*/
+.message__area .fukidasi.right::after {
+  right: -6px;
+  border-radius: 0px 0  0 17px/ 0px 0 0 13px; 
+  box-shadow: 14px 2px 0 -3px #2793fa inset; 
+}
+
+.read,.time{
+  font-size: 0.7em;
+  text-align: right;
+}
+
+.time.right{
+  text-align: left;
+}

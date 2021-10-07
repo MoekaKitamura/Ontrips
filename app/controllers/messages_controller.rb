@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
   end
 
   def index
+    @talks = Talk.all
     # 会話にひもづくメッセージを取得する
     @messages = @talk.messages
     if @messages.length > 10 #もしメッセージの数が10よりも大きければ
