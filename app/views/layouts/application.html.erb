@@ -58,7 +58,7 @@
     <% end %>
 
     <% if user_signed_in? %>
-      <div>あなたの名前:<%= current_user.name %></div>
+      <div class="login"><%= image_tag current_user.profile.icon.url %> <%= current_user.name %></div>
     <% end %>
 
     <%= yield %>
