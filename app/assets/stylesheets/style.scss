@@ -25,86 +25,6 @@ li{
   list-style: none;
 }
 
-p.login {
-  text-align: right;
-  margin: 10px 20px;
-}
-
-.form_area{
-  width: 600px;
-  margin: 0 auto;
-}
-
-.form_area h2{
-  text-align: left;
-  margin-bottom: 20px;
-}
-.form_area p{
-  text-align: left;
-  margin-bottom: 60px;
-}
-
-.field, .actions {
-    margin: 10px 0;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  text-align: left;
-}
-
-input,textarea,select{
-  width: 600px;
-  height: 50px;
-  margin-bottom: 20px;
-  padding: 20px;/*中に余裕ができる*/
-  font-size: 16px;
-  border: 1px solid #6F4C5B;
-  color: #6F4C5B;
-  border-radius: 5px;
-}
-
-textarea{
-  height: 200px;
-}
-
-.gender_area label{
-  width: 70px;
-  height: 50px;
-  line-height: 50px;
-  float: left;
-}
-.gender_area input{
-  width: 30px;
-  height: 50px;
-  line-height: 50px;
-  float: left;
-}
-
-.birthday_area select{
-  width: 190px;
-  margin-right: 10px;
-  float: left;
-
-}
-
-#profile_icon{
-  border: none;
-}
-
-#user_remember_me{
-  width: 20px;
-}
-
-.rememberable label{
-  text-align: center;
-}
-.guest, .actions input{
-  width: 400px;
-  margin-top: 20px;
-  padding: 10px;
-}
 
 
 #notice {
@@ -151,11 +71,6 @@ div.finished{
   @else{
     background: #fff;
   }
-}
-
-article{
-  height: 300px;
-
 }
 
 nav.pagination {
