@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Profiles</h1>
+<h1>Find your Travel mate</h1>
 
 <%= search_form_for @q do |f| %>
   <%= f.label :home_country, '国名で検索' %>
@@ -12,44 +12,27 @@
   <%= f.submit '検索' %>
 <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Icon</th>
-      <th>Gender</th>
-      <th>Birthday</th>
-      <th>Home country</th>
-      <th>Home city</th>
-      <th>First language</th>
-      <th>Second language</th>
-      <th>Introduction</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= image_tag profile.icon.url %></td>
-        <td><%= profile.gender %></td>
-        <td><%= profile.birthday %></td>
-        <td><%= profile.home_country %></td>
-        <td><%= profile.home_city %></td>
-        <td><%= profile.first_language %></td>
-        <td><%= profile.second_language %></td>
-        <td><%= profile.introduction %></td>
-        <td><%= profile.user.name %></td>
-        <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Profile', new_profile_path %>
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26595.638329121884!2d130.35110399999996!3d33.5675392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541918e44e39077%3A0xe8214e0d1793b30!2z5aSp56We6aeF!5e0!3m2!1sja!2sjp!4v1633389909337!5m2!1sja!2sjp" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+<div class="cards">
+<% @profiles.each do |profile| %>
+<div class="profile__card">
+	<i class="fas fa-crown"></i>
+	<%= image_tag profile.icon.url %>
+	<h3><%= profile.user.name %></h3>
+	<h6><%= profile.home_country %> / <%= profile.home_city %></h6>
+	<p><%= (Date.today.strftime('%Y%m%d').to_i - profile.birthday.strftime('%Y%m%d').to_i) / 10000 if  profile.birthday.present? %>歳 
+  <%= profile.gender %> </p>
+	<div class="buttons">
+		<%= link_to 'Detail', profile, class: "btn btn-info"%>
+		<%= link_to 'Message', profile, class: "btn btn-warning"%>
+</div>
+	<div class="profile__detail">
+	  <p>Language: <%= profile.first_language %> <%= profile.second_language %></p>
+    <p><%= profile.introduction.truncate(20) if profile.introduction.present? %></p>
+	</div>
+</div>
+<% end %>
+</div>

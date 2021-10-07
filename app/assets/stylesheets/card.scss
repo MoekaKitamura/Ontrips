@@ -1,0 +1,129 @@
+// --------------profile----------------
+.profile__card {
+	background-color: #e1daff;
+	border-radius: 5px;
+	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+	// color: #B3B8CD;
+	padding-top: 30px;
+	position: relative;
+	width: 350px;
+  height: 400px;
+  margin: 30px;
+}
+.profile__card img{
+  width: 100px;
+  height: 100px;
+}
+.fa-crown {
+	color: #FEBB0B;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+}
+
+.profile__detail {
+	background-color: #f4f1ff;
+	text-align: left;
+	padding: 15px;
+	margin-top: 30px;
+  font-size: 0.9em;
+  height: 100px;
+}
+
+// --------------trip----------------
+:root {
+  --surface-color: rgb(154, 233, 253);
+  --curve: 20;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0;
+}
+
+.card { //ひとつのカード
+  position: relative;
+  display: block;
+  height: 300px;  
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  background-color: rgb(255, 223, 251);
+  padding: 2em;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+  border-radius: calc(var(--curve) * 1px);    
+  background-color: var(--surface-color);      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header { //下の部分全体
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;    
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}  
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__icon { //icon
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;      
+  border-radius: 50%;      
+}
+
+.card__title { //name
+  font-size: 1.1em;
+  margin: 0 0 .3em;
+}
+
+.card__status { //home_country
+  font-size: 0.8em;
+  margin-left: 1em;
+}
+
+.card__description { //user情報
+  padding: 0 2em 2em;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  font-size: 0.8em;
+}
+
+.place{
+  font-size: 0.9em;
+  margin: 15px 0 10px 0 ;
+}
+
+.card__trip_description{
+  margin-top: 20px;
+  font-size: 0.8em;
+  color: rgb(202, 73, 73);
+  
+}

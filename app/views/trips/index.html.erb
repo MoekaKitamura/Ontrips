@@ -12,59 +12,32 @@
   <%= f.submit '検索' %>
 <% end %>
 <%= sort_link(@q, :start_on, "出発日順") %>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Country</th>
-      <th>City</th>
-      <th>Start on</th>
-      <th>Finish on</th>
-      <th>Flexible</th>
-      <th>Description</th>
-      <th>Goal</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <div class="scroll-list jscroll">
-    <% @trips.each do |trip| %>
-      <tr>
-        <td><%= trip.title %></td>
-        <td><%= trip.country %></td>
-        <td><%= trip.city %></td>
-        <td><%= trip.start_on %></td>
-        <td><%= trip.finish_on %></td>
-        <td><%= trip.flexible %></td>
-        <td><%= trip.description %></td>
-        <td><%= trip.goal %></td>
-        <td><%= trip.user.name %></td>
-        <td><%= link_to 'Show', trip %></td>
-        <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
-        <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    <%= paginate @trips %>
-  </div>
-  </tbody>
-</table>
 
 <div class="scroll-list jscroll">
-    <% @trips.each do |trip| %>     
-    <article>
-      <h3><%= trip.title %></h3>
-      <%# <p><%= trip.content.truncate(25) %>
-      <p class="morebt">
-        <%= link_to 'もっと見る', trip %> 
-        <%= link_to '編集する', edit_trip_path(trip) %> 
-        <%= link_to '削除する', trip, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </p>
-    </article>
+  <ul class="cards">
+    <% @trips.each do |trip| %>
+      <li>
+        <%= link_to trip, class:"card" do %>
+          <h4><%= trip.title %></h4>
+          <div class="place"><%= trip.country %> / <%= trip.city %></div>
+          <p><%= trip.start_on %> ~ <%= trip.finish_on %></p>
+          <div class="card__trip_description"><%= trip.description.truncate(47) %></div>
+          <div class="card__overlay">
+            <div class="card__header">
+              <%= image_tag trip.user.profile.icon.url, class:"card__icon" %>
+              <div class="card__header-text">
+                <h3 class="card__title"><%= trip.user.name %></h3>            
+                <span class="card__status"><%= trip.user.profile.home_country %> / <%= trip.user.profile.home_city %></span>
+              </div>
+            </div>
+            <p class="card__description"><%= trip.user.profile.first_language %>, <%= trip.user.profile.second_language %></p>
+          </div>
+        <% end %>   
+      </li>
     <% end %>
-    <%= paginate @trips %>
-  </div>
+  </ul>
+  <%= paginate @trips %>
+</div>
 
 <br>
 

@@ -18,13 +18,14 @@
 
   <div class="field">
     <%= form.label :gender %>
-    <%# <%= form.select :gender,Profile.genders.keys, {include_blank: '----------'}%> %>
-    <%= form.collection_radio_buttons :gender, Profile.genders,:first, :first %>
+    <div class="gender_area clearfix">
+    <%= form.collection_radio_buttons :gender, Profile.genders,:first, :first %></div>
   </div>
 
   <div class="field">
     <%= form.label :birthday %>
-    <%= form.date_select :birthday, { include_blank: '----------', start_year: 1921, end_year: 2010} %>
+    <div class="birthday_area clearfix">
+    <%= form.date_select :birthday, { include_blank: '----------', start_year: 1921, end_year: 2010} %></div>
   </div>
 
   <div class="field">
@@ -53,6 +54,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btntextchange" %>
   </div>
 <% end %>

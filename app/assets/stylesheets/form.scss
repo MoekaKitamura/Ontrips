@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+.form_area{
+  width: 600px;
+  margin: 0 auto;
+}
+
+.form_area h2{
+  text-align: left;
+  margin-bottom: 20px;
+}
+.form_area p{
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.field, .actions {
+    margin: 10px 0;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  text-align: left;
+}
+
+input,textarea,select{
+  width: 600px;
+  height: 50px;
+  margin-bottom: 20px;
+  padding: 20px;/*中に余裕ができる*/
+  font-size: 16px;
+  border: 1px solid #6F4C5B;
+  color: #6F4C5B;
+  border-radius: 5px;
+}
+
+textarea{
+  height: 200px;
+}
+
+.gender_area label{
+  width: 70px;
+  height: 50px;
+  line-height: 50px;
+  float: left;
+}
+.gender_area input{
+  width: 30px;
+  height: 50px;
+  line-height: 50px;
+  float: left;
+}
+
+.birthday_area select{
+  width: 190px;
+  margin-right: 10px;
+  float: left;
+
+}
+
+#profile_icon{
+  border: none;
+}
+
+#user_remember_me{
+  width: 20px;
+}
+
+.rememberable label{
+  text-align: center;
+}
+
+.guest, .actions input{
+  width: 400px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/*======表示するテキストが切り替わるボタン=======*/
+.btntextchange{
+  /*テキストの基点とするためrelativeを指定*/
+position: relative;
+  /*ボタンの形状*/
+border: 1px solid #555;
+border-radius:25px;
+  min-width:210px;
+padding: 20px;
+  text-align: center;
+display: inline-block;
+  text-decoration: none;
+  color: #333;
+  outline: none;
+  /*アニメーションの指定*/
+  transition: all .2s;
+}
+
+/*hoverした際の変化*/
+.btntextchange:hover{
+background:#333;
+color:#fff;
+}
+
+.btntextchange span{
+  /*絶対配置でテキストの位置を決める*/
+position: absolute;
+left: 50%;
+top:50%;
+  transform:translate(-50%,-50%);
+  /*アニメーションの指定*/
+  transition: all .5s;
+/*ブロック要素にしてテキスト折り返しなし*/  
+display: block;
+white-space: nowrap;
+}
+
+/*差し替わるテキストの設定*/
+.btntextchange span:nth-child(2){
+opacity:0;/*透過0に*/
+}
+
+/*hoverするとテキストが入れ替わる設定*/
+.btntextchange:hover span:nth-child(1){
+opacity:0;/*透過0に*/
+}
+
+.btntextchange:hover span:nth-child(2){
+opacity:1;/*不透明に*/
+}

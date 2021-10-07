@@ -1,4 +1,6 @@
-<h2><%= t('.title', resource: resource.model_name.human) %></h2>
+<div class="form_area">
+<h2><%= t('Edit your account', resource: resource.model_name.human) %></h2>
+<p>アカウント編集</p>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -19,11 +21,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br />
+    <%= f.label :password %> (<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)<br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
-      <br />
-      <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+      <%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %>
     <% end %>
   </div>
 
@@ -33,17 +34,16 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
+    <%= f.label :current_password %> (<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)<br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit t('.update') %>
+    <%= f.submit t('.update'), class:"btntextchange" %>
   </div>
 <% end %>
+</div>
 
-<h3><%= t('.cancel_my_account') %></h3>
-
-<p><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %></p>
+<p><%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %></p>
 
 <%= link_to t('devise.shared.links.back'), :back %>

@@ -5,21 +5,59 @@
   />
 </head>
 
-<div class="animate__animated animate__bounce animate__slow animate__delay-2s">
-  <br><h4>新しい旅の形 〜旅の目的に"交流"を〜 🌏</h4>
+<div class="top__header">
+  <div class="animate__animated animate__bounce animate__slow animate__delay-2s">
+    <h1>Be a Traveler</h1>
+    <h4>新しい旅の形 〜あなたの旅に"交流"を〜 🌏</h4>
+  </div>
+  <p>Ontripsは、一緒に観光する仲間を探し、また、現地の方とも繋がれるアプリです。</p>
+
+  <div class="top__button">
+    <%= link_to new_user_session_path, class:"btntextchange" do %>
+      <span>Log in</span><span>ログイン</span>
+    <% end %>
+    <%= link_to new_user_registration_path, class:"btntextchange" do %>
+      <span>Sign up</span><span>新規登録</span>
+    <% end %>
+    <%= link_to users_guest_sign_in_path, class:"btntextchange", method: :post do %>
+      <span>Guest</span><span>ゲストログイン</span>
+    <% end %>
+  </div>
 </div>
 
-
- <%# <a href="#" class="btntextchange"><span>About</span><span>私たちについて</span></a> %>
-<%= link_to new_user_session_path, class:"btntextchange" do %>
-  <span>Log in</span><span>ログイン</span>
-<% end %>
-<%= link_to new_user_registration_path, class:"btntextchange" do %>
-  <span>Sign up</span><span>新規登録</span>
-<% end %>
-<%= link_to users_guest_sign_in_path, class:"btntextchange", method: :post do %>
-  <span>Guest</span><span>ゲストログイン</span>
-<% end %>
-
 <div class="scrolldown4"><span>Scroll</span></div>
+<div class="top__main clearfix">
+  <div class="top__about1">
+    <h1>title</h1>
+    <%= image_tag "travel.jpg" %>      
+    <p>日本のパスポート保有者がビザなしで渡航可能または到着ビザで入国できるのは１９３カ国・地域。そんな世界最強のパスポートを持つ権利のある日本人のパスポート取得率は、わずか４人に１人・・・。旅に出ないのはもったいない！旅は人生を変えるきっかけにもなります。</p>
+  </div>
 
+  <div class="top__about1">
+    <h1>title</h1>
+    <%= image_tag "bringing.jpg" %>
+    <p>このアプリでは、旅行したいユーザーが掲示板に自分の旅の内容を投稿します。他のユーザーの中で同じ期間に同じ場所に行く予定のユーザーはその投稿を見て、その旅のメンバーに参加することができます。世界中から旅行仲間を探し、さらに旅がもっと楽しいものになります。旅の中の1日だけ一緒に過ごす人も探せます。</p>
+  </div>
+
+  <div class="top__about1">
+    <h1>title</h1>
+    <%= image_tag "airport.jpg" %>      
+    <p>また、旅行者としてだけでなく、自分の地元が行き先の旅投稿を見つけたら、現地人として旅に参加し、旅行者を案内することで、日本にいながら国際交流ができます。
+    自分の街の魅力を旅行者に伝え、ガイドしてあげましょう。旅行者の新たな視点から、今まで気がつかなかった、当たり前と思っていた発見が生まれるかもしれません。
+    交流を深めることで世界中に友達が増え、次は自分が旅に出た時に案内してもらえるかもしれません。世界中に訪れる友達がいるなんて、とてもワクワクしませんか？</p>
+  </div>
+
+  <div class="top__about1">
+    <h1>title</h1>
+    <%= image_tag "travel.jpg" %>      
+    <p>現地をよく知る方が友達感覚でガイドしてくれるとなると、知らない土地は怖いという感情が取り除かれ、旅へのハードルが低くなり、今まで躊躇っていた人々も旅に出ることができます。
+    現地の方と交流することで、その旅行先のことをもっと知れて、日常では出会えない、貴重な体験ができます。
+    もちろん、海外に行く機会がない方は、国内旅行でも利用できます。</p>
+  </div>
+
+ 
+
+</div>
+ <h1>このアプリで、旅仲間を見つけ、世界中を旅しよう！！✈️🌏</h1>
+
+  <h1>Start your Trip!!</h1>
