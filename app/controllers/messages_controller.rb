@@ -26,6 +26,7 @@ class MessagesController < ApplicationController
     @messages = @messages.order(:created_at)
     # 新規投稿のメッセージ用の変数を作成する
     @message = @talk.messages.build
+    @to = User.find(@message.talk.sender_id)
   end
 
   def create
