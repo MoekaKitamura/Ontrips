@@ -59,10 +59,18 @@
     <% end %>
     --->
     <% if user_signed_in? %>
-      <div class="login"><%= image_tag current_user.profile.icon.url %> <%= current_user.name %></div>
+      <div class="login">
+        <% if current_user.profile.icon? %>
+          <%= image_tag current_user.profile.icon.url%>
+        <% else %>
+          <%= image_tag asset_path("default_icon.png") %>
+        <% end %>
+        <%= current_user.name %>
+      </div>
     <% end %>
 
     <%= yield %>
+
     <footer>
     <div class="footer-logo">ontrips</div>
     <div class="footer-list">
