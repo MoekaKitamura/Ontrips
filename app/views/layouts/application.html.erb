@@ -21,6 +21,7 @@
               <a href="#" class="init-bottom"><i class="fas fa-user"></i> User</a>
               <ul class="menu__second-level">
                   <li><%= link_to "All Users", profiles_path %></li>
+                  <li><%= link_to "Talk", talks_path %></li>
               </ul>
           </li>
           <li class="menu__single">
@@ -40,7 +41,6 @@
           <li class="menu__single">
               <a href="#" class="init-bottom"><i class="fas fa-cog"></i> Account</a>
               <ul class="menu__second-level">
-                  <li><%= link_to "Talk", talks_path %></li>
                   <li><%= link_to "Profiles", profile_path(current_user.id) %></li>
                   <li><%= link_to "Account", edit_user_registration_path %></li>
                   <li><% if current_user.try(:admin?) %><%= link_to "Admin", rails_admin_path %><% end %></li>

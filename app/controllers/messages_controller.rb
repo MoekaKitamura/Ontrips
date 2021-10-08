@@ -5,11 +5,12 @@ class MessagesController < ApplicationController
   end
 
   def index
+    @talks = Talk.all
     # 会話にひもづくメッセージを取得する
     @messages = @talk.messages
     if @messages.length > 10 #もしメッセージの数が10よりも大きければ
       @over_ten = true #10より大きいというフラグを有効にして
-      @messages = Message.where(id: @messages[-10..-1].pluck(:id)) #メッセージを最新の10に絞る
+      @messages = Message.where(id: @talk.messages.order(created_at: :desc).limit(10).pluck(:id))#メッセージを最新の10に絞る
       # 直近で登録されたメッセージの10件のidを取得し、そのidのmessageの配列をwhereメソッドで取得する
     end
     if params[:m] #params[:m]というパラメータをチェックした時、そこに値があれば（trueであれば）
@@ -25,6 +26,7 @@ class MessagesController < ApplicationController
     @messages = @messages.order(:created_at)
     # 新規投稿のメッセージ用の変数を作成する
     @message = @talk.messages.build
+    @to = User.find(Talk.find(params[:talk_id]).receiver_id)
   end
 
   def create

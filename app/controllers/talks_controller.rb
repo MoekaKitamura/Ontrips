@@ -4,7 +4,7 @@ class TalksController < ApplicationController
   end
 
   def create
-    if logged_in?
+    if user_signed_in?
       # senderが送り主でreceiverが受取人
       # 該当のユーザ間での会話が過去に存在しているか？
       if Talk.between(params[:sender_id], params[:receiver_id]).present?

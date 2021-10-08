@@ -1,48 +1,60 @@
-<h1>Messages</h1>
-<!---メッセージが10件以上あれば以前のメッセージへのリンクを表示する--->
-<% if @over_ten %>
-  <%= link_to '以前のメッセージ', '?m=all' %>
-<% end %>
-
-<br>
-
-<div class="ui segment">
-  <% @messages.each do |message| %>
-    <% if message.content.present? %>
-      <div class="item">
-        <div class="content">
-          <div class="header">
-            <%# <%= image_tag message.user.image_name.url , class: "icon" %>
-            <strong><%= message.user.name %></strong> <%= message.message_time %>
-          </div>
-          <div class="list">
-            <div class="item">
-              <%= message.content %> /
-              <% if message.user == current_user %>
-                <%= message.read ? 'read' : 'unread' %>
-                <!---?の前の記述（message.read）が、trueなら : の左側の処理を実行（既読）、falseなら,: の右側の処理を実行（未読）--->
-              <% end %>  
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="col-sm-6">
+  <h1>Talks</h1>
+  <ul>
+    <% @talks.each do |talk| %>
+      <% if talk.target_user(current_user).present? %>
+        <li class="talking__user">
+          <%= link_to talk_messages_path(talk) do %>
+            <%= image_tag talk.target_user(current_user).profile.icon.url %>
+            <%= talk.target_user(current_user).name %>
+            <span class="btn btn-danger"><%= talk.messages.where.not(user_id:current_user.id).where(read: false).count %></span>
+          <% end %>
+        </li>
+      <% end %>
     <% end %>
-  <% end %>
+  </ul>
 </div>
 
+<div class="col-sm-6">
+  <h1>Messages</h1>
+  <div class=" message__area">
+  <h4><%= @to.name %>のトークルーム</h4>
+    <!---メッセージが10件以上あれば以前のメッセージへのリンクを表示する--->
+    <% if @over_ten %>
+      <%= link_to '以前のメッセージ', '?m=all' %>
+    <% end %>
 <br>
-
-<!---会話にひもづくメッセージの入力フォームを投稿者を自分に指定して生成する--->
-<%= form_with(model: [@talk, @message]) do |f| %>
-  <div class="field">
-    <%= f.text_area :content, autofocus: true, class: "form-control", :placeholder => "Enter your message..." %>
+    <% @messages.each do |message| %>
+      <% if message.content.present? %>
+          <% if message.user == current_user %>
+            <div class="fukidasi right">
+          <% else %>
+            <div class="fukidasi left">
+          <% end %>
+              <%= message.content %>
+              <div class="message__detail">
+                <p><%= message.created_at.strftime('%m/%d %H:%M') %></p>
+                <% if message.user == current_user %>
+                  <p><%= message.read ? 'read' : 'unread' %></p>
+                  <!---?の前の記述（message.read）が、trueなら : の左側の処理を実行（既読）、falseなら,: の右側の処理を実行（未読）--->
+                <% end %>
+              </div>
+            </div>
+      <% end %>
+    <% end %>
   </div>
-    <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-  <div>
-    <%= f.submit "Send" %>
-  </div>
-<% end %>
 
-<br>
+  <br>
 
-<p><%= link_to 'All Talks', talks_path %></p>
+  <!---会話にひもづくメッセージの入力フォームを投稿者を自分に指定して生成する--->
+  <%= form_with(model: [@talk, @message]) do |f| %>
+    <div class="field">
+      <%= f.text_area :content, class: "form-control", :placeholder => "Enter your message..." %>
+    </div>
+      <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+    <div>
+      <%= f.submit "Send", class:"btntextchange"%>
+    </div>
+  <% end %>
+
+</div>

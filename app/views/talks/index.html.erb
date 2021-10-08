@@ -1,14 +1,24 @@
-<h1>Talks</h1>
-
-<table class="table table-hover">
-  <tbody>
+<div class="col-sm-6">
+  <h1>Talks</h1>
+  <ul>
     <% @talks.each do |talk| %>
-      <td>
-        <% if talk.target_user(current_user).present? %>
-          <%# <%= image_tag talk.target_user(current_user).image_name.url , class: "icon" %>
-          <%= link_to talk.target_user(current_user).name, talk_messages_path(talk)%>
-        <% end %>
-      </td>
+      <% if talk.target_user(current_user).present? %>
+        <li class="talking__user">
+          <%= link_to talk_messages_path(talk) do %>
+            <%= image_tag talk.target_user(current_user).profile.icon.url %>
+            <%= talk.target_user(current_user).name %>
+            <span class="btn btn-danger"><%= talk.messages.where.not(user_id:current_user.id).where(read: false).count %></span>
+          <% end %>
+        </li>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
+  </ul>
+</div>
+
+<div class="col-sm-6">
+  <h1>Messages</h1>
+  <div class=" message__area">
+  
+  </div>
+
+</div>
