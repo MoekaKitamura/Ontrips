@@ -113,3 +113,40 @@ footer p{
   box-sizing: border-box;
   width: 100%;
 }
+
+// --------------blog---
+.blog__area{
+  border: solid 1px #000;
+  max-width: 1000px;
+  min-height: 600px;
+  margin: 0 auto;
+  position: relative;
+
+}
+
+.user__area{
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+.blog__area h1{
+  margin: 50px;
+  text-align: left;
+  width: 60%;
+  height: 110px;
+  line-height: 1.5em;
+}
+
+.blog__area .content{
+  margin: 50px;
+  text-align: left;
+  line-height: 1.7em;
+
+}
+
+.blog__area img{
+  width: 100px;
+  border: solid 0.5px #000;
+
+}
