@@ -1,6 +1,6 @@
 // --------------profile----------------
 .profile__card {
-	background-color: #e1daff;
+	background-color: #F6E9E2;
 	border-radius: 5px;
 	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
 	// color: #B3B8CD;
@@ -22,7 +22,7 @@
 }
 
 .profile__detail {
-	background-color: #f4f1ff;
+	background-color: #F6F3EE;
 	text-align: left;
 	padding: 15px;
 	margin-top: 30px;
@@ -32,7 +32,7 @@
 
 // --------------trip----------------
 :root {
-  --surface-color: rgb(154, 233, 253);
+  --surface-color: #F6E9E2;
   --curve: 20;
 }
 
@@ -53,7 +53,7 @@
   height: 300px;  
   border-radius: calc(var(--curve) * 1px);
   overflow: hidden;
-  background-color: rgb(255, 223, 251);
+  background-color: #F6F3EE;
   padding: 2em;
 }
 
@@ -124,6 +124,6 @@
 .card__trip_description{
   margin-top: 20px;
   font-size: 0.8em;
-  color: rgb(202, 73, 73);
+  color: #D5A1A3;
   
 }

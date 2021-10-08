@@ -121,7 +121,7 @@ footer p{
   min-height: 600px;
   margin: 0 auto;
   position: relative;
-
+  margin-bottom: 20px;
 }
 
 .user__area{
@@ -142,11 +142,13 @@ footer p{
   margin: 50px;
   text-align: left;
   line-height: 1.7em;
-
 }
 
 .blog__area img{
   width: 100px;
   border: solid 0.5px #000;
-
 }
+
+// .blog__area.index{
+//   height: 400px;
+// }
