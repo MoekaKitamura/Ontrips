@@ -1,19 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+<div class="blog__area">
+  <h1><%= @blog.title.truncate(35) %></h1>
 
-<p>
-  <strong>Content:</strong>
-  <%= @blog.content %>
-</p>
+  <p class="content"><%= @blog.content %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @blog.user %>
-</p>
-
+  <div class="user__area">
+    <p><%= image_tag @blog.user.profile.icon.url %></p>
+    <p><%= @blog.user.name %></p>
+  </div>
+</div>
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
