@@ -49,7 +49,7 @@
   <!---会話にひもづくメッセージの入力フォームを投稿者を自分に指定して生成する--->
   <%= form_with(model: [@talk, @message]) do |f| %>
     <div class="field">
-      <%= f.text_area :content, autofocus: true, class: "form-control", :placeholder => "Enter your message..." %>
+      <%= f.text_area :content, class: "form-control", :placeholder => "Enter your message..." %>
     </div>
       <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
     <div>
