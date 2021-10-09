@@ -6,7 +6,7 @@ class Users::SessionsController < Devise::SessionsController
       @profile.save
     end
     sign_in user
-    redirect_to trips_path, notice: 'ゲストユーザーとしてログインしました。'
+    redirect_to profile_path(user.id), notice: 'ゲストユーザーとしてログインしました。'
   end
 end
 
