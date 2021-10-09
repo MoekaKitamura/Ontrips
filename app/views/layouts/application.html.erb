@@ -50,14 +50,14 @@
         </ul>
       <% end %>
     </header>
-    <!---
+    
     <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
+      <p class="alert alert-notice"><i class="fas fa-check"></i> <%= notice %></p>
     <% end %>
     <% if alert %>
-      <p class="alert alert-error"><%= alert %></p>
+      <p class="alert alert-error"><i class="fas fa-exclamation-triangle"></i> <%= alert %></p>
     <% end %>
-    --->
+    
     <% if user_signed_in? %>
       <div class="login">
         <% if current_user.profile.icon? %>
