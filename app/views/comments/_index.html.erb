@@ -1,13 +1,23 @@
-<ul>
+<ul class="comment">
   <% comments.each do |comment| %>
     <% if comment.id.present? %>
-      <li class="comment">
-        <p><%= comment.user.name %></p><br>
-        <p>内容:<%= comment.content %></p><br>
-        <div class="comment-content" id ="this_comment_<%= comment.id %>"></div>
-        <p><%= link_to "✎", edit_trip_comment_path(trip, comment), remote: true %></p>
-        <p><%= link_to "×", trip_comment_path(comment.trip_id, comment.id), method: :delete, remote: true,
-                                        data: { confirm: "本当に削除しますか?"} %></p>
+      <li>
+        <p>
+          <%= image_tag comment.user.profile.icon.url %>
+          <%= comment.user.name %>
+        </p>
+
+        <p>
+          <%= comment.content %>
+          <%= link_to edit_trip_comment_path(trip, comment), remote: true do %>
+            <i class="fas fa-pencil-alt"></i>
+          <% end %>
+          <%= link_to trip_comment_path(comment.trip_id, comment.id), method: :delete, remote: true,
+                                        data: { confirm: "本当に削除しますか?"} do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </p>
+          <div class="comment-content" id ="this_comment_<%= comment.id %>"></div>
       </li>
     <% end %>
   <% end %>
