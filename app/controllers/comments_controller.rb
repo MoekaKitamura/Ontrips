@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
     @comment = @trip.comments.find(params[:id])
       respond_to do |format|
         if @comment.update(comment_params)
-          flash.now[:notice] = 'コメントが編集されました'
+          flash.now[:notice] = t('notice.update', model: t('comment'))
           format.js { render :index }
         else
           flash.now[:notice] = 'コメントの編集に失敗しました'
@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     respond_to do |format|
-      flash.now[:notice] = 'コメントが削除されました'
+      flash.now[:notice] = t('notice.destroy', model: t('comment'))
       format.js { render :index }
     end
   end

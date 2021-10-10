@@ -30,4 +30,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  notice:
+    create: "%{model} was successfully created."
+    update: "%{model} was successfully updated."
+    destroy: "%{model} was successfully destroyed."
+  user: User
+  profile: Profile
+  trip: Trip
+  member: Member
+  comment: Comment
+  favorite: Favorite
+  blog: Blog
+  talk: Talk
+  message: Message
