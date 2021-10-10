@@ -1,52 +1,63 @@
-<p>
-  <strong>User:</strong>
-  <%= @profile.user.name %>
-</p>
+<div class="trip__area">
+  <div class="col-sm-6">
+    <%= image_tag @profile.icon.url, class: "profile_icon" %> 
+    <h1><%= @profile.user.name %></h1>
 
-<p>
-  <strong>Icon:</strong>
-  <%= image_tag @profile.icon.url %>
-</p>
+    <p>
+      <i class="far fa-address-card"></i>
+      <% if  @profile.birthday.present? %> 
+        <%= (Date.today.strftime('%Y%m%d').to_i - @profile.birthday.strftime('%Y%m%d').to_i) / 10000 %>歳 
+      <% end %>
+      / <%= @profile.gender %>
+    </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @profile.gender %>
-</p>
+    <p>
+      <i class="fas fa-globe-americas"></i>
+      <%= @profile.home_country %> /
+      <%= @profile.home_city %>
+    </p>
 
-<p>
-  <strong>Birthday:</strong>
-  <% if  @profile.birthday.present? %> 
-    <%= @profile.birthday %>
-</p>
+    <p>
+      <i class="far fa-comments"></i>
+      <%= @profile.first_language %> / <%= @profile.second_language %>
+    </p>
 
-  <%= (Date.today.strftime('%Y%m%d').to_i - @profile.birthday.strftime('%Y%m%d').to_i) / 10000 %>歳
-  <% end %>
-<p>
-  <i class="fas fa-globe-americas"></i>
-  <strong>Home country:</strong>
-  <%= @profile.home_country %>
-</p>
 
-<p>
-  <strong>Home city:</strong>
-  <%= @profile.home_city %>
-</p>
+    <p>
+      <%= @profile.introduction %>
+    </p>
 
-<p>
-  <strong>First language:</strong>
-  <%= @profile.first_language %>
-</p>
+    <% unless @profile.user_id == current_user.id %>
+        <p><%= link_to 'メッセージを送る', talks_path(sender_id: current_user.id, receiver_id: @profile.user.id), method: :post, class: "btn btn-warning" %></p>
+    <% end %>
 
-<p>
-  <strong>Second language:</strong>
-  <%= @profile.second_language %>
-</p>
+  </div>
 
-<p>
-  <strong>Introduction:</strong>
-  <%= @profile.introduction %>
-</p>
+  <div class="col-sm-6">
+    <p><i class="fas fa-plane"></i> <%= @profile.user.name %>さんが参加している旅行</p>
+    <div class="list">
+      <ul>
+        <% @joining.each do |join| %>
+          <%= link_to trip_path(join.trip_id) do %>
+            <li><%= join.trip.title %></li>
+          <% end %>
+        <% end %>
+      </ul>  
+    </div>
 
+    <p><i class="fas fa-book-open"></i> <%= @profile.user.name %>さんのブログ</p>
+    <div class="list">
+      <ul>
+        <% @blogs.each do |blog| %>
+          <%= link_to blog_path(blog.id) do %>
+            <li><%= blog.title %></li>
+          <% end %>
+        <% end %>
+      </ul>  
+    </div>
+
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
