@@ -22,6 +22,7 @@
   <%= (Date.today.strftime('%Y%m%d').to_i - @profile.birthday.strftime('%Y%m%d').to_i) / 10000 %>歳
   <% end %>
 <p>
+  <i class="fas fa-globe-americas"></i>
   <strong>Home country:</strong>
   <%= @profile.home_country %>
 </p>

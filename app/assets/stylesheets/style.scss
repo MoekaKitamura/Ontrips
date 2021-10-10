@@ -98,15 +98,6 @@ li{
     padding-top: 5px;
   }
 
-div.finished{
-  @if goal{
-    background: rgb(155, 155, 155);
-  }
-  @else{
-    background: #fff;
-  }
-}
-
 nav.pagination {
   display: none;
 } 
@@ -181,6 +172,64 @@ footer p{
 .blog__area img{
   width: 100px;
   border: solid 0.5px #000;
+}
+
+//----trip--------------------
+.trip__area{
+  border: solid 1px #000;
+  max-width: 1500px;
+  min-height: 600px;
+  margin: 0 auto;
+  // position: relative;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+div.finished{
+  @if goal{
+    background: rgb(155, 155, 155);
+  }
+  @else{
+    background: #fff;
+  }
+}
+
+.trip__area .col-sm-6{
+  min-height: 600px;
+  text-align: left;
+}
+
+.trip__area h1{
+  margin: 50px;
+  line-height: 3em;
+  display: inline;
+  background: linear-gradient(transparent 70%, rgba(193, 255, 247, 0.76) 70%);
+}
+
+.trip__area p{
+  margin: 30px 0 0 50px;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+.members__list, .other__trips{
+  width: 70%;
+  min-height: 100px;
+  margin: 20px 0 0 50px;
+  padding: 20px;
+  background-color: aliceblue;
+}
+
+.members__list li, .other__trips li{
+  list-style: disc;
+  line-height: 1.5em;
+}
+
+.trip__area img{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: solid 0.5px rgb(160, 160, 160);
 }
 
 // ----地球のアニメーション----<div class="earth"></div>をHTMLへ追加-------

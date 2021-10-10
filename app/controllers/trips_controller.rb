@@ -16,13 +16,15 @@ class TripsController < ApplicationController
     @members = @trip.members
     @comments = @trip.comments
     @comment = @trip.comments.build
-    @similar = Trip.where(country: @trip.country).where.not(id: @trip.id)
+    @similar = Trip.where(country: @trip.country).where.not(id: @trip.id).order(updated_at: :desc).limit(3)
+    @visiters = @members.where(as: 1).count
+    @locals = @members.where(as: 2).count
   end
 
   def change_goal
     #旅行を終了する
     @trip.update(goal: params[:goal])
-    redirect_to @trip, notice: 'ステータスを変更しました。'
+    redirect_to @trip, notice: t('notice.change', word: t('status'))
   end
 
   # GET /trips/new
