@@ -39,7 +39,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user_id = current_user.id
     if @trip.save
-      redirect_to @trip, notice: 'Trip was successfully created.'
+      redirect_to @trip, notice: t('notice.create', model: t('trip'))
     else
       render :new
     end
@@ -48,7 +48,7 @@ class TripsController < ApplicationController
   # PATCH/PUT /trips/1
   def update
     if @trip.update(trip_params)
-      redirect_to @trip, notice: 'Trip was successfully updated.'
+      redirect_to @trip, notice: t('notice.update', model: t('trip'))
     else
       render :edit
     end
@@ -57,7 +57,7 @@ class TripsController < ApplicationController
   # DELETE /trips/1
   def destroy
     @trip.destroy
-    redirect_to trips_url, notice: 'Trip was successfully destroyed.'
+    redirect_to trips_url, notice: t('notice.destroy', model: t('trip'))
   end
 
   private

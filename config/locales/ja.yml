@@ -205,3 +205,7 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  notice:
+    create: "%{model}を作成しました！"
+    update: "%{model}を編集しました！"
+    destroy: "%{model}を削除しました！"

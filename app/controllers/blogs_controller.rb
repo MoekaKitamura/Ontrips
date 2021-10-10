@@ -22,7 +22,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
     if @blog.save
-      redirect_to @blog, notice: "Blog was successfully created."
+      redirect_to @blog, notice: t('notice.create', model: t('blog'))
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class BlogsController < ApplicationController
 
   def update
     if @blog.update(blog_params)
-      redirect_to @blog, notice: "Blog was successfully updated."
+      redirect_to @blog, notice: t('notice.update', model: t('blog'))
     else
       render :edit, status: :unprocessable_entity
     end
@@ -38,7 +38,7 @@ class BlogsController < ApplicationController
 
   def destroy
     @blog.destroy
-    redirect_to blogs_url, notice: "Blog was successfully destroyed."
+    redirect_to blogs_url, notice: t('notice.destroy', model: t('blog'))
   end
 
   private

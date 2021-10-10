@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
     if @profile.save
-      redirect_to @profile, notice: 'Profile was successfully created.'
+      redirect_to @profile, notice: t('notice.create', model: t('profile'))
     else
       render :new
     end
@@ -36,7 +36,7 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   def update
     if @profile.update(profile_params)
-      redirect_to @profile, notice: 'Profile was successfully updated.'
+      redirect_to @profile, notice: t('notice.update', model: t('profile'))
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class ProfilesController < ApplicationController
   # DELETE /profiles/1
   def destroy
     @profile.destroy
-    redirect_to profiles_url, notice: 'Profile was successfully destroyed.'
+    redirect_to profiles_url, notice: t('notice.destroy', model: t('profile'))
   end
 
   private
