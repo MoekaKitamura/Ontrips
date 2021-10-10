@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     member do
       post :change_goal
     end
+    collection do
+      get :favorite
+      get :member
+    end
   end
   resources :blogs
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

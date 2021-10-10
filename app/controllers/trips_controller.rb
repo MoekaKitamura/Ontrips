@@ -27,6 +27,10 @@ class TripsController < ApplicationController
     redirect_to @trip, notice: t('notice.change', word: t('status'))
   end
 
+  def favorite
+    @favorites = current_user.favorites.page(params[:page]).per(3)
+  end
+
   # GET /trips/new
   def new
     @trip = Trip.new
