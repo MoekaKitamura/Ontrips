@@ -16,6 +16,14 @@
     <% @trips.each do |trip| %>
       <li>
         <%= link_to trip, class:"card" do %>
+        <div class="trip_status">
+          <% if trip.favorites.where(user_id: current_user.id).present? %>
+            <p><i class="fas fa-star"></i></p>
+          <% end %>
+          <% if trip.members.where(user_id: current_user.id).present? %>
+            <p><i class="fas fa-child"></i></p>
+          <% end %>
+        </div>
           <h4><%= trip.title %></h4>
           <div class="place"><%= trip.country %> / <%= trip.city %></div>
           <p><%= trip.start_on %> ~ <%= trip.finish_on %></p>

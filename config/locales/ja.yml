@@ -209,3 +209,14 @@ ja:
     create: "%{model}を作成しました！"
     update: "%{model}を編集しました！"
     destroy: "%{model}を削除しました！"
+    change: "%{word}を変更しました！"
+  user: ユーザー
+  profile: プロフィール
+  trip: 旅行
+  member: メンバー
+  comment: コメント
+  favorite: お気に入り
+  blog: ブログ
+  talk: トーク
+  message: メッセージ
+  status: ステータス

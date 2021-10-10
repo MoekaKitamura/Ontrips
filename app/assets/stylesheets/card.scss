@@ -124,6 +124,16 @@
 .card__trip_description{
   margin-top: 20px;
   font-size: 0.8em;
-  color: #D5A1A3;
-  
+  color: #D5A1A3;  
+}
+
+.trip_status {
+	color: #FEBB0B;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+}
+
+.trip_status .fa-child{
+  color: rgb(25, 75, 141);
 }

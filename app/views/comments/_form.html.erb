@@ -12,8 +12,7 @@
   <% end %>
   
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, autofocus: true, :placeholder => "コメントをする" %>
+    <%= form.text_area :content, :placeholder => "コメントをする" %>
   </div>
   <div class="actions">
     <%= form.submit "Comment!", class:"btntextchange"%>
