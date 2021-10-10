@@ -31,6 +31,10 @@ class TripsController < ApplicationController
     @favorites = current_user.favorites.page(params[:page]).per(3)
   end
 
+  def member
+    @joining = current_user.members.page(params[:page]).per(3)
+  end
+
   # GET /trips/new
   def new
     @trip = Trip.new

@@ -4,7 +4,7 @@
   <ul class="cards">
     <% @favorites.each do |favorite| %>
       <li>
-        <%= link_to favorite, class:"card" do %>
+        <%= link_to trip_path(favorite.trip_id), class:"card" do %>
           <h4><%= favorite.trip.title %></h4>
           <div class="place"><%= favorite.trip.country %> / <%= favorite.trip.city %></div>
           <p><%= favorite.trip.start_on %> ~ <%= favorite.trip.finish_on %></p>
