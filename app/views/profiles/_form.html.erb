@@ -13,6 +13,7 @@
 
   <div class="field">
     <%= form.label :icon %>
+    <%= image_tag(profile.icon.url) if profile.icon && profile.icon.url %>
     <%= form.file_field :icon %>
   </div>
 

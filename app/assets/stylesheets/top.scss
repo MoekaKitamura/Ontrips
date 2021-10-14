@@ -1,7 +1,10 @@
 
 .top__header{
   height: 500px;
-  background: rgb(219, 248, 255);
+  // background-image: url("nyc.jpg");
+  // background-size: 100% auto;
+  // background-position: left top;
+  // background-repeat: no-repeat;
   padding: 100px;
 }
 
@@ -9,10 +12,10 @@
   margin: 50px;
 }
 .top__main{
-  max-width: 1200px;
+  max-width: 1500px;
   min-height: 1000px;
   position: relative;
-  background: rgb(235, 157, 157);
+  background: rgb(255, 250, 235);
   margin: 0 auto;
 }
 .top__about1{
@@ -24,12 +27,15 @@
   width: 600px;
   position: absolute;
   right: 0;
+  text-align: left;
+  padding: 50px;
   // float: left;
 }
 
 .top__main img{
   width: 600px;
   float: left;
+  padding: 50px;
 }
 /*========= 手書きアニメLoadingのためのCSS ===============*/
 

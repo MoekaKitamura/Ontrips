@@ -32,7 +32,7 @@
 
     <p>
       <%= link_to profile_path(@trip.user.profile.id) do %>
-        <%= image_tag @trip.user.profile.icon.url %>
+        <%= image_tag @trip.user.profile.icon.url, class: "trip_icon"%>
         <%= @trip.user.name %>
       <% end %>
     </p>
@@ -66,7 +66,7 @@
       <% end %>
     </p>
 
-    <div class="members__list">
+    <div class="list">
     <ul>
       <% @members.each do |member| %>
         <%= link_to profile_path(member.user.id) do %>
@@ -77,9 +77,8 @@
     </div>
 
     <!-- 似ている掲示板-->
-    <p>
-      <i class="fas fa-search"></i> You might also like : <%= @trip.country %>行きの他の旅行</p>
-    <div class="other__trips">
+    <p><i class="fas fa-search"></i> You might also like : <%= @trip.country %>行きの他の旅行</p>
+    <div class="list">
       <ul>
         <% @similar.each do |similar| %>
           <%= link_to trip_path(similar.id) do %>
