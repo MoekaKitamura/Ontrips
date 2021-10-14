@@ -60,7 +60,7 @@ https://docs.google.com/spreadsheets/d/1ENKwAzdYHMGjMbthwnVfu-RVuUPE5uRBg9CM09zG
 
 ### ER図 / Entity Relationship Diagram
 使用ソフト: draw.io
-![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/ER.png)
+![image](https://github.com/MoekaKitamura/Original_app/blob/master/docs/ER2.png)
 
 ### 画面遷移図 / Screen Transition Diagram
 使用ソフト: draw.io
