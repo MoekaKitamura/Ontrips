@@ -1,0 +1,482 @@
+code,name_jp,name_en
+AZ,バクー,Baku
+AF,カブール,Kabul
+US,サンアントニオ,San Antonio
+US,サンディエゴ,San Diego
+US,サンノゼ,San Jose
+US,シカゴ,Chicago
+US,ダラス,Dallas
+US,ニューヨーク,New York City
+US,ヒューストン,Houston
+US,フィラデルフィア,Philadelphia
+US,フェニックス,Phoenix
+US,ロサンゼルス,Los Angeles
+AE,ドバイ,Dubai
+DZ,アルジェ,Algiers
+DZ,オラン,Oran
+AR,ブエノスアイレス,Buenos Aires
+AR,コルドバ,Cordoba
+AR,メンドーサ,Mendoza
+AR,ロサリオ,Rosario
+AM,エレバン,Yerevan
+AO,ルアンダ,Luanda
+YE,サヌア,Sana'a
+GB,ロンドン,London
+GB,グラスゴー,Glasgow
+GB,バーミンガム,Birmingham
+IT,ローマ,Rome
+IT,ミラノ,Milano
+IQ,バグダッド,Baghdad
+IQ,バスラ,Al-Basrah Qadha Center
+IQ,モスル,Al-Mosul Qadha Center
+IR,テヘラン,Tehran
+IR,アフヴァーズ,Ahvaz
+IR,イスファハン,Isfahan
+IR,キャラジ,Karaj
+IR,ゴム,Qom
+IR,シーラーズ,Shiraz
+IR,タブリーズ,Tabriz
+IR,マシュハド,Mashhad
+IN,デリー,Delhi Municipal Corporation (DMC)
+IN,アウランガーバード,Aurangabad
+IN,アグラ,Agra
+IN,アフマダーバード,Ahmedabad
+IN,アムリトサル,Amritsar
+IN,アラーハーバード,Allahabad
+IN,インドール,Indore
+IN,ヴァドーダラー,Vadodara
+IN,ヴィシャーカパトナム,Greater Visakhapatnam Municipal Corporation (GVMC)
+IN,ヴィジャヤワーダ,Vijayawada
+IN,ガーズィヤーバード,Ghaziabad
+IN,カーンプル,Kanpur
+IN,カルヤン,Kalyan
+IN,グワーリオール,Gwalior
+IN,コインバトール,Coimbatore
+IN,コーター,Kota
+IN,コルカタ,Kolkata
+IN,ジャイプル,Jaipur
+IN,ジャバルプル,Jabalpur
+IN,シュリーナガル,Srinagar
+IN,ジョードプル,Jodhpur
+IN,スーラト,Surat
+IN,ターネー,Thane
+IN,ダンバード,Dhanbad
+IN,チェンナイ,Chennai
+IN,ナーグプル,Nagpur
+IN,ナーシク,Nashik
+IN,ナビムンバイ,Navi Mumbai
+IN,ハイデラーバード,Greater Hyderabad Municipal Corporation (GHMC)
+IN,ハウラー,Howrah
+IN,バサイ,Vasai
+IN,パトナ,Patna
+IN,バンガロール,Bruhat Bengaluru Mahanagara Palike (BBMP)
+IN,ピンプリ・チンチワッド,Pimpri-Chinchwad
+IN,ファリーダーバード,Faridabad
+IN,プネー,Pune
+IN,ボーパール,Bhopal
+IN,マドゥライ,Madurai
+IN,ムンバイ,Greater Mumbai
+IN,メーラト,Meerut
+IN,ラーイプル,Raipur
+IN,ラージコート,Rajkot
+IN,ラーンチー,Ranchi
+IN,ラクナウ,Lucknow
+IN,ルディアーナー,Ludhiana
+IN,ワーラーナシー,Varanasi
+ID,ジャカルタ,Jakarta
+ID,スカブミ,Sukabumi
+ID,スラバヤ,Surabaya
+ID,タンゲラン,Tangerang
+ID,チルボン,Cirebon
+ID,バタム,Batam
+ID,パレンバン,Palembang
+ID,バンダールランプン,Bandar Lampung
+ID,バンドン,Bandung
+ID,プカンバル,Pekanbaru
+ID,ボゴール,Bogor
+ID,マカッサル,Makassar
+ID,マラン,Malang
+ID,メダン,Medan
+UG,カンパラ,Kampala
+UA,キエフ,Kiev
+UA,ハルキウ,Kharkiv
+UZ,タシケント,Tashkent
+UY,モンテビデオ,Montevideo
+EC,キト,Quito
+EC,グアヤキル,Guayaquil
+EG,カイロ,Cairo
+EG,アレクサンドリア,Alexandria
+ET,アディスアベバ,Addis Ababa
+AU,アデレード,Adelaide
+AU,シドニー,Sydney
+AU,パース,Perth
+AU,ブリスベーン,Brisbane
+AU,メルボルン,Melbourne
+AT,ウィーン,Vienna
+GH,アクラ,Accra
+GH,クマシ,Kumasi
+KZ,ヌルスルタン,Nur-Sultan
+KZ,アルマトイ,Almaty
+KZ,シムケント,Shymkent
+CA,オタワ,Ottawa
+CA,エドモントン,Edmonton
+CA,カルガリー,Calgary
+CA,トロント,Toronto
+CA,モントリオール,Montreal
+CM,ヤウンデ,Yaounde
+CM,ドゥアラ,Duala
+KR,ソウル,Seoul
+KR,仁川（インチョン）,Incheon
+KR,蔚山（ウルサン）,Ulsan
+KR,光州（クァンジュ）,Gwangju
+KR,大邱（テグ）,Daegu
+KR,大田（テジョン）,Daejeon
+KR,釜山（プサン）,Busan
+KH,プノンペン,Phnom Penh
+KH,バッタンバン,Battambang
+KP,ピョンヤン,Pyongyang
+GN,コナクリ,Conakry
+CU,ハバナ,Havana
+KE,ナイロビ,Nairobi
+CI,アビジャン,Abidjan
+CO,ボゴタ,Bogota
+CO,カリ,Cali
+CO,カルタヘナ,Cartagena
+CO,バランキージャ,Barranquilla
+CO,メデリン,Medellin
+CD,キンシャサ,Kinshasa
+SA,リヤド,Riyadh
+SA,アルマディーナ,Al-Madinah
+SA,ジッダ,Jeddah
+SA,メッカ,Makkah
+ZM,ルサカ,Lusaka
+SL,フリータウン,Freetown
+GE,トビリシ,Tbilisi
+SY,ダマスカス,Damascus
+SY,アレッポ,Aleppo
+SY,イドリブ,Idlib
+SY,ダマスカス郊外,Rural Damascus
+SY,デリゾール,Deir ez-Zor
+SY,ハサカ,Al-Hasakah
+SY,ハマー,Hama
+SY,ホムス,Homs
+SG,シンガポール,Singapore
+ZW,ハラレ,Harare
+SD,オムドゥルマン,Omdurman
+ES,マドリード,Madrid
+ES,バルセロナ,Barcelona
+SN,ダカール,Dakar
+RS,ベオグラード,Belgrade
+SO,モガディシオ,Mogadishu
+TH,バンコク,Bangkok
+TH,サムットプラカーン,Samut Prakan
+TH,チョンブリー,Chon Buri
+TW,台北（タイペイ）,Taipei
+TW,高雄（カオシュン）,Kaohsiung
+TW,新北（シンペイ）,New Taipei
+TW,台中（タイチョン）,Taichung
+TW,台南（タイナン）,Tainan
+TW,桃園（タオユェン）,Taoyuan
+TW,彰化（チャンホワ）,Changhua
+TZ,アルーシャ,Arusha
+TZ,ザンジバル,Zanzibar
+TZ,ダルエスサラーム,Dar es Salaam
+TZ,ムワンザ,Mwanza
+CZ,プラハ,Prague
+TD,ウンジャメナ,N'Djamena
+CN,北京（ペキン）,Beijing
+CN,鞍山（アンシャン）,Anshan
+CN,安丘（アンチュウ）,Anqiu
+CN,宜興（イーシン）,Yixing
+CN,益陽（イーヤン）,Yiyang
+CN,煙台（イェンタイ）,Yantai
+CN,無錫（ウーシー）,Wuxi
+CN,武進（ウージン）,Wujin
+CN,武漢（ウーハン）,Wuhan
+CN,濰坊（ウェイファン）,Weifang
+CN,温州（ウェンヂョウ）,Wenzhou
+CN,温嶺（ウェンリン）,Wenling
+CN,烏魯木斉（ウルムチ）,Urumqi
+CN,鄂州（オゥーヂョウ）,Ezhou
+CN,高州（カオチョウ）,Gaozhou
+CN,広安（グァンアン）,Guangan
+CN,広州（グアンヂョウ）,Guangzhou
+CN,桂平（グイピン）,Guiping
+CN,貴港（グエガン）,Guigang
+CN,昆明（クンミン）,Kunming
+CN,貴陽（コイヤン）,Guiyang
+CN,公主嶺（ゴンヂューリン）,Gongzhuling
+CN,棗荘（ザオヂュアン）,Zaozhuang
+CN,棗陽（ザオヤン）,Zaoyang
+CN,江陰（ジァンイン）,Jiangyin
+CN,江都（ジァンドゥー）,Jiangdu
+CN,西安（シーアン）,Xi'an
+CN,石家荘（シージャーズォアン）,Shijiazhuang
+CN,西山（シーシャン）,Xishan
+CN,済南（ジーナン）,Jinan
+CN,済寧（ジーニン）,Jining (Shandong)
+CN,即墨（ジーモー）,Jimo
+CN,仙桃（シェンタオ）,Xiantao
+CN,深圳（シェンヂェン）,Shenzhen
+CN,瀋陽（シェンヤン）,Shenyang
+CN,簡陽（ジェンヤン）,Jianyang (Sichuan)
+CN,廈門（シャーメン）,Xiamen
+CN,蕭山（シャオシャン）,Xiaoshan
+CN,江津（ジャンジン）,Jiangjin
+CN,商丘（シャンチュウ）,Shangqiu
+CN,項城（シャンチョン）,Xiangcheng
+CN,汕頭（シャントウ）,Shantou
+CN,上海（シャンハイ）,Shanghai
+CN,徐州（シューィヂョウ）,Xuzhou
+CN,宣威（シュエンウェイ）,Xuanwei
+CN,順徳（シュンダー）,Shunde
+CN,寿光（ショウグァン）,Shouguang
+CN,諸城（ショジョウ）,Zhucheng
+CN,晋江（ジンジアン）,Jinjiang
+CN,新泰（シンタイ）,Xintai
+CN,荊州（ジンヂョウ）,Jingzhou
+CN,興化（シンフア）,Xinghua
+CN,信陽（シンヤン）,Xinyang
+CN,随州（スイヂョウ）,Suizhou
+CN,遂寧（スイニン）,Suining
+CN,宿州（スーヂョウ）,Suzhou (Anhui)
+CN,蘇州（スーヂョウ）,Suzhou (Jiangsu)
+CN,淄博（ズーボー）,Zibo
+CN,資陽（ズーヤン）,Ziyang
+CN,鄭州（ズェンヂョウ）,Zhengzhou
+CN,鄒城（ズォウチョン）,Zoucheng
+CN,中山（ズォンシャン）,Zhongshan
+CN,大慶（ダーチン）,Daqing
+CN,大同（ダートン）,Datong
+CN,大連（ダーリエン）,Dalian
+CN,泰安（タイアン）,Tai'an
+CN,泰興（タイシン）,Taixing
+CN,台州（タイヂョウ）,Taizhou (Zhejiang)
+CN,太原（タイユアン）,Taiyuan
+CN,唐山（タンシャン）,Tangshan
+CN,啓東（チードン）,Qidong
+CN,赤峰（チーフォン）,Chifeng
+CN,吉林（ヂーリン）,Jilin
+CN,斉斉哈爾（チチハル）,Qiqihar
+CN,潮陽（チャオヤン）,Chaoyang (Guangdong)
+CN,湛江（チャンジァン）,Zhanjiang
+CN,長沙（チャンシャー）,Changsha
+CN,常熟（チャンスゥオー）,Changshu
+CN,常徳（チャンダー）,Changde
+CN,長春（チャンチュン）,Changchun
+CN,常州（チャンヂョウ）,Changzhou
+CN,諸曁（ヂュージー）,Zhuji
+CN,泉州（チュワンヂョウ）,Quanzhou
+CN,鍾祥（ヂョンシャン）,Zhongxiang
+CN,欽州（チンジョウ）,Qinzhou
+CN,青島（チンダオ）,Qingdao
+CN,自貢（ツーゴン）,Zigong
+CN,慈渓（ツーシー）,Cixi
+CN,成都（ツェンドゥー）,Chengdu
+CN,重慶（ツォンチン）,Chongqing
+CN,天水（ティエンシュイ）,Tianshui
+CN,天津（ティエンジン）,Tianjin
+CN,天門（ティエンメン）,Tianmen
+CN,定州（ティンチョウ）,Dingzhou
+CN,鄧州（テンチョウ）,Dengzhou
+CN,東莞（ドングアン）,Dongguan
+CN,東台（ドンタイ）,Dongtai
+CN,滕州（トンヂョウ）,Tengzhou
+CN,通州（トンヂョウ）,Tongzhou
+CN,南安（ナンアン）,Nan'an
+CN,南京（ナンジン）,Nanjing
+CN,南昌（ナンチャン）,Nanchang
+CN,南充（ナンチョン）,Nanchong
+CN,南寧（ナンニン）,Nan'ning
+CN,南海（ナンハイ）,Nanhai
+CN,南陽（ナンヤン）,Nan'yang
+CN,寧波（ニンポー）,Ningbo
+CN,内江（ネイジャン）,Neijiang
+CN,哈爾浜（ハーアルピン）,Harbin
+CN,巴中（バーヂョン）,Bazhong
+CN,合肥（ハーフェイ）,Hefei
+CN,海城（ハイチョン）,Haicheng
+CN,包頭（パオトウ）,Baotou
+CN,邯鄲（ハンダン）,Handan
+CN,漢川（ハンチュアン）,Hanchuan
+CN,杭州（ハンヂョウ）,Hangzhou
+CN,畢節（ビージェー）,Bijie
+CN,邳州（ピーヂョウ）,Pizhou
+CN,平度（ピンドゥ）,Pingdu
+CN,淮南（ファイナン）,Huainan
+CN,撫順（フーシュン）,Fushun
+CN,福州（フーヂョウ）,Fuzhou (Fujian)
+CN,湖州（フーヂョウ）,Huzhou
+CN,撫州（フーヂョウ）,Fuzhou (Jiangxi)
+CN,福清（フーチン）,Fuqing
+CN,普寧（プーニン）,Puning
+CN,富陽（フーヤン）,Fuyang (Zhejiang)
+CN,豊城（フォンチョン）,Fengcheng (Jiangxi)
+CN,呼和浩特（フフホト）,Huhehaote
+CN,北流（ベイリュウ）,Beiliu
+CN,淮安（ホァイアン）,Huai'an
+CN,化州（ホアチョウ）,Huazhou
+CN,合川（ホーチュアン）,Hechuan
+CN,亳州（ボーヂョウ）,Bozhou
+CN,菏沢（ホーヅー）,Heze
+CN,香港（ホンコン）,Hong Kong
+CN,麻城（マーチョン）,Macheng
+CN,綿陽（ミエンヤン）,Mianyang
+CN,牡丹江（ムーダンジァン）,Mudanjiang
+CN,禹州（ユィヂョウ）,Yuzhou
+CN,玉樹（ユーシュー）,Yushu
+CN,楽清（ユエチン）,Leqing
+CN,永城（ヨンチョン）,Yongcheng
+CN,楽山（ラーシャン）,Leshan
+CN,莱蕪（ライウー）,Laiwu
+CN,蘭州（ランチョウ）,Lanzhou
+CN,日照（リーザオ）,Rizhao
+CN,廉江（リェンジャン）,Lianjiang
+CN,柳州（リュウヂョウ）,Liuzhou
+CN,瀏陽（リュウヤン）,Liuyang
+CN,臨沂（リンイー）,Linyi
+CN,瑞安（ルイアン）,Ruian
+CN,六安（ルーアン）,Lu'an
+CN,如皋（ルーガオ）,Rugao
+CN,瀘州（ルーヂョウ）,Luzhou
+CN,陸豊（ルーフォン）,Lufeng
+CN,洛陽（ルオヤン）,Luoyang
+CN,雷州（レイジョウ）,Leizhou
+CN,耒陽（レイヤン）,Leiyang
+TN,チュニス,Tunis
+CL,サンティアゴ,Santiago
+DE,ベルリン,Berlin
+DE,ケルン,Cologne
+DE,ハンブルク,Hamburg
+DE,ミュンヘン,Munich
+TG,ロメ,Lome
+DO,サントドミンゴ,Santo Domingo
+DO,サントドミンゴエステ,Santo Domingo East
+TR,アンカラ,Ankara
+TR,アイドゥン,Aydin
+TR,アダナ,Adana
+TR,アンタルヤ,Antalya
+TR,イスタンブール,Istanbul
+TR,イズミル,Izmir
+TR,ヴァン,Van
+TR,カイセリ,Kayseri
+TR,ガジアンテップ,Gaziantep
+TR,カフラマンマラシュ,Kahramanmaras
+TR,コジャエリ,Kocaeli
+TR,コンヤ,Konya
+TR,サカリヤ,Sakarya
+TR,サムスン,Samsun
+TR,シャンルウルファ,Sanliurfa
+TR,ディヤルバクル,Diyarbakir
+TR,テキルダー,Tekirdag
+TR,デニズリ,Denizli
+TR,ハタイ,Hatay
+TR,バルケスィル,Balikesir
+TR,ブルサ,Bursa
+TR,マニサ,Manisa
+TR,メルシン,Mersin
+NG,イバダン,Ibadan
+NG,カノ,Kano
+NG,ラゴス,Lagos
+NE,ニアメ,Niamey
+JP,東京,Tokyo
+JP,大阪,Osaka City
+JP,川崎,Kawasaki
+JP,京都,Kyoto City
+JP,神戸,Kobe
+JP,さいたま,Saitama City
+JP,札幌,Sapporo
+JP,仙台,Sendai
+JP,名古屋,Nagoya
+JP,広島,Hiroshima City
+JP,福岡,Fukuoka City
+JP,横浜,Yokohama
+NZ,オークランド,Auckland
+PK,イスラマバード,Islamabad
+PK,カラチ,Karachi
+PK,クエッタ,Quetta
+PK,グジュランワラ,Gujranwala
+PK,ハイデラバード,Hyderabad
+PK,ファイサラバード,Faisalabad
+PK,ペシャーワル,Peshawar
+PK,ムルタン,Multan
+PK,ラホール,Lahore
+PK,ラワルピンディ,Rawalpindi
+HU,ブダペスト,Budapest
+BD,ダッカ,Dhaka
+BD,チッタゴン,Chittagong
+PH,マニラ,Manila
+PH,カローカン,Caloocan
+PH,ケソンシティ,Quezon City
+PH,ダバオ,Davao City
+BR,ブラジリア,Brasilia
+BR,カンピーナス,Campinas
+BR,グアルーリョス,Guarulhos
+BR,クリチバ,Curitiba
+BR,ゴイアニア,Goiania
+BR,サルバドール,Salvador
+BR,サンゴンサロ,Sao Goncalo
+BR,サンパウロ,Sao Paulo
+BR,サンルイス,Sao Luis
+BR,フォルタレザ,Fortaleza
+BR,ベレン,Belem
+BR,ベロオリゾンテ,Belo Horizonte
+BR,ポルトアレグレ,Porto Alegre
+BR,マセイオ,Maceio
+BR,マナウス,Manaus
+BR,リオデジャネイロ,Rio de Janeiro
+BR,レシフェ,Recife
+FR,パリ,Paris
+BG,ソフィア,Sofia
+BF,ワガドゥグー,Ouagadougou
+VN,ハノイ,Hanoi
+VN,ホーチミン,Ho Chi Minh City
+VE,カラカス,Caracas
+VE,マラカイボ,Maracaibo
+BY,ミンスク,Minsk
+PE,リマ,Lima
+PL,ワルシャワ,Warsaw
+BO,サンタクルス,Santa Cruz
+MG,アンタナナリボ,Antananarivo
+ML,バマコ,Bamako
+MY,クアラルンプール,Kuala Lumpur
+MM,ネーピードー,Naypyidaw
+MM,マンダレー,Mandalay
+MM,ヤンゴン,Yangon
+MX,メキシコシティ,Mexico City
+MX,アグアスカリエンテス,Aguascalientes
+MX,グアダラハラ,Guadalajara
+MX,クエルナバカ,Cuernavaca
+MX,ケレタロ,Queretaro
+MX,サンルイスポトシ,San Luis Potosi
+MX,ティフアナ,Tijuana
+MX,トルーカ,Toluca
+MX,トレオン,Torreon
+MX,フアレス,Juarez
+MX,プエブラ,Puebla
+MX,メヒカリ,Mexicali
+MX,メリダ,Merida
+MX,モンテレー,Monterrey
+MX,レオン,Leon
+MR,ヌアクショット,Nouakchott
+MZ,マプト,Maputo
+MA,カサブランカ,Casablanca
+MA,フェズ,Fez
+MN,ウランバートル,Ulan Bator
+JO,アンマン,Amman
+LY,トリポリ,Tripoli
+RO,ブカレスト,Bucharest
+RU,モスクワ,Moscow
+RU,ウファ,Ufa
+RU,エカテリンブルク,Ekaterinburg
+RU,オムスク,Omsk
+RU,カザン,Kazan
+RU,クラスノヤルスク,Krasnoyarsk
+RU,サマラ,Samara
+RU,サンクトペテルブルク,Saint Petersburg
+RU,チェリャビンスク,Chelyabinsk
+RU,ニジニノブゴロド,Nizhny Novgorod
+RU,ノボシビルスク,Novosibirsk
+RU,ペルミ,Perm
+RU,ボルゴグラード,Volgograd
+RU,ロストフナドヌー,Rostov-on-Don
