@@ -11,9 +11,9 @@ class TripsController < ApplicationController
 
   # GET /trips/1
   def show
-    show_region
-    show_country
-    show_city
+    show_region(@trip)
+    show_country(@trip)
+    show_city(@trip)
     @favorite = current_user.favorites.find_by(trip_id: @trip.id)
     @member = current_user.members.find_by(trip_id: @trip.id)
     @members = @trip.members
@@ -98,27 +98,27 @@ class TripsController < ApplicationController
       end
     end
 
-    def show_region
-      if @trip.place.ancestry.nil?
-        @region = @trip.place
-      elsif @trip.place.ancestry&.length == 1
-        @region = @trip.place.parent
-      elsif @trip.place.ancestry&.include?('/')
-        @region = @trip.place.parent.parent
+    def show_region(table)
+      if table.place.ancestry.nil?
+        @region = table.place
+      elsif table.place.ancestry&.length == 1
+        @region = table.place.parent
+      elsif table.place.ancestry&.include?('/')
+        @region = table.place.parent.parent
       end
     end
 
-    def show_country
-      if @trip.place.ancestry&.length == 1
-        @country = @trip.place
-      elsif @trip.place.ancestry&.include?('/')
-        @country = @trip.place.parent
+    def show_country(table)
+      if table.place.ancestry&.length == 1
+        @country = table.place
+      elsif table.place.ancestry&.include?('/')
+        @country = table.place.parent
       end
     end
 
-    def show_city
-      if @trip.place.ancestry&.include?('/')
-        @city = @trip.place
+    def show_city(table)
+      if table.place.ancestry&.include?('/')
+        @city = table.place
       end
     end
 end

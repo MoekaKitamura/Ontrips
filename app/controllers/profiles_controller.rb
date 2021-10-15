@@ -13,6 +13,13 @@ class ProfilesController < ApplicationController
   def show
     @joining = @profile.user.members.order(updated_at: :desc).limit(4)
     @blogs = @profile.user.blogs.order(updated_at: :desc).limit(4)
+    if @profile.place.ancestry&.include?('/')
+      @code = @profile.place.parent.code.downcase 
+    elsif @profile.place.root?
+      @code = nil
+    else
+      @code = @profile.place.code.downcase 
+    end
   end
 
   # GET /profiles/new
