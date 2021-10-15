@@ -2,7 +2,7 @@ class Users::SessionsController < Devise::SessionsController
   def new_guest
     user = User.guest
     unless Profile.where(id: user.id).present?
-      @profile = user.build_profile(id: user.id)
+      @profile = user.build_profile(id: user.id, place_id: 651)
       @profile.save
     end
     sign_in user
