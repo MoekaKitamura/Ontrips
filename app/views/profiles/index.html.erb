@@ -10,6 +10,11 @@
   <%= f.submit '検索' %>
 <% end %>
 
+<h5>登録ユーザーの国別数</h5>
+<p><%= Place.group(:code).count.size %>の国と地域</p>
+ <%= @chart_map %>
+ <%= geo_chart @chart_map %>
+
 <div class="cards">
 	<% @profiles.each do |profile| %>
 		<div class="profile__card">

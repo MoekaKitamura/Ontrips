@@ -17,4 +17,6 @@
 //= require jquery_ujs
 //= require jquery.jscroll.min.js
 //= require bootstrap/dist/js/bootstrap.min
+//= require chartkick
+//= require Chart.bundle
 //= require_tree .
