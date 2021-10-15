@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_15_025925) do
+ActiveRecord::Schema.define(version: 2021_10_15_030851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,14 +80,14 @@ ActiveRecord::Schema.define(version: 2021_10_15_025925) do
     t.string "icon"
     t.integer "gender"
     t.date "birthday"
-    t.integer "home_country"
-    t.integer "home_city"
     t.integer "first_language"
     t.integer "second_language"
     t.text "introduction"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_profiles_on_place_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -146,6 +146,7 @@ ActiveRecord::Schema.define(version: 2021_10_15_025925) do
   add_foreign_key "members", "users"
   add_foreign_key "messages", "talks"
   add_foreign_key "messages", "users"
+  add_foreign_key "profiles", "places"
   add_foreign_key "profiles", "users"
   add_foreign_key "trips", "places"
   add_foreign_key "trips", "users"

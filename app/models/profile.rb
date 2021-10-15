@@ -3,6 +3,8 @@ class Profile < ApplicationRecord
 
   mount_uploader :icon, IconUploader
 
+  belongs_to :place
+
   enum gender: { 男性: 1, 女性: 2, その他: 3 }
   enum home_country: { 日本: 1, オーストラリア: 2, アメリカ: 3 }
   enum home_city: { 福岡: 1, 東京: 2, 大阪: 3 }
