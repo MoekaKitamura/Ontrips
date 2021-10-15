@@ -17,14 +17,20 @@
   </div>
 
   <div class="field">
-    <%= form.label :country %>
-    <%= form.select :country,Trip.countries.keys, {include_blank: '----------'}%>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.select :city,Trip.cities.keys, {include_blank: '----------'}%>
-
+    <%= form.label :place %>
+    <%= collection_select :place, :region, @regions, :id, :name_jp, include_blank: "エリアを選択してください" %>
+    <%= select :place, :country, [], include_blank: "国を選択してください", class: "default-country-select" %>
+    <%= select :place, :city, [], include_blank: "都市を選択してください", class: "default-city-select" %>
+      <% @regions.each do |region| %>
+        <template id="country-of-region_<%= region.id %>">
+          <%= collection_select :place, :country, region.children, :id, :name_jp, include_blank: "国を選択してください" %>
+        </template>
+          <% region.children.each do |country| %>
+            <template id="city-of-country_<%= country.id %>">
+              <%= collection_select :place, :city, country.children, :id, :name_jp, include_blank: "都市を選択してください" %>
+            </template>
+          <% end %>
+      <% end %>
   </div>
 
   <div class="field">

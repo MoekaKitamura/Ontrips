@@ -6,15 +6,24 @@
       <li>
         <%= link_to trip_path(join.trip_id), class:"card" do %>
           <h4><%= join.trip.title %></h4>
-          <div class="place"><%= join.trip.country %> / <%= join.trip.city %></div>
+          <div class="place">
+            <%= join.trip.place.name_jp if join.trip.place.ancestry&.length == 1 %>
+            <%= join.trip.place.parent.name_jp if join.trip.place.ancestry&.include?('/') %>
+             / 
+            <%= join.trip.place.name_jp if join.trip.place.ancestry&.include?('/') %>
+          </div>
           <p><%= join.trip.start_on %> ~ <%= join.trip.finish_on %></p>
           <div class="card__trip_description"><%= join.trip.description.truncate(47) %></div>
           <div class="card__overlay">
             <div class="card__header">
               <%= image_tag join.trip.user.profile.icon.url, class:"card__icon" %>
               <div class="card__header-text">
-                <h3 class="card__title"><%= join.trip.user.name %></h3>            
-                <span class="card__status"><%= join.trip.user.profile.home_country %> / <%= join.trip.user.profile.home_city %></span>
+                <h3 class="card__title"><%= join.trip.user.name %></h3>
+                <span class="card__status">
+                  <%= join.trip.user.profile.place.name_jp if join.trip.user.profile.place.ancestry&.length == 1 %>
+                  <%= join.trip.user.profile.place.parent.name_jp if join.trip.user.profile.place.ancestry&.include?('/') %>
+                   / <%= join.trip.user.profile.place.name_jp if join.trip.user.profile.place.ancestry&.include?('/') %>
+                </span>          
               </div>
             </div>
             <p class="card__description"><%= join.trip.user.profile.first_language %>, <%= join.trip.user.profile.second_language %></p>
