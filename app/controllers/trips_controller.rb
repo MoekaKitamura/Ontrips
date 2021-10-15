@@ -11,12 +11,15 @@ class TripsController < ApplicationController
 
   # GET /trips/1
   def show
+    show_region(@trip)
+    show_country(@trip)
+    show_city(@trip)
     @favorite = current_user.favorites.find_by(trip_id: @trip.id)
     @member = current_user.members.find_by(trip_id: @trip.id)
     @members = @trip.members
     @comments = @trip.comments
     @comment = @trip.comments.build
-    @similar = Trip.where(country: @trip.country).where.not(id: @trip.id).order(updated_at: :desc).limit(3)
+    @similar = Trip.where(place_id: @country.id).where.not(id: @trip.id).order(updated_at: :desc).limit(3)
     @visiters = @members.where(as: 1).count
     @locals = @members.where(as: 2).count
   end
@@ -38,16 +41,19 @@ class TripsController < ApplicationController
   # GET /trips/new
   def new
     @trip = Trip.new
+    @regions = Place.where(ancestry: nil)
   end
 
   # GET /trips/1/edit
   def edit
+    @regions = Place.where(ancestry: nil)
   end
 
   # POST /trips
   def create
     @trip = Trip.new(trip_params)
     @trip.user_id = current_user.id
+    @trip.place_id = place_param
     if @trip.save
       redirect_to @trip, notice: t('notice.create', model: t('trip'))
     else
@@ -57,6 +63,7 @@ class TripsController < ApplicationController
 
   # PATCH/PUT /trips/1
   def update
+    @trip.place_id = place_param
     if @trip.update(trip_params)
       redirect_to @trip, notice: t('notice.update', model: t('trip'))
     else
@@ -78,6 +85,40 @@ class TripsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def trip_params
-      params.require(:trip).permit(:title, :country, :city, :start_on, :finish_on, :flexible, :description, :goal)
+      params.require(:trip).permit(:title, :start_on, :finish_on, :flexible, :description, :goal)
+    end
+
+    def place_param
+      if params[:place][:city].present?
+        params[:place][:city]
+      elsif params[:place][:country].present?
+        params[:place][:country]
+      else params[:place][:area].present?
+        params[:place][:area]
+      end
+    end
+
+    def show_region(table)
+      if table.place.ancestry.nil?
+        @region = table.place
+      elsif table.place.ancestry&.length == 1
+        @region = table.place.parent
+      elsif table.place.ancestry&.include?('/')
+        @region = table.place.parent.parent
+      end
+    end
+
+    def show_country(table)
+      if table.place.ancestry&.length == 1
+        @country = table.place
+      elsif table.place.ancestry&.include?('/')
+        @country = table.place.parent
+      end
+    end
+
+    def show_city(table)
+      if table.place.ancestry&.include?('/')
+        @city = table.place
+      end
     end
 end

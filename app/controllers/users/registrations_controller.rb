@@ -3,7 +3,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     super
-    @profile = @user.build_profile(id: @user.id)
+    @profile = @user.build_profile(id: @user.id, place_id: 651)
     @profile.save
   end
 

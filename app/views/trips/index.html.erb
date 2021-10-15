@@ -1,7 +1,7 @@
 <h1>Trips</h1>
 <%= search_form_for @q do |f| %>
   <%= f.label :country, '国名で検索' %>
-  <%= f.select :country_eq ,Trip.countries, {include_blank: '----------'} %>
+  <%# <%= f.select :country_eq ,Trip.countries, {include_blank: '----------'} %> %>
 <br>
   <%= f.label :start_on, '期間で検索' %>
   <%= f.date_field :start_on_gteq %>〜
@@ -25,7 +25,12 @@
           <% end %>
         </div>
           <h4><%= trip.title %></h4>
-          <div class="place"><%= trip.country %> / <%= trip.city %></div>
+          <div class="place">
+            <%= trip.place.name_jp if trip.place.ancestry&.length == 1 %>
+            <%= trip.place.parent.name_jp if trip.place.ancestry&.include?('/') %>
+             / 
+            <%= trip.place.name_jp if trip.place.ancestry&.include?('/') %>
+          </div>
           <p><%= trip.start_on %> ~ <%= trip.finish_on %></p>
           <div class="card__trip_description"><%= trip.description.truncate(47) %></div>
           <div class="card__overlay">
@@ -33,7 +38,11 @@
               <%= image_tag trip.user.profile.icon.url, class:"card__icon" %>
               <div class="card__header-text">
                 <h3 class="card__title"><%= trip.user.name %></h3>            
-                <span class="card__status"><%= trip.user.profile.home_country %> / <%= trip.user.profile.home_city %></span>
+                <span class="card__status">
+                  <%= trip.user.profile.place.name_jp if trip.user.profile.place.ancestry&.length == 1 %>
+                  <%= trip.user.profile.place.parent.name_jp if trip.user.profile.place.ancestry&.include?('/') %>
+                   / <%= trip.user.profile.place.name_jp if trip.user.profile.place.ancestry&.include?('/') %>
+                </span>
               </div>
             </div>
             <p class="card__description"><%= trip.user.profile.first_language %>, <%= trip.user.profile.second_language %></p>

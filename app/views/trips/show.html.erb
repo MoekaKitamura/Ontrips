@@ -6,7 +6,7 @@
 
     <p>
       <i class="fas fa-map-marker-alt"></i>
-      <%= @trip.country %> / <%= @trip.city %>
+      <%= @country.name_jp %> / <%= @city.name_jp if @city.present? %>
     </p>
 
     <p>
@@ -77,7 +77,7 @@
     </div>
 
     <!-- 似ている掲示板-->
-    <p><i class="fas fa-search"></i> You might also like : <%= @trip.country %>行きの他の旅行</p>
+    <p><i class="fas fa-search"></i> You might also like : <%= @country.name_jp %>行きの他の旅行</p>
     <div class="list">
       <ul>
         <% @similar.each do |similar| %>

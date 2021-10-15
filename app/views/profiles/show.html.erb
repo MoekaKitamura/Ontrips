@@ -1,7 +1,10 @@
 <div class="trip__area">
   <div class="col-sm-6">
     <%= image_tag @profile.icon.url, class: "profile_icon" %> 
-    <h1><%= @profile.user.name %></h1>
+    <h1>
+      <%= @profile.user.name %>
+      <i class="flag-icon flag-icon-<%= @code %>"></i>
+    </h1>
 
     <p>
       <i class="far fa-address-card"></i>
@@ -13,8 +16,10 @@
 
     <p>
       <i class="fas fa-globe-americas"></i>
-      <%= @profile.home_country %> /
-      <%= @profile.home_city %>
+      <%= @profile.place.name_jp if @profile.place.ancestry&.length == 1 %>
+      <%= @profile.place.parent.name_jp if @profile.place.ancestry&.include?('/') %>
+       / 
+      <%= @profile.place.name_jp if @profile.place.ancestry&.include?('/') %>
     </p>
 
     <p>

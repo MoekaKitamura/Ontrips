@@ -13,6 +13,13 @@ class ProfilesController < ApplicationController
   def show
     @joining = @profile.user.members.order(updated_at: :desc).limit(4)
     @blogs = @profile.user.blogs.order(updated_at: :desc).limit(4)
+    if @profile.place.ancestry&.include?('/')
+      @code = @profile.place.parent.code.downcase 
+    elsif @profile.place.root?
+      @code = nil
+    else
+      @code = @profile.place.code.downcase 
+    end
   end
 
   # GET /profiles/new
@@ -22,6 +29,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+    @regions = Place.where(ancestry: nil)
   end
 
   # POST /profiles
@@ -37,6 +45,7 @@ class ProfilesController < ApplicationController
 
   # PATCH/PUT /profiles/1
   def update
+    @profile.place_id = place_param
     if @profile.update(profile_params)
       redirect_to @profile, notice: t('notice.update', model: t('profile'))
     else
@@ -59,6 +68,17 @@ class ProfilesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def profile_params
-      params.require(:profile).permit(:icon, :icon_cache, :gender, :birthday, :home_country, :home_city, :first_language, :second_language, :introduction)
+      params.require(:profile).permit(:icon, :icon_cache, :gender, :birthday, :first_language, :second_language, :introduction)
     end
+
+    def place_param
+      if params[:place][:city].present?
+        params[:place][:city]
+      elsif params[:place][:country].present?
+        params[:place][:country]
+      else params[:place][:area].present?
+        params[:place][:area]
+      end
+    end
+
 end

@@ -18,15 +18,13 @@ ja:
         icon: アイコン
         gender: 性別
         birthday: 生年月日
-        home_country: 出身地
-        home_city: 出身地(都市)
+        place: 出身地
         first_language: 第1言語
         second_language: 第2言語
         introduction: 自己紹介
       trip:
         title: タイトル
-        country: 行き先
-        city: 行き先(都市)
+        place: 行き先
         start_on: 出発日
         finish_on: 到着日
         flexible: 日程変更可能

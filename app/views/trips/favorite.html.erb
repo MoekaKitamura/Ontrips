@@ -6,15 +6,24 @@
       <li>
         <%= link_to trip_path(favorite.trip_id), class:"card" do %>
           <h4><%= favorite.trip.title %></h4>
-          <div class="place"><%= favorite.trip.country %> / <%= favorite.trip.city %></div>
+          <div class="place">
+            <%= favorite.trip.place.name_jp if favorite.trip.place.ancestry&.length == 1 %>
+            <%= favorite.trip.place.parent.name_jp if favorite.trip.place.ancestry&.include?('/') %>
+             / 
+            <%= favorite.trip.place.name_jp if favorite.trip.place.ancestry&.include?('/') %>
+          </div>
           <p><%= favorite.trip.start_on %> ~ <%= favorite.trip.finish_on %></p>
           <div class="card__trip_description"><%= favorite.trip.description.truncate(47) %></div>
           <div class="card__overlay">
             <div class="card__header">
               <%= image_tag favorite.trip.user.profile.icon.url, class:"card__icon" %>
               <div class="card__header-text">
-                <h3 class="card__title"><%= favorite.trip.user.name %></h3>            
-                <span class="card__status"><%= favorite.trip.user.profile.home_country %> / <%= favorite.trip.user.profile.home_city %></span>
+                <h3 class="card__title"><%= favorite.trip.user.name %></h3>
+                <span class="card__status">
+                  <%= favorite.trip.user.profile.place.name_jp if favorite.trip.user.profile.place.ancestry&.length == 1 %>
+                  <%= favorite.trip.user.profile.place.parent.name_jp if favorite.trip.user.profile.place.ancestry&.include?('/') %>
+                   / <%= favorite.trip.user.profile.place.name_jp if favorite.trip.user.profile.place.ancestry&.include?('/') %>
+                </span>
               </div>
             </div>
             <p class="card__description"><%= favorite.trip.user.profile.first_language %>, <%= favorite.trip.user.profile.second_language %></p>
