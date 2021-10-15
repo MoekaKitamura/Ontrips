@@ -2,7 +2,7 @@
 
 <%= search_form_for @q do |f| %>
   <%= f.label :home_country, '国名で検索' %>
-  <%= f.select :home_country_eq ,Profile.home_countries, {include_blank: '----------'} %>
+  <%# <%= f.select :home_country_eq ,Profile.home_countries, {include_blank: '----------'} %> %>
 <br>
   <%= f.label :first_language_or_second_language, '言語で検索' %>
   <%= f.select :first_language_or_second_language_eq ,Profile.first_languages, {include_blank: '----------'} %>
@@ -16,7 +16,12 @@
 			<i class="fas fa-crown"></i>
 			<%= image_tag profile.icon.url %>
 			<h3><%= profile.user.name %></h3>
-			<h6><%= profile.home_country %> / <%= profile.home_city %></h6>
+			<h6>
+				<%= profile.place.name_jp if profile.place.ancestry&.length == 1 %>
+				<%= profile.place.parent.name_jp if profile.place.ancestry&.include?('/') %>
+				/ 
+				<%= profile.place.name_jp if profile.place.ancestry&.include?('/') %>
+			</h6>
 			<p>
 				<%= (Date.today.strftime('%Y%m%d').to_i - profile.birthday.strftime('%Y%m%d').to_i) / 10000 if  profile.birthday.present? %>歳 
 				<%= profile.gender %>
