@@ -13,14 +13,10 @@ $(document).on('turbolinks:load', function() {
   };
 
   //先ほどビューファイルに追加したもともとある子要素用のセレクトボックスのHTML
-  var defaultCountrySelect = `<select name="place[country]" id="place_country">
-                              <option value>国を選択してください</option>
-                              </select>`;
+  var defaultCountrySelect = '<select name="place[country]" id="place_country"><option value>国を選択してください</option></select>';
 
   //先ほどビューファイルに追加したもともとある子要素用のセレクトボックスのHTML
-  var defaultCitySelect = `<select name="place[city]" id="place_city">
-                            <option value>都市を選択してください</option>
-                            </select>`;
+  var defaultCitySelect = '<select name="place[city]" id="place_city"><option value>都市を選択してください</option></select>';
 
   $(document).on('change', '#place_region', function() {
     var regionVal = $('#place_region').val();
