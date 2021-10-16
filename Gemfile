@@ -34,6 +34,10 @@ gem 'font-awesome-sass'
 
 gem 'ancestry'
 
+gem 'chartkick'
+gem 'geocoder'
+gem 'dotenv-rails'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'

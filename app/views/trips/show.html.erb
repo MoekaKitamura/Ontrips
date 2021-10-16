@@ -30,15 +30,6 @@
       <% end %>
     </p>
 
-    <p>
-      <%= link_to profile_path(@trip.user.profile.id) do %>
-        <%= image_tag @trip.user.profile.icon.url, class: "trip_icon"%>
-        <%= @trip.user.name %>
-      <% end %>
-    </p>
-  </div>
-
-  <div class="col-sm-6">
     <!---favorite--->
     <p>
       <i class="fas fa-star"></i>
@@ -58,7 +49,7 @@
       <%= @members.count %>人が参加中 ( visiter:<%= @visiters %> / local:<%= @locals %> )
       <% unless @trip.user_id == current_user.id %>
         <% if @member.present? %>
-          <%= link_to '参加中！！', member_path(id: @member.id), method: :delete, class: 'btn btn-danger' %>
+          <%= link_to '参加キャンセル', member_path(id: @member.id), method: :delete, class: 'btn btn-danger' %>
         <% else %>
           <%= link_to '一緒に旅をする', members_path(trip_id: @trip.id, as: 1), method: :post, class: 'btn btn-primary' %>
           <%= link_to 'ローカルとして参加', members_path(trip_id: @trip.id, as: 2), method: :post, class: 'btn btn-primary' %>
@@ -75,6 +66,64 @@
       <% end %>
     </ul>  
     </div>
+
+
+    <p>
+      <%= link_to profile_path(@trip.user.profile.id) do %>
+        <%= image_tag @trip.user.profile.icon.url, class: "trip_icon"%>
+        <%= @trip.user.name %>
+      <% end %>
+    </p>
+  </div>
+
+  <div class="col-sm-6">
+    <!---map--->
+  <p>
+  <%= @from.name_en %> <i class="flag-icon flag-icon-<%= @from.code.downcase %>"></i>
+  <i class="fas fa-plane"></i>
+  <%= @to.name_en %>
+  <i class="flag-icon flag-icon-<%= @to.code.downcase %>"></i>
+  (<%= @to.distance_to(@from).floor %> miles)</p>
+  
+  <div id="map"></div>
+
+  <script>
+    function initMap() {
+      
+      var from = { lat: <%= @from.latitude %>, lng: <%= @from.longitude %> };
+      var to = { lat: <%= @to.latitude %>, lng: <%= @to.longitude %> };
+      var middle = { lat: <%= @middle[0] %>, lng: <%= @middle[1] %> };
+
+      // マップの設定
+      var map = new google.maps.Map(document.getElementById("map"), {
+        center: middle,
+        zoom: 2,
+      });
+
+      //ピンを表示(2点)
+      var markerFrom = new google.maps.Marker({
+                    position: from,
+                    map: map,
+      });
+      
+      var markerTo= new google.maps.Marker({
+                    position: to,
+                    map: map,
+                    animation: google.maps.Animation.BOUNCE,
+               });
+
+      // 吹き出し表示
+      var userIcon = '<%= image_tag @trip.user.profile.icon.url, class: "map_icon"%>';
+      var userName = '<%= @trip.user.name %>';
+
+      var infowindow = new google.maps.InfoWindow({
+          content: `<h6>${userIcon}${userName}</h6>`,
+          anchor: markerFrom,
+          // disableAutoPan: true
+      });
+      
+    } 
+  </script>
 
     <!-- 似ている掲示板-->
     <p><i class="fas fa-search"></i> You might also like : <%= @country.name_jp %>行きの他の旅行</p>
