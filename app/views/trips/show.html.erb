@@ -39,6 +39,56 @@
   </div>
 
   <div class="col-sm-6">
+    <!---map--->
+  <p>Google Map</p>
+
+  <p>From -- <%= @from.name_jp %>の緯度: <%= @from.latitude %> 経度:<%= @from.longitude %>
+  <i class="flag-icon flag-icon-<%= @from.code.downcase %>"></i></p>
+  <p>To -- <%= @to.name_jp %>の緯度: <%= @to.latitude %> 経度:<%= @to.longitude %>
+  <i class="flag-icon flag-icon-<%= @to.code.downcase %>"></i></p>
+
+  <p>距離 <%= @to.distance_to(@from) %></p>
+  <p>中間地点 <%= @middle %></p>
+  
+  <div id="map"></div>
+
+  <script>
+    function initMap() {
+      
+      var from = { lat: <%= @from.latitude %>, lng: <%= @from.longitude %> };
+      var to = { lat: <%= @to.latitude %>, lng: <%= @to.longitude %> };
+      var middle = { lat: <%= @middle[0] %>, lng: <%= @middle[1] %> };
+
+      // マップの設定
+      var map = new google.maps.Map(document.getElementById("map"), {
+        center: middle,
+        zoom: 2,
+      });
+
+       //ピンを表示(2点)
+      var markerFrom = new google.maps.Marker({
+                    position: from,
+                    map: map,
+      });
+      
+      var markerTo= new google.maps.Marker({
+                    position: to,
+                    map: map,
+                    animation: google.maps.Animation.BOUNCE,
+               });
+
+      // 吹き出し表示
+      var userIcon = '<%= image_tag @trip.user.profile.icon.url, class: "map_icon"%>';
+      var userName = '<%= @trip.user.name %>';
+
+      var infowindow = new google.maps.InfoWindow({
+          content: `<h6>${userIcon}${userName}</h6>`,
+          anchor: markerFrom,
+      });
+      
+    } 
+  </script>
+
     <!---favorite--->
     <p>
       <i class="fas fa-star"></i>

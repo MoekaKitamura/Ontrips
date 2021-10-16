@@ -22,6 +22,10 @@ class TripsController < ApplicationController
     @similar = Trip.where(place_id: @country.id).where.not(id: @trip.id).order(updated_at: :desc).limit(3)
     @visiters = @members.where(as: 1).count
     @locals = @members.where(as: 2).count
+    # map ---
+    @from = @trip.user.profile.place
+    @to = @trip.place
+    @middle = Geocoder::Calculations.geographic_center([@to,@from]) #中間地点
   end
 
   def change_goal
