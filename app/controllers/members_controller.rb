@@ -11,7 +11,7 @@ class MembersController < ApplicationController
         redirect_to trip_path(params[:trip_id]), notice: "#{member.trip.user.name}さんの旅にローカルとして参加しました！"
       end
     else
-      redirect_to @trip, notice: 'この旅行は終了しています。終了した旅行に参加できません。'
+      redirect_to @trip, alert: 'この旅行は終了しています。終了した旅行に参加できません。'
     end
     
   end

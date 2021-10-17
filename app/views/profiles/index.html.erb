@@ -1,46 +1,54 @@
 <h1>Find your Travel mate</h1>
 
 <%= search_form_for @q do |f| %>
-  <%= f.label :home_country, '国名で検索' %>
-  <%# <%= f.select :home_country_eq ,Profile.home_countries, {include_blank: '----------'} %> %>
+  <%= f.search_field :place_name_jp_or_place_name_en_or_introduction_cont, :placeholder => "居住地（日本語 or 英語）・キーワードで検索" %>
 <br>
-  <%= f.label :first_language_or_second_language, '言語で検索' %>
-  <%= f.select :first_language_or_second_language_eq ,Profile.first_languages, {include_blank: '----------'} %>
-
-  <%= f.submit '検索' %>
+  <%= f.select :first_language_or_second_language_eq ,Profile.first_languages, {include_blank: '言語で検索'} %>
+<br>
+  <%= f.submit '検索', class:"btntextchange search" %>
 <% end %>
 
-<h5>登録ユーザーの国別数</h5>
-<p><%= Place.group(:code).count.size %>の国と地域</p>
- <%= @chart_map %>
+<p><%= @chart_map.size %>の国と地域にあなたの旅仲間がいます！</p>
  <%= geo_chart @chart_map %>
 
-<div class="cards">
-	<% @profiles.each do |profile| %>
-		<div class="profile__card">
-			<i class="fas fa-crown"></i>
-			<%= image_tag profile.icon.url %>
-			<h3><%= profile.user.name %></h3>
-			<h6>
-				<%= profile.place.name_jp unless profile.place.ancestry&.include?('/') %>
-				<%= profile.place.parent.name_jp if profile.place.ancestry&.include?('/') %>
-				/ 
-				<%= profile.place.name_jp if profile.place.ancestry&.include?('/') %>
-			</h6>
-			<p>
-				<%= (Date.today.strftime('%Y%m%d').to_i - profile.birthday.strftime('%Y%m%d').to_i) / 10000 if  profile.birthday.present? %>歳 
-				<%= profile.gender %>
-			</p>
-			<div class="buttons">
-				<%= link_to 'Detail', profile, class: "btn btn-info"%>
-				<% unless profile.user_id == current_user.id %>
-					<%= link_to 'Message', talks_path(sender_id: current_user.id, receiver_id: profile.user.id), method: :post, class: "btn btn-warning" %>
-				<% end %>
+<div class="scroll-list jscroll">
+	<div class="cards">
+		<% @profiles.each do |profile| %>
+			<div class="profile__card">
+				<i class="fas fa-crown"></i>
+				<%= image_tag profile.icon.url %>
+				<h3><%= profile.user.name %></h3>
+				<h6>
+					<%= profile.place.name_jp unless profile.place.ancestry&.include?('/') %>
+					<%= profile.place.parent.name_jp if profile.place.ancestry&.include?('/') %>
+					/ 
+					<%= profile.place.name_jp if profile.place.ancestry&.include?('/') %>
+				</h6>
+				<p>
+					<%= (Date.today.strftime('%Y%m%d').to_i - profile.birthday.strftime('%Y%m%d').to_i) / 10000 if  profile.birthday.present? %>歳 
+					<%= profile.gender %>
+				</p>
+				<div class="buttons">
+					<%= link_to 'Detail', profile, class: "btn btn-info"%>
+					<% unless profile.user_id == current_user.id %>
+						<%= link_to 'Message', talks_path(sender_id: current_user.id, receiver_id: profile.user.id), method: :post, class: "btn btn-warning" %>
+					<% end %>
+				</div>
+				<div class="profile__detail"><i class="far fa-comments"></i>
+					<%= profile.first_language %> <%= profile.second_language %>
+					<p><%= profile.introduction.truncate(20) if profile.introduction.present? %></p>
+				</div>
 			</div>
-			<div class="profile__detail">
-				<p>Language: <%= profile.first_language %> <%= profile.second_language %></p>
-				<p><%= profile.introduction.truncate(20) if profile.introduction.present? %></p>
-			</div>
-		</div>
-	<% end %>
+		<% end %>
+	</div>
+	<%= paginate @profiles %>
 </div>
+
+<script>
+  $(function() {
+    $('.jscroll').jscroll({
+      contentSelector: '.scroll-list',
+      nextSelector: 'span.next:last a'
+    });
+  });
+</script>

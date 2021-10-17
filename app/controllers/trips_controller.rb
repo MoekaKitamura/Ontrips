@@ -5,8 +5,7 @@ class TripsController < ApplicationController
   # GET /trips
   def index
     @q = Trip.ransack(params[:q])
-    @trips = @q.result(distinct: true).page(params[:page]).per(3)
-    # @trips = Trip.all
+    @trips = @q.result(distinct: true).includes(:place).page(params[:page]).per(3)
   end
 
   # GET /trips/1

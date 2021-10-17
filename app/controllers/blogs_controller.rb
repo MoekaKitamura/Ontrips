@@ -4,8 +4,7 @@ class BlogsController < ApplicationController
 
   def index
     @q = Blog.ransack(params[:q])
-    @blogs = @q.result(distinct: true)
-    # @blogs = Blog.all
+    @blogs = @q.result(distinct: true).includes(:user).page(params[:page]).per(2)
   end
 
   def show
