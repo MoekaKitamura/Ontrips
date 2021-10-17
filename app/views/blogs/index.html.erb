@@ -1,9 +1,8 @@
-<h1>Blogs</h1>
+<h1>Travel Story</h1>
 <%= search_form_for @q do |f| %>
-  <%= f.label :title_or_content, 'キーワードで検索' %>
-  <%= f.search_field :title_or_content_cont, class: "form-control", :placeholder => "あいまいなワードで検索"%> 
-
-  <%= f.submit '検索' %>
+  <%= f.search_field :title_or_content_cont, :placeholder => "キーワードで検索"%> 
+<br>
+  <%= f.submit '検索', class:"btntextchange search" %>
 <% end %>
 
   <% @blogs.each do |blog| %>

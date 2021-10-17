@@ -127,3 +127,29 @@ opacity:0;/*透過0に*/
 .btntextchange:hover span:nth-child(2){
 opacity:1;/*不透明に*/
 }
+
+//--ransack----------------------
+.trip_search .blog_search .profile_search{
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.search_date_area{
+  max-width: 100%;
+}
+
+.search_date{
+  max-width: 200px;
+}
+
+#q_place_name_jp_or_place_name_en_or_title_or_description_cont, 
+#q_title_or_content_cont, 
+#q_place_name_jp_or_place_name_en_or_introduction_cont,
+#q_first_language_or_second_language_eq{
+  max-width: 90%;
+}
+
+input.search{
+  max-width: 300px;
+}
+

@@ -1,18 +1,14 @@
 <h1>Find your Travel mate</h1>
 
 <%= search_form_for @q do |f| %>
-  <%= f.label :home_country, '国名で検索' %>
-  <%# <%= f.select :home_country_eq ,Profile.home_countries, {include_blank: '----------'} %> %>
+  <%= f.search_field :place_name_jp_or_place_name_en_or_introduction_cont, :placeholder => "居住地（日本語 or 英語）・キーワードで検索" %>
 <br>
-  <%= f.label :first_language_or_second_language, '言語で検索' %>
-  <%= f.select :first_language_or_second_language_eq ,Profile.first_languages, {include_blank: '----------'} %>
-
-  <%= f.submit '検索' %>
+  <%= f.select :first_language_or_second_language_eq ,Profile.first_languages, {include_blank: '言語で検索'} %>
+<br>
+  <%= f.submit '検索', class:"btntextchange search" %>
 <% end %>
 
-<h5>登録ユーザーの国別数</h5>
-<p><%= Place.group(:code).count.size %>の国と地域</p>
- <%= @chart_map %>
+<p><%= @chart_map.size %>の国と地域にあなたの旅仲間がいます！</p>
  <%= geo_chart @chart_map %>
 
 <div class="cards">
