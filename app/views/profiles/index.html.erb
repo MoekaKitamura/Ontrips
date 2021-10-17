@@ -33,8 +33,8 @@
 					<%= link_to 'Message', talks_path(sender_id: current_user.id, receiver_id: profile.user.id), method: :post, class: "btn btn-warning" %>
 				<% end %>
 			</div>
-			<div class="profile__detail">
-				<p>Language: <%= profile.first_language %> <%= profile.second_language %></p>
+			<div class="profile__detail"><i class="far fa-comments"></i>
+				<%= profile.first_language %> <%= profile.second_language %>
 				<p><%= profile.introduction.truncate(20) if profile.introduction.present? %></p>
 			</div>
 		</div>
