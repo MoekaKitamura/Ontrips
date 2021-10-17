@@ -5,8 +5,7 @@ class ProfilesController < ApplicationController
   # GET /profiles
   def index
     @q = Profile.ransack(params[:q])
-    @profiles = @q.result(distinct: true)
-    # @profiles = Profile.all
+    @profiles = @q.result(distinct: true).includes(:place).page(params[:page]).per(3)
     @chart_map = Place.joins(:profiles).group(:code).count
   end
 
