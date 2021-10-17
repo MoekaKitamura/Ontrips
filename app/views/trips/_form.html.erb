@@ -17,7 +17,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :place %>
+    <%= form.label "行き先（国名まで必須）" %>
     <%= collection_select :place, :region, @regions, :id, :name_jp, include_blank: "エリアを選択してください" %>
     <%= select :place, :country, [], include_blank: "国を選択してください", class: "default-country-select" %>
     <%= select :place, :city, [], include_blank: "都市を選択してください", class: "default-city-select" %>

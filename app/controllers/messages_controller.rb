@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!
   before_action do
     # どの会話（チャットルーム）に存在するメッセージなのか？
     @talk = Talk.find(params[:talk_id])

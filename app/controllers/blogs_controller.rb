@@ -16,6 +16,9 @@ class BlogsController < ApplicationController
   end
 
   def edit
+    unless @blog.user == current_user
+      redirect_to @blog, alert: "投稿者以外は編集できません"
+    end
   end
 
   def create

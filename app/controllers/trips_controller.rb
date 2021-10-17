@@ -11,9 +11,10 @@ class TripsController < ApplicationController
 
   # GET /trips/1
   def show
-    show_region(@trip)
-    show_country(@trip)
-    show_city(@trip)
+    # show_region(@trip)
+    # show_country(@trip)
+    # show_city(@trip)
+    country_or_city(@trip)
     @favorite = current_user.favorites.find_by(trip_id: @trip.id)
     @member = current_user.members.find_by(trip_id: @trip.id)
     @members = @trip.members
@@ -50,6 +51,9 @@ class TripsController < ApplicationController
 
   # GET /trips/1/edit
   def edit
+    unless @trip.user == current_user
+      redirect_to @trip, alert: "投稿者以外は編集できません"
+    end
     @regions = Place.where(ancestry: nil)
   end
 
@@ -61,7 +65,8 @@ class TripsController < ApplicationController
     if @trip.save
       redirect_to @trip, notice: t('notice.create', model: t('trip'))
     else
-      render :new
+      redirect_to new_trip_path, alert: "国名が未入力です！！"
+      # render :new
     end
   end
 
@@ -71,7 +76,8 @@ class TripsController < ApplicationController
     if @trip.update(trip_params)
       redirect_to @trip, notice: t('notice.update', model: t('trip'))
     else
-      render :edit
+      redirect_to edit_trip_path, alert: "国名が未入力です！！"
+      # render :edit
     end
   end
 
@@ -97,32 +103,33 @@ class TripsController < ApplicationController
         params[:place][:city]
       elsif params[:place][:country].present?
         params[:place][:country]
-      else params[:place][:area].present?
-        params[:place][:area]
+      # else params[:place][:area].present? #
+      #   params[:place][:area]
       end
     end
 
-    def show_region(table)
-      if table.place.ancestry.nil?
-        @region = table.place
-      elsif table.place.ancestry&.length == 1
-        @region = table.place.parent
-      elsif table.place.ancestry&.include?('/')
-        @region = table.place.parent.parent
-      end
-    end
+    # def show_region(table)
+    #   if table.place.ancestry.nil?
+    #     @region = table.place
+    #   elsif table.place.ancestry&.length == 1
+    #     @region = table.place.parent
+    #   elsif table.place.ancestry&.include?('/')
+    #     @region = table.place.parent.parent
+    #   end
+    # end
 
-    def show_country(table)
-      if table.place.ancestry&.length == 1
-        @country = table.place
-      elsif table.place.ancestry&.include?('/')
-        @country = table.place.parent
-      end
-    end
-
-    def show_city(table)
+    def country_or_city(table)
       if table.place.ancestry&.include?('/')
+        @country = table.place.parent
         @city = table.place
+      else
+        @country = table.place
       end
     end
+
+    # def show_city(table)
+    #   if table.place.ancestry&.include?('/')
+    #     @city = table.place
+    #   end
+    # end
 end

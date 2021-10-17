@@ -7,7 +7,7 @@
         <%= link_to trip_path(join.trip_id), class:"card" do %>
           <h4><%= join.trip.title %></h4>
           <div class="place">
-            <%= join.trip.place.name_jp if join.trip.place.ancestry&.length == 1 %>
+            <%= join.trip.place.name_jp unless join.trip.place.ancestry&.include?('/') %>
             <%= join.trip.place.parent.name_jp if join.trip.place.ancestry&.include?('/') %>
              / 
             <%= join.trip.place.name_jp if join.trip.place.ancestry&.include?('/') %>
@@ -20,7 +20,7 @@
               <div class="card__header-text">
                 <h3 class="card__title"><%= join.trip.user.name %></h3>
                 <span class="card__status">
-                  <%= join.trip.user.profile.place.name_jp if join.trip.user.profile.place.ancestry&.length == 1 %>
+                  <%= join.trip.user.profile.place.name_jp unless join.trip.user.profile.place.ancestry&.include?('/') %>
                   <%= join.trip.user.profile.place.parent.name_jp if join.trip.user.profile.place.ancestry&.include?('/') %>
                    / <%= join.trip.user.profile.place.name_jp if join.trip.user.profile.place.ancestry&.include?('/') %>
                 </span>          

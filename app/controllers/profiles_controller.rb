@@ -30,6 +30,9 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+    unless @profile.user == current_user
+      redirect_to @profile, alert: "ユーザー本人以外は編集できません"
+    end
     @regions = Place.where(ancestry: nil)
   end
 
@@ -50,7 +53,8 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params)
       redirect_to @profile, notice: t('notice.update', model: t('profile'))
     else
-      render :edit
+      redirect_to edit_profile_path, alert: "国名が未入力です！！"
+      # render :edit
     end
   end
 

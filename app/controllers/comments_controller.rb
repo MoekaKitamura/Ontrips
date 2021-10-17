@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   # コメントを保存、投稿する
   before_action :set_trip, only: [:create, :edit, :update]
   def create
@@ -10,7 +11,7 @@ class CommentsController < ApplicationController
       if @comment.save
         format.js { render :index } #index.js.erbへrender
       else
-        format.html { redirect_to trip_path(@trip), notice: '投稿できませんでした...' }
+        format.html { redirect_to trip_path(@trip), alert: 'コメントを入力してください' }
       end
     end
   end
