@@ -22,7 +22,7 @@
 			<%= image_tag profile.icon.url %>
 			<h3><%= profile.user.name %></h3>
 			<h6>
-				<%= profile.place.name_jp if profile.place.ancestry&.length == 1 %>
+				<%= profile.place.name_jp unless profile.place.ancestry&.include?('/') %>
 				<%= profile.place.parent.name_jp if profile.place.ancestry&.include?('/') %>
 				/ 
 				<%= profile.place.name_jp if profile.place.ancestry&.include?('/') %>

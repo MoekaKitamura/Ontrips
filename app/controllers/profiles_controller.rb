@@ -50,7 +50,8 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params)
       redirect_to @profile, notice: t('notice.update', model: t('profile'))
     else
-      render :edit
+      redirect_to edit_profile_path, alert: "国名が未入力です！！"
+      # render :edit
     end
   end
 

@@ -26,7 +26,7 @@
         </div>
           <h4><%= trip.title %></h4>
           <div class="place">
-            <%= trip.place.name_jp if trip.place.ancestry&.length == 1 %>
+            <%= trip.place.name_jp unless trip.place.ancestry&.include?('/') %>
             <%= trip.place.parent.name_jp if trip.place.ancestry&.include?('/') %>
              / 
             <%= trip.place.name_jp if trip.place.ancestry&.include?('/') %>
@@ -39,7 +39,7 @@
               <div class="card__header-text">
                 <h3 class="card__title"><%= trip.user.name %></h3>            
                 <span class="card__status">
-                  <%= trip.user.profile.place.name_jp if trip.user.profile.place.ancestry&.length == 1 %>
+                  <%= trip.user.profile.place.name_jp unless trip.user.profile.place.ancestry&.include?('/') %>
                   <%= trip.user.profile.place.parent.name_jp if trip.user.profile.place.ancestry&.include?('/') %>
                    / <%= trip.user.profile.place.name_jp if trip.user.profile.place.ancestry&.include?('/') %>
                 </span>

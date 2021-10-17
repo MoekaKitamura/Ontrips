@@ -16,7 +16,7 @@
 
     <p>
       <i class="fas fa-globe-americas"></i>
-      <%= @profile.place.name_jp if @profile.place.ancestry&.length == 1 %>
+      <%= @profile.place.name_jp unless @profile.place.ancestry&.include?('/') %>
       <%= @profile.place.parent.name_jp if @profile.place.ancestry&.include?('/') %>
        / 
       <%= @profile.place.name_jp if @profile.place.ancestry&.include?('/') %>
