@@ -27,8 +27,8 @@ GB,バーミンガム,Birmingham
 IT,ローマ,Rome
 IT,ミラノ,Milano
 IQ,バグダッド,Baghdad
-IQ,バスラ,Al-Basrah Qadha Center
-IQ,モスル,Al-Mosul Qadha Center
+IQ,バスラ,Basrah
+IQ,モスル,Mosul
 IR,テヘラン,Tehran
 IR,アフヴァーズ,Ahvaz
 IR,イスファハン,Isfahan
@@ -37,7 +37,7 @@ IR,ゴム,Qom
 IR,シーラーズ,Shiraz
 IR,タブリーズ,Tabriz
 IR,マシュハド,Mashhad
-IN,デリー,Delhi Municipal Corporation (DMC)
+IN,デリー,Delhi
 IN,アウランガーバード,Aurangabad
 IN,アグラ,Agra
 IN,アフマダーバード,Ahmedabad
@@ -45,7 +45,7 @@ IN,アムリトサル,Amritsar
 IN,アラーハーバード,Allahabad
 IN,インドール,Indore
 IN,ヴァドーダラー,Vadodara
-IN,ヴィシャーカパトナム,Greater Visakhapatnam Municipal Corporation (GVMC)
+IN,ヴィシャーカパトナム,Visakhapatnam
 IN,ヴィジャヤワーダ,Vijayawada
 IN,ガーズィヤーバード,Ghaziabad
 IN,カーンプル,Kanpur
@@ -65,11 +65,11 @@ IN,チェンナイ,Chennai
 IN,ナーグプル,Nagpur
 IN,ナーシク,Nashik
 IN,ナビムンバイ,Navi Mumbai
-IN,ハイデラーバード,Greater Hyderabad Municipal Corporation (GHMC)
+IN,ハイデラーバード,Hyderabad
 IN,ハウラー,Howrah
 IN,バサイ,Vasai
 IN,パトナ,Patna
-IN,バンガロール,Bruhat Bengaluru Mahanagara Palike (BBMP)
+IN,バンガロール,Bengaluru
 IN,ピンプリ・チンチワッド,Pimpri-Chinchwad
 IN,ファリーダーバード,Faridabad
 IN,プネー,Pune
@@ -325,7 +325,7 @@ CN,綿陽（ミエンヤン）,Mianyang
 CN,牡丹江（ムーダンジァン）,Mudanjiang
 CN,禹州（ユィヂョウ）,Yuzhou
 CN,玉樹（ユーシュー）,Yushu
-CN,楽清（ユエチン）,Leqing
+CN,楽清（ユエチン）,Yueqing
 CN,永城（ヨンチョン）,Yongcheng
 CN,楽山（ラーシャン）,Leshan
 CN,莱蕪（ライウー）,Laiwu
@@ -380,16 +380,16 @@ NG,カノ,Kano
 NG,ラゴス,Lagos
 NE,ニアメ,Niamey
 JP,東京,Tokyo
-JP,大阪,Osaka City
+JP,大阪,Osaka
 JP,川崎,Kawasaki
-JP,京都,Kyoto City
+JP,京都,Kyoto
 JP,神戸,Kobe
-JP,さいたま,Saitama City
+JP,さいたま,Saitama
 JP,札幌,Sapporo
 JP,仙台,Sendai
 JP,名古屋,Nagoya
-JP,広島,Hiroshima City
-JP,福岡,Fukuoka City
+JP,広島,Hiroshima
+JP,福岡,Fukuoka
 JP,横浜,Yokohama
 NZ,オークランド,Auckland
 PK,イスラマバード,Islamabad
