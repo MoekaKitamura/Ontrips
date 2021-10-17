@@ -72,8 +72,8 @@
   )
   user5 = User.create!(
     id: 5,
-    name: "Sho",
-    email: "sho@g.com",
+    name: "Shota",
+    email: "shota@g.com",
     password: "111111",
     confirmed_at: Time.now,
   )
@@ -357,7 +357,7 @@
 
 # blog
   Blog.create!(
-    title: "ハワイ旅行の日記",
+    title: "ハワイ旅行の日記🌺",
     content: "家族でハワイに行ってきました！ホテルは憧れのロイヤルハワイアン！ピンクのホテルが可愛い〜〜💓",
     user_id: 1,
   )
@@ -370,7 +370,7 @@
 
   Blog.create!(
     title: "海外旅行にはまったキッカケ",
-    content: "大学の授業の一環で、海外ボランティアに参加しました。これが私にとって、初めての海外！！",
+    content: "大学の授業の一環で、海外ボランティアに参加しました。これが僕にとって、初めての海外！！",
     user_id: 5,
   )
 
@@ -381,7 +381,7 @@
   )
 
   Blog.create!(
-    title: "About my hometown ",
+    title: "About my hometown Liverpool",
     content: "Did you know that Liverpool also has more World Heritage Buildings than any other city? This is thanks to our maritime heritage during the 1800s. We also have 2 cathedrals and 2 football teams.",
     user_id: 4,
   )

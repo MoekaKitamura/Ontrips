@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   # コメントを保存、投稿する
   before_action :set_trip, only: [:create, :edit, :update]
   def create
