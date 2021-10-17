@@ -30,6 +30,9 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+    unless @profile.user == current_user
+      redirect_to @profile, alert: "ユーザー本人以外は編集できません"
+    end
     @regions = Place.where(ancestry: nil)
   end
 

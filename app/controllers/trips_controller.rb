@@ -51,6 +51,9 @@ class TripsController < ApplicationController
 
   # GET /trips/1/edit
   def edit
+    unless @trip.user == current_user
+      redirect_to @trip, alert: "投稿者以外は編集できません"
+    end
     @regions = Place.where(ancestry: nil)
   end
 

@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   has_many :talks, foreign_key: :sender_id, dependent: :destroy
-  has_many :talks, foreign_key: :receiver_id, dependent: :destroy
+  # has_many :talks, foreign_key: :receiver_id, dependent: :destroy
 
   def self.guest
     find_or_create_by(email: 'guest@example.com') do |user|
