@@ -33,7 +33,9 @@
 			</p>
 			<div class="buttons">
 				<%= link_to 'Detail', profile, class: "btn btn-info"%>
-				<%= link_to 'Message', talks_path(sender_id: current_user.id, receiver_id: profile.user.id), method: :post, class: "btn btn-warning" %>
+				<% unless profile.user_id == current_user.id %>
+					<%= link_to 'Message', talks_path(sender_id: current_user.id, receiver_id: profile.user.id), method: :post, class: "btn btn-warning" %>
+				<% end %>
 			</div>
 			<div class="profile__detail">
 				<p>Language: <%= profile.first_language %> <%= profile.second_language %></p>

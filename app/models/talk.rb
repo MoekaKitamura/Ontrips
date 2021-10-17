@@ -16,9 +16,11 @@ class Talk < ApplicationRecord
   # current_userと、current_userの相手となるuserの情報を取得
   def target_user(current_user)
     if sender_id == current_user.id
-      User.find(receiver_id)
+      # User.find(receiver_id)
+      User.find_by(id: receiver_id)
     elsif receiver_id == current_user.id
-      User.find(sender_id)
+      # User.find(sender_id)
+      User.find_by(id: sender_id)
     end
   end
 end
