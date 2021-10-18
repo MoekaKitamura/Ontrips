@@ -43,7 +43,7 @@
     <div class="list">
       <ul>
         <% @joining.each do |join| %>
-          <%= link_to trip_path(join.trip_id) do %>
+          <%= link_to trip_path(join.trip_id), data: {"turbolinks" => false} do %>
             <li><%= join.trip.title %></li>
           <% end %>
         <% end %>

@@ -15,7 +15,7 @@
   <ul class="cards">
     <% @trips.each do |trip| %>
       <li>
-        <%= link_to trip, class:"card" do %>
+        <%= link_to trip, data: {"turbolinks" => false}, class:"card" do %>
         <div class="trip_status">
           <% if trip.favorites.where(user_id: current_user.id).present? %>
             <p><i class="fas fa-star"></i></p>
