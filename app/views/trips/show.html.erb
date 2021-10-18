@@ -60,9 +60,14 @@
 
       <div class="list">
       <ul>
+        <li><strong><%= @trip.user.name %></strong></li>
         <% @members.each do |member| %>
           <%= link_to profile_path(member.user.id) do %>
-            <li><%= member.user.name %></li>
+            <li><%= member.user.name %>
+              <% if member.as == 2 %>
+                <i class="fas fa-street-view"></i>
+              <% end %>
+            </li>  
           <% end %>
         <% end %>
       </ul>  
@@ -152,7 +157,7 @@
         </div>
       </div>
     </div>
-    
+
   </article>
 
 
