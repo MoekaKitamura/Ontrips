@@ -12,7 +12,7 @@ ontrips
 #### このアプリで、旅仲間を見つけ、世界中を旅しよう！！✈️🌏
 
 ## 本番環境 / Production
-https://ontrips.herokuapp.com
+
 
 ## 開発言語 / Language
 - OS: Linux
