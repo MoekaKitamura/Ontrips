@@ -168,7 +168,7 @@ footer p{
 //----trip-&-profile-------------------
 .trip__area{
   border: solid 1px #000;
-  max-width: 1500px;
+  max-width: 1600px;
   min-height: 600px;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -184,8 +184,12 @@ div.finished{
   }
 }
 
+article{
+  min-height: 1000px;
+}
+
 .trip__area .col-sm-6{
-  min-height: 600px;
+  min-height: 1000px;
   text-align: left;
   padding-top: 30px;
 }
@@ -201,6 +205,8 @@ div.finished{
   margin: 0 0 30px 50px;
   font-size: 18px;
   line-height: 1.5em;
+  padding-right: 10px;
+  text-align: justify;
 }
 
 .trip_icon{
@@ -208,6 +214,10 @@ div.finished{
   width: 50px;
   height: 50px;
   border: solid 0.5px rgb(160, 160, 160);
+}
+
+.similar_area{
+  margin-top: 50px;
 }
 
 .comment__area{
@@ -232,9 +242,12 @@ div.finished{
   border: solid 0.5px rgb(160, 160, 160);
 }
 
+#comment_content{
+  height: 100px;
+}
 .list{
   width: 70%;
-  min-height: 100px;
+  min-height: 150px;
   margin: 0 0 20px 50px;
   padding: 20px;
   background-color: aliceblue;
@@ -251,6 +264,37 @@ div.finished{
   margin: 0 0 50px 50px;
   border: solid 0.5px rgb(160, 160, 160);
 
+}
+
+#map {
+  height: 350px;
+  max-width: 600px;
+  margin: 0 50px;
+}
+
+.gm-style-iw{
+  width: 100px;
+  height: 50px;
+  padding: 5px;
+}
+
+.gm-style .gm-style-iw{
+  border-radius: 25px;
+}
+
+.gm-style-iw h6{
+  font-size: 9px;
+  margin: 0 auto;
+}
+
+.map_icon{
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.gm-ui-hover-effect{
+  display: none!important; //closeボタン非表示
 }
 
 
@@ -291,33 +335,3 @@ div.finished{
 //   }
 // }
 // ---------------------------
-#map {
-  height: 350px;
-  max-width: 550px;
-  margin: 10px auto;
-}
-
-.gm-style-iw{
-  width: 100px;
-  height: 50px;
-  padding: 5px;
-}
-
-.gm-style .gm-style-iw{
-  border-radius: 25px;
-}
-
-.gm-style-iw h6{
-  font-size: 11px;
-  margin: 0 auto;
-}
-
-.map_icon{
-  width: 30px;
-  border-radius: 50%;
-  margin-right: 5px;
-}
-
-.gm-ui-hover-effect{
-  display: none!important; //closeボタン非表示
-}
