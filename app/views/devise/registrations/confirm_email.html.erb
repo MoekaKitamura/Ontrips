@@ -9,4 +9,6 @@
 
 <h2><i class="far fa-envelope"></i></h2>
 
-<%= link_to 'letter_opener', letter_opener_web_path if Rails.env.development? %>
+<% if  Rails.env.development? %>
+  <%= link_to 'letter_opener', letter_opener_web_path %>
+<% end %>

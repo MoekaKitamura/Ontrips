@@ -166,7 +166,7 @@
 
   Trip.create!(
     id: 3,
-    title: "ドバイでラクダに乗りたい",
+    title: "ドバイでラクダに乗りたい🐫",
     start_on: "2021-12-10",
     finish_on: "2021-12-26",
     flexible: false,
@@ -196,7 +196,7 @@
     flexible: false,
     description: "今回初めてヨーロッパに行きます！クリスマスを本場の北ヨーロッパで過ごしたくて、旅することに決めました！一緒にいろんな貴重な体験しましょうー！！",
     goal: false,
-    user_id: 5,
+    user_id: 2,
     place_id: 124
   )
   
@@ -247,8 +247,8 @@
 
   Member.create!(
     as: 1,
-    user_id: 4,
-    trip_id: 4,
+    user_id: 2,
+    trip_id: 3,
   )
 
   Member.create!(
@@ -256,6 +256,7 @@
     user_id: 5,
     trip_id: 4,
   )
+
 
 # comment
   Comment.create!(
@@ -323,15 +324,15 @@
   Message.create!(
     content: "こんにちは",
     talk_id: 1,
-    user_id: 2,
+    user_id: 1,
     read: true,
   )
 
   Message.create!(
     content: "はじめまして！",
     talk_id: 1,
-    user_id: 1,
-    read: true,
+    user_id: 2,
+    read: false,
   )
 
   Message.create!(
