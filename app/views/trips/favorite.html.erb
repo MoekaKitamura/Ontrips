@@ -4,7 +4,7 @@
   <ul class="cards">
     <% @favorites.each do |favorite| %>
       <li>
-        <%= link_to trip_path(favorite.trip_id), class:"card" do %>
+        <%= link_to trip_path(favorite.trip_id), data: {"turbolinks" => false}, class:"card" do %>
           <h4><%= favorite.trip.title %></h4>
           <div class="place">
             <%= favorite.trip.place.name_jp unless favorite.trip.place.ancestry&.include?('/') %>

@@ -1,98 +1,208 @@
+#header{
+  width:100%;
+  height: 80vh;
+  position: relative;
+} 
+
+#container{
+  position: relative;
+  z-index:1;
+  background:#C0E1E1;
+  padding-bottom: 100px;
+  text-align: center;
+  min-height: min-content;
+}
 
 .top__header{
-  height: 500px;
+  width:100%;
+  // height: 500px;
   // background-image: url("nyc.jpg");
   // background-size: 100% auto;
   // background-position: left top;
   // background-repeat: no-repeat;
   padding: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
 }
 
 .top__button{
   margin: 50px;
 }
+
 .top__main{
   max-width: 1500px;
-  min-height: 1000px;
-  position: relative;
-  background: rgb(255, 250, 235);
   margin: 0 auto;
 }
-.top__about1{
-  width: 600px;
-  // position: absolute;
-  // right: 0;
+
+.top__about{
+  display: flex;
 }
-.top__about1 p{
-  width: 600px;
-  position: absolute;
-  right: 0;
-  text-align: left;
-  padding: 50px;
-  // float: left;
+
+.top__about .content{
+  padding: 100px;
+}
+
+.content h4,.content p{
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+.content h4{
+  padding: 20px 0 ;
 }
 
 .top__main img{
   width: 600px;
-  float: left;
   padding: 50px;
 }
+
+.start_your_trip{
+  padding-top: 100px;
+}
+
+/*========= スクロールダウンのためのCSS ===============*/
+/*=== 9-1-4 矢印が動いてスクロールを促す  ====*/
+
+/*スクロールダウン全体の場所*/
+.scrolldown4{
+  /*描画位置※位置は適宜調整してください*/
+  position:absolute;
+  bottom:1%;
+  right:50%;
+  /*矢印の動き1秒かけて永遠にループ*/
+  animation: arrowmove 1s ease-in-out infinite;
+}
+
+/*下からの距離が変化して全体が下→上→下に動く*/
+@keyframes arrowmove{
+    0%{bottom:1%;}
+    50%{bottom:3%;}
+    100%{bottom:1%;}
+}
+
+/*Scrollテキストの描写*/
+.scrolldown4 span{
+  /*描画位置*/
+  position: absolute;
+  left:-20px;
+  bottom:10px;
+  /*テキストの形状*/
+  color: rgb(255, 194, 144);
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  /*縦書き設定*/
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+/* 矢印の描写 */
+.scrolldown4:before {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  right: -6px;
+  /*矢印の形状*/
+  width: 1px;
+  height: 20px;
+  background: rgb(255, 194, 144);
+  transform: skewX(-31deg);
+}
+
+.scrolldown4:after{
+  content:"";
+  /*描画位置*/
+  position: absolute;
+  bottom:0;
+  right:0;
+  /*矢印の形状*/
+  width:1px;
+  height: 50px;
+  background:rgb(255, 194, 144);
+}
+
+/*========= 画像使う時に使えるかも ===============*/
+
+// #header:before{
+// content: '';
+// position:fixed;
+// top:0;
+// left:0;
+// z-index:-1;
+// width:100%;
+// height: 100vh;
+// /*背景画像設定*/
+// // background:url("https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/9-1-4/img/01.jpg") no-repeat center;
+// background-size:cover;
+// }
+
+// @media screen and (max-width:768px){
+
+//   #header,
+//   #header:before{
+// height: 90vh;    
+//   }
+  
 /*========= 手書きアニメLoadingのためのCSS ===============*/
 
-/* Loading背景画面設定　*/
-#splash {
-  /*fixedで全面に固定*/
-position: fixed;
-width: 100%;
-height: 100%;
-z-index: 999;
-background:#333;
-text-align:center;
-color:#fff;
-}
+// /* Loading背景画面設定　*/
+// #splash {
+//   /*fixedで全面に固定*/
+// position: fixed;
+// width: 100%;
+// height: 100%;
+// z-index: 999;
+// background:#333;
+// text-align:center;
+// color:#fff;
+// }
 
-/* Loading画像中央配置　*/
-#splash_logo {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
+// /* Loading画像中央配置　*/
+// #splash_logo {
+// position: absolute;
+// top: 50%;
+// left: 50%;
+// transform: translate(-50%, -50%);
+// }
 
-/* Loading アイコンの大きさ設定　*/
-#splash_logo svg{
-width:300px;
-}
+// /* Loading アイコンの大きさ設定　*/
+// #splash_logo svg{
+// width:300px;
+// }
 
-/*========= SVG操作手書き風にするためのCSS ===============*/
+// /*========= SVG操作手書き風にするためのCSS ===============*/
 
-#mask .st0{
-  fill:none;
-  stroke:#fff;
-  stroke-width:90;/*線の太さを指定する*/
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  stroke-miterlimit:10;
-  stroke-dasharray: 1500; /* 線の間隔を指定する */
-  stroke-dashoffset:1500; /* 線の位置を指定する */
-}
+// #mask .st0{
+//   fill:none;
+//   stroke:#fff;
+//   stroke-width:90;/*線の太さを指定する*/
+//   stroke-linecap:round;
+//   stroke-linejoin:round;
+//   stroke-miterlimit:10;
+//   stroke-dasharray: 1500; /* 線の間隔を指定する */
+//   stroke-dashoffset:1500; /* 線の位置を指定する */
+// }
 
-/*========= レイアウトのためのCSS ===============*/
+// /*========= レイアウトのためのCSS ===============*/
 
-#container{
-  width:100%;
-  height: 100vh;
-  background: #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+// #container{
+//   width:100%;
+//   height: 100vh;
+//   background: #ccc;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center;
+// }
 
-a{
-  color: #333;
-}
+// a{
+//   color: #333;
+// }
 
-a:hover{
-   text-decoration: none;   
-}
+// a:hover{
+//    text-decoration: none;   
+// }
+// }

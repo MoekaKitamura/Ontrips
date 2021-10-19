@@ -4,7 +4,7 @@
   <ul class="cards">
     <% @joining.each do |join| %>
       <li>
-        <%= link_to trip_path(join.trip_id), class:"card" do %>
+        <%= link_to trip_path(join.trip_id), data: {"turbolinks" => false}, class:"card" do %>
           <h4><%= join.trip.title %></h4>
           <div class="place">
             <%= join.trip.place.name_jp unless join.trip.place.ancestry&.include?('/') %>
