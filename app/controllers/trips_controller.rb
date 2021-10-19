@@ -19,7 +19,8 @@ class TripsController < ApplicationController
     @members = @trip.members
     @comments = @trip.comments
     @comment = @trip.comments.build
-    @similar = Trip.where(place_id: @country.id).where.not(id: @trip.id).order(updated_at: :desc).limit(3)
+    @similar = Trip.where(place_id: @country.id).or(Trip.where(place_id: @country.child_ids))
+                  .where.not(id: @trip.id).order(updated_at: :desc).limit(3)
     @visiters = @members.where(as: 1).count
     @locals = @members.where(as: 2).count
     # map ---
