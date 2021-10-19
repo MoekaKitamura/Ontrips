@@ -81,7 +81,7 @@
     birthday: "1994-07-11",
     first_language: "日本語",
     second_language: "英語",
-    introduction: "こんにちは！福岡出身のMoekaです！ 仕事やプライペート合わせて、渡航暦は10ヶ国です🌏✈️ マレーシアに一人旅に行った時、現地で友達を作って観光したり、ローカルの方と話していろんな体験をしたのがとても楽しかったので、またそんな旅ができたらいいなと思ってます！ぜひ一緒に旅しましょー！😆",
+    introduction: "こんにちは！福岡出身のMoekaです！ 仕事やプライペート合わせて、渡航暦は11ヶ国です🌏✈️ マレーシアに一人旅に行った時、現地で友達を作って観光したり、ローカルの方と話していろんな体験をしたのがとても楽しかったので、またそんな旅ができたらいいなと思ってます！ぜひ一緒に旅しましょー！😆",
     place_id: 661,  #福岡
   )
   profile1.save
@@ -117,7 +117,7 @@
     birthday: "1990-07-11",
     first_language: "英語",
     second_language: "スペイン語",
-    introduction: "Hi. My name's Phil. I've been living in Japan for 6 years and teaching at ACE since 2011. I'm from England and my hometown is Liverpool. I'm sure Liverpool needs very little introduction as its also the home of the Beatles. Penny Lane is a 5 minute walk from my house and I used to play football on Strawberry fields!",
+    introduction: "Hi. My name's Phil. I've been living in Japan for 6 years. I'm from England and my hometown is Liverpool. I'm sure Liverpool needs very little introduction as its also the home of the Beatles. Penny Lane is a 5 minute walk from my house and I used to play football on Strawberry fields!",
     place_id: 40,  #イギリス
   )
   profile4.save

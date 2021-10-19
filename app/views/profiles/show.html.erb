@@ -1,4 +1,5 @@
 <div class="trip__area">
+<article>
   <div class="col-sm-6">
     <%= image_tag @profile.icon.url, class: "profile_icon" %> 
     <h1>
@@ -62,6 +63,7 @@
     </div>
 
   </div>
+</article>
 </div>
 
 <% if @profile.user.id == current_user.id %>

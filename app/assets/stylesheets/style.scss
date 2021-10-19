@@ -169,7 +169,8 @@ footer p{
 .trip__area{
   border: solid 1px #000;
   max-width: 1600px;
-  min-height: 600px;
+  // min-height: 600px;
+  // height: auto;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 20px;
@@ -189,9 +190,9 @@ article{
 }
 
 .trip__area .col-sm-6{
-  min-height: 1000px;
+  min-height: min-content;
   text-align: left;
-  padding-top: 30px;
+  padding: 30px 0;
 }
 
 .trip__area h1{

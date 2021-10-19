@@ -149,7 +149,7 @@
         <div class="list">
           <ul>
             <% @similar.each do |similar| %>
-              <%= link_to trip_path(similar.id) do %>
+              <%= link_to trip_path(similar.id), data: {"turbolinks" => false} do %>
                 <li><%= similar.title %></li>
               <% end %>
             <% end %>
