@@ -23,6 +23,15 @@ class User < ApplicationRecord
     end
   end
 
+  def self.guest_admin
+    find_or_create_by(email: 'guest_admin@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = "Guest Admin"
+      user.admin = true
+      user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+    end
+  end
+
   validates :name, presence: true, length: { in: 2..25 }
 
 end

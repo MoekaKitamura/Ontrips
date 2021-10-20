@@ -11,15 +11,18 @@ class Trip < ApplicationRecord
 
   belongs_to :place
 
-  # validates :title, presence: true, length: { maximum: 35 }
-  # validate :not_before_today
-  # validate :not_before_start
-
-  # def not_before_today
-  #   errors.add(:start_on, 'は本日以降で入力してください') if start_on.nil? || start_on < Date.today
-  # end
-
-  # def not_before_start
-  #   errors.add(:finish_on, 'は出発日以降で入力してください') if finish_on < start_on
-  # end
+  validates :title, presence: true, length: { maximum: 35 }
+  validate :not_before_today
+  validate :not_before_start
+  
+  def not_before_today
+    errors.add(:start_on, 'は本日以降で入力してください') if start_on.nil? || start_on < Date.today
+  end
+  
+  def not_before_start
+    if finish_on? && start_on?
+      errors.add(:finish_on, 'は出発日以降で入力してください') if finish_on < start_on
+    end
+  end
+  
 end

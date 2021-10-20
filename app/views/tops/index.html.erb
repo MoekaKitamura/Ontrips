@@ -13,17 +13,22 @@
     </div>
     <p>Ontripsは、一緒に観光する仲間を探し、また、現地の方とも繋がれるアプリです。</p>
 
-    <div class="top__button">
-      <%= link_to new_user_session_path, class:"btntextchange" do %>
-        <span>Log in</span><span>ログイン</span>
-      <% end %>
-      <%= link_to new_user_registration_path, class:"btntextchange" do %>
-        <span>Sign up</span><span>新規登録</span>
-      <% end %>
-      <%= link_to users_guest_sign_in_path, class:"btntextchange", method: :post do %>
-        <span>Guest</span><span>ゲストログイン</span>
-      <% end %>
-    </div>
+    <% unless user_signed_in? %>
+      <div class="top__button">
+        <%= link_to new_user_session_path, class:"btntextchange" do %>
+          <span>Log in</span><span>ログイン</span>
+        <% end %>
+        <%= link_to new_user_registration_path, class:"btntextchange" do %>
+          <span>Sign up</span><span>新規登録</span>
+        <% end %>
+        <%= link_to users_guest_sign_in_path, class:"btntextchange", method: :post do %>
+          <span>Guest</span><span>ゲストログイン</span>
+        <% end %>
+        <%= link_to users_guest_admin_sign_in_path, class:"btntextchange", method: :post do %>
+          <span>Guest Admin</span><span>ゲスト管理者ログイン</span>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
   <div class="scrolldown4"><span>Scroll</span></div>
@@ -67,9 +72,9 @@
 
   <h3>このアプリで、旅仲間を見つけ、世界中を旅しよう！！✈️🌏</h3>
 
+  <% unless user_signed_in? %>
     <h3 class="start_your_trip">Start your Trip!!</h3>
-
-      <div class="top__button">
+    <div class="top__button">
       <%= link_to new_user_session_path, class:"btntextchange" do %>
         <span>Log in</span><span>ログイン</span>
       <% end %>
@@ -79,6 +84,9 @@
       <%= link_to users_guest_sign_in_path, class:"btntextchange", method: :post do %>
         <span>Guest</span><span>ゲストログイン</span>
       <% end %>
-
-</div>
+      <%= link_to users_guest_admin_sign_in_path, class:"btntextchange", method: :post do %>
+        <span>Guest Admin</span><span>ゲスト管理者ログイン</span>
+      <% end %>
+    </div>
+  <% end %>
 <!--/container--></div> 
