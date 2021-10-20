@@ -65,7 +65,7 @@ class TripsController < ApplicationController
     if @trip.save
       redirect_to @trip, notice: t('notice.create', model: t('trip'))
     else
-      redirect_to new_trip_path, alert: "国名が未入力です！！"
+      redirect_to new_trip_path, alert: "未入力の項目または不正な入力があります"
       # render :new
     end
   end
@@ -76,7 +76,7 @@ class TripsController < ApplicationController
     if @trip.update(trip_params)
       redirect_to @trip, notice: t('notice.update', model: t('trip'))
     else
-      redirect_to edit_trip_path, alert: "国名が未入力です！！"
+      redirect_to edit_trip_path, alert: "未入力の項目または不正な入力があります"
       # render :edit
     end
   end
