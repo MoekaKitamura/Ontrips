@@ -24,7 +24,7 @@
             <p><i class="fas fa-child"></i></p>
           <% end %>
         </div>
-          <h4><%= trip.title %></h4>
+          <h4 class="trip_title"><%= trip.title %></h4>
           <div class="place">
             <%= trip.place.name_jp unless trip.place.ancestry&.include?('/') %>
             <%= trip.place.parent.name_jp if trip.place.ancestry&.include?('/') %>
