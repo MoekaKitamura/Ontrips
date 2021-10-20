@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 RSpec.describe Trip, type: :system do
@@ -56,6 +55,7 @@ RSpec.describe Trip, type: :system do
         trip = FactoryBot.create(:trip, user_id: @user.id, place_id: to_city1.id)
         visit trip_path(trip.id)
         click_on "Delete"
+        page.driver.browser.switch_to.alert.accept
         expect(page).to have_content '旅行を削除しました！'
         expect(page).to have_content 'Find Trips'
       end

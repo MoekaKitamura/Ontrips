@@ -178,7 +178,7 @@
 <% if @trip.user.id == current_user.id %>
   <p>
     <%= link_to 'Edit', edit_trip_path(@trip) %> |
-    <%= link_to "Delete", trip_path, method: :delete %>
+    <%= link_to "Delete", trip_path, method: :delete, data: { confirm: '本当に削除しますか？' } %>
   </p>
 <% end %>
 
