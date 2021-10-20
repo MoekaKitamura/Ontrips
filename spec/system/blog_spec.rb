@@ -28,6 +28,17 @@ RSpec.describe Blog, type: :system do
       end
     end
 
+    context 'ブログの投稿に失敗した場合' do
+      it 'エラーメッセージが表示される' do
+        visit new_blog_path
+        fill_in 'blog_title', with: ''
+        fill_in 'blog_content', with: ''
+        click_on "登録する"
+        expect(page).to have_content 'タイトルを入力してください'
+        expect(page).to have_content '内容を入力してください'
+      end
+    end
+
     context 'ブログを編集した場合' do
       it '変更内容が反映される' do
         blog = FactoryBot.create(:blog, user_id: @user.id)
@@ -68,6 +79,14 @@ RSpec.describe Blog, type: :system do
 
     let!(:blog1) { FactoryBot.create(:blog, user_id: @user1.id) }
     let!(:blog2) { FactoryBot.create(:blog2, user_id: @user2.id) }
+
+    context '他人のブログの詳細ページにアクセスした場合' do
+      it 'editとdeleteのボタンが表示されない' do
+        visit edit_blog_path(blog2.id)
+        expect(page).not_to have_link 'Edit'
+        expect(page).not_to have_link 'Delete'
+      end
+    end
 
     context '他人のブログの編集ページにアクセスした場合' do
       it 'エラーメッセージが出て、アクセスできない' do

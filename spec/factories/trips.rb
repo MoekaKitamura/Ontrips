@@ -12,4 +12,11 @@ FactoryBot.define do
     finish_on { "2023-8-11" }
     description { "Sydney" }
   end
+
+  factory :third_trip, class: Trip do
+    title { "Trip3" }
+    start_on { "2024-7-11" }
+    finish_on { "2024-8-11" }
+    description { "Perth" }
+  end
 end

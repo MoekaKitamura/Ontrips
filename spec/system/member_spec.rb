@@ -8,6 +8,7 @@ RSpec.describe "Member", type: :system do
   let!(:to_country) { to_region.children.create(code: "AU", name_jp: "オーストラリア", name_en: "Australia") }
   let!(:to_city1) { to_country.children.create(code: "AU", name_jp: "メルボルン", name_en: "Melbourne") }
   let!(:to_city2) { to_country.children.create(code: "AU", name_jp: "シドニー", name_en: "Sydney") }
+  let!(:to_city3) { to_country.children.create(code: "AU", name_jp: "パース", name_en: "Perth") }
 
   describe '旅行の参加機能' do
     before do
@@ -25,6 +26,7 @@ RSpec.describe "Member", type: :system do
   
     let!(:trip1) { FactoryBot.create(:trip, user_id: @user2.id, place_id: to_city1.id) }
     let!(:trip2) { FactoryBot.create(:second_trip, user_id: @user2.id, place_id: to_city2.id, goal:true) }
+    let!(:trip3) { FactoryBot.create(:third_trip, user_id: @user1.id, place_id: to_city3.id) }
 
     context '旅行者として参加した場合' do
       it '旅のメンバーに名前が表示、ボタンが「参加キャンセル」に変わる' do
@@ -61,6 +63,14 @@ RSpec.describe "Member", type: :system do
         click_on "一緒に旅をする"
         expect(page).to have_content 'この旅行は終了しています。終了した旅行に参加できません'
         expect(page).to have_content '一緒に旅をする'
+      end
+    end
+
+    context '自分の投稿にアクセスした場合' do
+      it '参加するがボタンが表示されない' do
+        visit trip_path(trip3.id)
+        expect(page).not_to have_button '一緒に旅をする'
+        expect(page).not_to have_button 'ローカルとして参加'
       end
     end
 

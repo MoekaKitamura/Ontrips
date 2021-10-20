@@ -23,12 +23,12 @@ RSpec.describe "Favorite", type: :system do
       click_button "ログイン"
     end
   
-    let!(:trip1) { FactoryBot.create(:trip, user_id: @user2.id, place_id: to_city1.id) }
+    let!(:trip1) { FactoryBot.create(:trip, user_id: @user1.id, place_id: to_city1.id) }
     let!(:trip2) { FactoryBot.create(:second_trip, user_id: @user2.id, place_id: to_city2.id, goal:false) }
 
     context '旅行をお気に入りした場合' do
       it 'お気に入り登録され、ボタンが「お気に入り解除」に変わる' do
-        visit trip_path(trip1.id)
+        visit trip_path(trip2.id)
         click_on "お気に入りする"
         expect(page).to have_content 'Admin Userさんの旅をお気に入りしました'
         expect(page).to have_content 'お気に入り解除'
@@ -37,11 +37,18 @@ RSpec.describe "Favorite", type: :system do
 
     context 'お気に入りを解除した場合' do
       it 'お気に入りが解除され、ボタンが「お気に入りする」に変わる' do
-        visit trip_path(trip1.id)
+        visit trip_path(trip2.id)
         click_on "お気に入りする"        
         click_on "お気に入り解除"
         expect(page).to have_content 'Admin Userさんの旅のお気に入りを解除しました'
         expect(page).to have_content 'お気に入りする'
+      end
+    end
+
+    context '自分の投稿にアクセスした場合' do
+      it 'お気に入りがボタンが表示されない' do
+        visit trip_path(trip1.id)
+        expect(page).not_to have_button 'お気に入りする'
       end
     end
 
