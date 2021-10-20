@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :user do
-    name { "一般ユーザー" }
+    name { "General User" }
     email { "general@ex.com" }
     password { "password" }
     admin { false }
@@ -8,7 +8,7 @@ FactoryBot.define do
   end
 
   factory :second_user, class: User do
-    name { "管理ユーザー" }
+    name { "Admin User" }
     email { "admin@ex.com" }
     password { "password" }
     admin { true }
