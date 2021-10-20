@@ -22,7 +22,7 @@ RSpec.describe Trip, type: :system do
     end
 
     context '旅行を投稿した場合' do
-      it '作成した掲示板が表示される' do
+      it '作成した投稿内容が表示される' do
         visit new_trip_path
         fill_in 'trip_title', with: 'タイトル'
         select 'オセアニア', from: 'place_region'
@@ -52,7 +52,7 @@ RSpec.describe Trip, type: :system do
     end
 
     context '旅行を削除した場合' do
-      it '投稿内容が削除される' do
+      it '投稿が削除される' do
         trip = FactoryBot.create(:trip, user_id: @user.id, place_id: to_city1.id)
         visit trip_path(trip.id)
         click_on "Delete"
@@ -62,7 +62,7 @@ RSpec.describe Trip, type: :system do
     end
   end
 
-  describe 'Trip一覧表示機能' do
+  describe '旅行一覧表示機能' do
     before do
       @user = FactoryBot.create(:second_user)
       profile = @user.build_profile(id: @user.id, place_id: from_city.id)
@@ -83,16 +83,16 @@ RSpec.describe Trip, type: :system do
        expect(page).to have_content 'Trip2'
       end
     end
-    context '掲示板が作成日時の降順に並んでいる場合(デフォルト)' do
-      it 'シドニー(2個目)が一番上に表示される' do
-        visit trips_path
-        trip_list = all('.trip_title')
-        expect(trip_list[0]).to have_content 'Trip2'
-        expect(trip_list[1]).to have_content 'Trip1'
-      end
-    end
-    context '掲示板が出発日の昇順に並んでいる場合' do
-      it 'メルボルン(1個目)が一番上に表示される' do
+    # context '掲示板が作成日時の降順に並んでいる場合(デフォルト)' do # 作成順が毎回違うため、削除
+    #   it 'シドニー(2個目)が一番上に表示される' do
+    #     visit trips_path
+    #     trip_list = all('.trip_title')
+    #     expect(trip_list[0]).to have_content 'Trip2'
+    #     expect(trip_list[1]).to have_content 'Trip1'
+    #   end
+    # end
+    context '出発日の昇順に並び替えをした場合' do
+      it '出発日が1番早い、メルボルンが一番上に表示される' do
         visit trips_path
         click_on "出発日順に並び替え"
         sleep 5
@@ -101,8 +101,8 @@ RSpec.describe Trip, type: :system do
         expect(trip_list[1]).to have_content 'Trip2'
       end
     end
-    context 'シドニーであいまい検索をした場合' do
-      it '検索ワードでヒットする掲示板のみ表示される' do
+    context '「シドニー」であいまい検索をした場合' do
+      it '検索ワードでヒットするシドニーの旅行のみ表示される' do
         visit trips_path
         fill_in 'q_place_name_jp_or_place_name_en_or_title_or_description_cont', with: 'シドニー'
         click_on "検索"

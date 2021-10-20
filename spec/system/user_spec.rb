@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'ユーザー管理機能', type: :system do
+RSpec.describe User, type: :system do
   let!(:region) { Place.create(name_jp: "東アジア", name_en: "East Asia") }
   let!(:country) { region.children.create(code: "JP", name_jp: "日本", name_en: "Japan") }
   let!(:city) { country.children.create(code: "JP", name_jp: "福岡", name_en: "Fukuoka") }
@@ -34,6 +34,7 @@ RSpec.describe 'ユーザー管理機能', type: :system do
       it '自分のアカウント編集ページが見れる' do
         visit edit_user_registration_path
         expect(page).to have_content 'Edit Your Account'
+        expect(page).to have_field 'user_email', with: 'general@ex.com'
       end
     end
     context 'ログイン後、旅行掲示板一覧ページにアクセスした場合' do
