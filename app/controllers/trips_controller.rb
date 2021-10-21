@@ -76,7 +76,7 @@ class TripsController < ApplicationController
     if @trip.update(trip_params)
       redirect_to @trip, notice: t('notice.update', model: t('trip'))
     else
-      redirect_to edit_trip_path, alert: "未入力の項目または不正な入力があります"
+      redirect_to edit_trip_path, alert: "#{@trip.errors.full_messages.join('。')}。"
       # render :edit
     end
   end

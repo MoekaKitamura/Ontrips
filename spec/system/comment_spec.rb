@@ -48,7 +48,6 @@ RSpec.describe Comment, type: :system do
         comment = Comment.create(content: "NICE!!", user_id: @user.id, trip_id: trip1.id)
         visit trip_path(trip1.id)
         find("a[href='/trips/#{trip1.id}/comments/#{comment.id}/edit'").click
-        # fill_in 'comment_content_<%= trip1.id %>', with: 'AWESOME!!'
         fill_in "comment_content_#{trip1.id}", with: 'AWESOME!!'
         click_on "更新する"
         expect(page).to have_content 'AWESOME!!'

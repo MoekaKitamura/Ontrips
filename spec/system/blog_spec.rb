@@ -63,7 +63,7 @@ RSpec.describe Blog, type: :system do
     end
   end
 
-  describe 'ブログ アクセス制限・検索機能' do
+  describe 'ブログ 一覧・アクセス制限・検索機能' do
     before do
       @user1 = FactoryBot.create(:user)
       profile = @user1.build_profile(id: @user1.id, place_id: city.id)
@@ -80,9 +80,17 @@ RSpec.describe Blog, type: :system do
     let!(:blog1) { FactoryBot.create(:blog, user_id: @user1.id) }
     let!(:blog2) { FactoryBot.create(:blog2, user_id: @user2.id) }
 
+    context '一覧画面に遷移した場合' do
+      it '投稿されているブログが一覧で表示される' do
+       visit blogs_path
+       expect(page).to have_content 'Blog1'
+       expect(page).to have_content 'Blog2'
+      end
+    end
+
     context '他人のブログの詳細ページにアクセスした場合' do
       it 'editとdeleteのボタンが表示されない' do
-        visit edit_blog_path(blog2.id)
+        visit blog_path(blog2.id)
         expect(page).not_to have_link 'Edit'
         expect(page).not_to have_link 'Delete'
       end
