@@ -94,8 +94,8 @@ RSpec.describe User, type: :system do
     context 'ログアウトした場合' do
       it 'ログイン画面へ遷移' do
         visit root_path
-        click_on "Account"
-        click_on "Log out"
+        click_on "MENU"
+        click_on "ログアウト"
         sleep 1.0
         page.driver.browser.switch_to.alert.accept
         expect(current_path).to eq root_path

@@ -58,7 +58,7 @@ RSpec.describe Blog, type: :system do
         click_on '削除'
         page.driver.browser.switch_to.alert.accept
         expect(page).to have_content 'ブログを削除しました！'
-        expect(page).to have_content 'Travel Story'
+        expect(page).to have_content 'Travel Experience'
       end
     end
   end
