@@ -1,44 +1,44 @@
-# # Place   親21, 子249, 孫481 = トータル751
-#   require "csv"
+# Place   親21, 子249, 孫481 = トータル751
+  require "csv"
 
-#   CSV.foreach('db/region.csv', headers: true) do |row|
-#     Place.create(
-#       name_jp: row['name_jp'],
-#       name_en: row['name_en'],
-#     )
-#   end
+  CSV.foreach('db/region.csv', headers: true) do |row|
+    Place.create(
+      name_jp: row['name_jp'],
+      name_en: row['name_en'],
+    )
+  end
 
-#   @parents = Place.where(ancestry: nil)
+  @parents = Place.where(ancestry: nil)
     
-#   CSV.foreach('db/country.csv', headers: true) do |row|
-#     region = row['region']
-#     parent = @parents.find_by(name_jp: region)
-#       parent.children.create(
-#       code: row['code'],
-#       name_jp: row['name_jp'],
-#       name_en: row['name_en'],
-#       )
-#   end
+  CSV.foreach('db/country.csv', headers: true) do |row|
+    region = row['region']
+    parent = @parents.find_by(name_jp: region)
+      parent.children.create(
+      code: row['code'],
+      name_jp: row['name_jp'],
+      name_en: row['name_en'],
+      )
+  end
 
-#   CSV.foreach('db/city.csv', headers: true) do |row|
-#     country = row['code']
-#     child = Place.find_by(code: country)
-#       child.children.create(
-#       code: row['code'],
-#       name_jp: row['name_jp'],
-#       name_en: row['name_en'],
-#       )
-#   end
+  CSV.foreach('db/city.csv', headers: true) do |row|
+    country = row['code']
+    child = Place.find_by(code: country)
+      child.children.create(
+      code: row['code'],
+      name_jp: row['name_jp'],
+      name_en: row['name_en'],
+      )
+  end
 
-# # 自動入力されなかった4箇所の緯度経度(country)
-#   um = Place.where(name_jp: "合衆国領有小離島")
-#   um.update(latitude: 20.423774366032127, longitude: 166.89544468782452)
-#   va = Place.where(name_jp: "バチカン市国")
-#   va.update(latitude: 41.90356049319624, longitude: 12.452661989558097)
-#   ps = Place.where(name_jp: "パレスチナ")
-#   ps.update(latitude: 32.132514367266744, longitude: 35.22118611556339)
-#   mk = Place.where(name_jp: "マケドニア共和国")
-#   mk.update(latitude: 41.64239710419572, longitude: 21.729136413080525)
+# 自動入力されなかった4箇所の緯度経度(country)
+  um = Place.where(name_jp: "合衆国領有小離島")
+  um.update(latitude: 20.423774366032127, longitude: 166.89544468782452)
+  va = Place.where(name_jp: "バチカン市国")
+  va.update(latitude: 41.90356049319624, longitude: 12.452661989558097)
+  ps = Place.where(name_jp: "パレスチナ")
+  ps.update(latitude: 32.132514367266744, longitude: 35.22118611556339)
+  mk = Place.where(name_jp: "マケドニア共和国")
+  mk.update(latitude: 41.64239710419572, longitude: 21.729136413080525)
 
 # user
   user1 = User.create!(
