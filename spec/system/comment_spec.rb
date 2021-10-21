@@ -32,13 +32,24 @@ RSpec.describe Comment, type: :system do
       end
     end
 
+    context 'コメントを入力せずに送信した場合' do
+      it '送信できず、コメントが表示されない' do
+        visit trip_path(trip1.id)
+        fill_in 'comment_content', with: ''
+        click_on "Comment!"
+        comment_list = all('.comment li')
+        expect(comment_list).not_to have_selector '.comment li'
+        expect(page).to have_content 'コメントを入力してください'
+      end
+    end
+
     context 'コメントを編集した場合' do
       it '変更内容が反映される' do
         comment = Comment.create(content: "NICE!!", user_id: @user.id, trip_id: trip1.id)
         visit trip_path(trip1.id)
         find("a[href='/trips/#{trip1.id}/comments/#{comment.id}/edit'").click
         # fill_in 'comment_content_<%= trip1.id %>', with: 'AWESOME!!'
-        fill_in 'comment_content_#{trip1.id}', with: 'AWESOME!!'
+        fill_in "comment_content_#{trip1.id}", with: 'AWESOME!!'
         click_on "更新する"
         expect(page).to have_content 'AWESOME!!'
       end
