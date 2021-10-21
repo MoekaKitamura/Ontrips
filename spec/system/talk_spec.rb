@@ -34,6 +34,7 @@ RSpec.describe Talk, type: :system do
         click_on "メッセージを送る"
         fill_in 'message_content', with: ''
         click_button "Send"
+        sleep 1.0
         message_list = all('.fukidasi')
         expect(message_list).not_to have_selector '.fukidasi'
       end

@@ -37,6 +37,7 @@ RSpec.describe Comment, type: :system do
         visit trip_path(trip1.id)
         fill_in 'comment_content', with: ''
         click_on "Comment!"
+        sleep 1.0
         comment_list = all('.comment li')
         expect(comment_list).not_to have_selector '.comment li'
         expect(page).to have_content 'コメントを入力してください'

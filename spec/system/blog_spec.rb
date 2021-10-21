@@ -108,6 +108,7 @@ RSpec.describe Blog, type: :system do
         visit blogs_path
         fill_in 'q_title_or_content_cont', with: 'Blog1'
         click_on "検索"
+        sleep 1.0
         blog_list = all('.blog_title')
         expect(blog_list[0]).to have_content 'Blog1'
         expect(blog_list[1]).not_to have_content 'Blog2'

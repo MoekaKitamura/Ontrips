@@ -157,6 +157,7 @@ RSpec.describe Trip, type: :system do
         visit trips_path
         fill_in 'q_place_name_jp_or_place_name_en_or_title_or_description_cont', with: 'シドニー'
         click_on "検索"
+        sleep 1.0
         trip_list = all('.trip_title')
         expect(trip_list[0]).to have_content 'Trip2'
         expect(trip_list[1]).not_to have_content 'Trip1'
@@ -168,6 +169,7 @@ RSpec.describe Trip, type: :system do
         visit trips_path
         fill_in 'q_place_name_jp_or_place_name_en_or_title_or_description_cont', with: 'Sydney'
         click_on "検索"
+        sleep 1.0
         trip_list = all('.trip_title')
         expect(trip_list[0]).to have_content 'Trip2'
         expect(trip_list[1]).not_to have_content 'Trip1'
@@ -180,6 +182,7 @@ RSpec.describe Trip, type: :system do
         fill_in 'q_start_on_gteq', with: '002022-01-01'
         fill_in 'q_finish_on_lteq', with: '002022-12-31'
         click_on "検索"
+        sleep 1.0
         trip_list = all('.trip_title')
         expect(trip_list[0]).to have_content 'Trip1'
         expect(trip_list[1]).not_to have_content 'Trip2'
