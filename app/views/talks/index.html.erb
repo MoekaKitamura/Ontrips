@@ -1,5 +1,6 @@
+<h2>Talk</h2>
+<p>ダイレクトメッセージ</p>
 <div class="col-sm-6">
-  <h1>Talks</h1>
   <ul>
     <% @talks.each do |talk| %>
       <% if talk.target_user(current_user).present? %>
@@ -16,7 +17,6 @@
 </div>
 
 <div class="col-sm-6">
-  <h1>Messages</h1>
   <div class=" message__area">
   
   </div>

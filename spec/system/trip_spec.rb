@@ -69,7 +69,7 @@ RSpec.describe Trip, type: :system do
       it '投稿が削除される' do
         trip = FactoryBot.create(:trip, user_id: @user.id, place_id: to_city1.id)
         visit trip_path(trip.id)
-        click_on "Delete"
+        click_on '削除'
         page.driver.browser.switch_to.alert.accept
         expect(page).to have_content '旅行を削除しました！'
         expect(page).to have_content 'Find Trips'
@@ -129,7 +129,7 @@ RSpec.describe Trip, type: :system do
       it '旅を終了する,Edit,Deleteのリンクが表示されない' do
         visit trip_path(trip2.id)
         expect(page).not_to have_link '旅を終了する'
-        expect(page).not_to have_link 'Edit'
+        expect(page).not_to have_link '編集'
         expect(page).not_to have_link 'Delete'
       end
     end

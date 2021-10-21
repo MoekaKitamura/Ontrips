@@ -1,5 +1,6 @@
+<h2>Talk</h2>
+<p>ダイレクトメッセージ</p>
 <div class="col-sm-6">
-  <h1>Talks</h1>
   <ul>
     <% @talks.each do |talk| %>
       <% if talk.target_user(current_user).present? %>
@@ -16,7 +17,6 @@
 </div>
 
 <div class="col-sm-6">
-  <h1>Messages</h1>
   <div class=" message__area">
   <h4><%= @to.name %>のトークルーム</h4>
     <!---メッセージが10件以上あれば以前のメッセージへのリンクを表示する--->
@@ -49,11 +49,11 @@
   <!---会話にひもづくメッセージの入力フォームを投稿者を自分に指定して生成する--->
   <%= form_with(model: [@talk, @message]) do |f| %>
     <div class="field">
-      <%= f.text_area :content, class: "form-control", :placeholder => "Enter your message..." %>
+      <%= f.text_area :content, class: "form-control", :placeholder => "メッセージを入力" %>
     </div>
-      <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+      <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
     <div>
-      <%= f.submit "Send", class:"btntextchange"%>
+      <%= f.submit "送信", class:"btntextchange"%>
     </div>
   <% end %>
 

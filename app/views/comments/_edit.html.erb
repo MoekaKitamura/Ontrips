@@ -1,8 +1,7 @@
 <%= form_with(model: [trip, comment]) do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-      <ul>
+      <h2><%= pluralize(comment.errors.count, "件") %>のエラーが見つかりました</h2>
       <% comment.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>

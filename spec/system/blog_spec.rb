@@ -55,7 +55,7 @@ RSpec.describe Blog, type: :system do
       it '投稿が削除される' do
         blog = FactoryBot.create(:blog, user_id: @user.id)
         visit blog_path(blog.id)
-        click_on "Delete"
+        click_on '削除'
         page.driver.browser.switch_to.alert.accept
         expect(page).to have_content 'ブログを削除しました！'
         expect(page).to have_content 'Travel Story'
@@ -91,7 +91,7 @@ RSpec.describe Blog, type: :system do
     context '他人のブログの詳細ページにアクセスした場合' do
       it 'editとdeleteのボタンが表示されない' do
         visit blog_path(blog2.id)
-        expect(page).not_to have_link 'Edit'
+        expect(page).not_to have_link '編集'
         expect(page).not_to have_link 'Delete'
       end
     end

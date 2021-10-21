@@ -1,9 +1,15 @@
-<h1>Travel Story</h1>
+<h2>Travel Expreance</h2>
+<p>旅行ブログ</p>
+
 <%= search_form_for @q do |f| %>
-  <%= f.search_field :title_or_content_cont, :placeholder => "キーワードで検索"%> 
+  <%= f.search_field :title_or_content_cont, :placeholder => "キーワードで検索" %> 
 <br>
   <%= f.submit '検索', class:"btntextchange search" %>
 <% end %>
+
+<h5><i class="fas fa-pencil-alt"></i> <%= link_to '投稿する', new_blog_path %></h5>
+
+<hr>
 
 <div class="scroll-list jscroll">
   <% @blogs.each do |blog| %>

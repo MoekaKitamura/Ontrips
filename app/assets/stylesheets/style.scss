@@ -3,8 +3,9 @@
 @import 'font-awesome';
 
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: #faf8f8;
+  color: #524c4c;
+  // color: #333;
   // margin-top: 33px;
   font-family: 'Noto Sans JP',sans-serif;
   font-size: 16px;
@@ -17,6 +18,11 @@ h1{ //confirmable
   margin-top: 100px;
 }
 
+h5{
+  text-align: right;
+  margin-right: 5rem;
+  font-size: 1.5rem;
+}
 p{
   margin: 0 0 10px 0;
 }

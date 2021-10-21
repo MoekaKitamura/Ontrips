@@ -1,7 +1,7 @@
 <%= form_with(model: blog, local: true) do |form| %>
   <% if blog.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+      <h2><%= pluralize(blog.errors.count, "件") %>のエラーが見つかりました</h2>
 
       <ul>
       <% blog.errors.full_messages.each do |message| %>
@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%# <%= form.label :title %>
+    <%= form.text_field :title, :placeholder => "タイトル" %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%# <%= form.label :content %>
+    <%= form.text_area :content, :placeholder => '旅の体験談、思い出、注意した方がいいこと・・・等' %>
   </div>
 
 
