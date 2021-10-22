@@ -119,6 +119,7 @@ footer{
   position: absolute;
   bottom: 0;
   display: table;
+  background: #faf8f8;
 }
 
 footer p{
@@ -130,7 +131,7 @@ footer p{
 
 .container{
   position: relative;
-  padding-bottom: 70px;
+  padding: 0 0 70px 0;
   min-height: 100vh;
   box-sizing: border-box;
   width: 100%;

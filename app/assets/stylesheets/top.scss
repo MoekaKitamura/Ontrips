@@ -1,46 +1,59 @@
-#header{
+.top_main{
   width:100%;
   height: 80vh;
   position: relative;
 } 
 
-#container{
+.guide_area{
   position: relative;
   z-index:1;
   background:#C0E1E1;
-  padding-bottom: 100px;
+  padding-bottom: 100px;  
   text-align: center;
   min-height: min-content;
 }
 
-.top__header{
-  width:100%;
-  // height: 500px;
-  // background-image: url("nyc.jpg");
-  // background-size: 100% auto;
-  // background-position: left top;
-  // background-repeat: no-repeat;
-  padding: 100px;
+.top_content{
+  width: 100%;
+  height: 70%;
+  display: flex;
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
+  margin: 0;
+}
+
+.top_description{
+  padding: 100px 0 0 40px;
+}
+
+.app_logo{
+  margin: 0;
+  padding: 20px 0 50px 10px;
+  text-align: left;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+  color: #524c4c;
+  opacity: 0.9;
 }
 
 .top__button{
   margin: 50px;
 }
 
-.top__main{
+.guide_contents{
   max-width: 1500px;
   margin: 0 auto;
 }
 
-.top__about{
+.guide{
   display: flex;
 }
 
-.top__about .content{
+.guide .content{
   padding: 100px;
 }
 
@@ -53,7 +66,7 @@
   padding: 20px 0 ;
 }
 
-.top__main img{
+.guide_contents img{
   width: 600px;
   padding: 50px;
 }
@@ -122,6 +135,17 @@
   width:1px;
   height: 50px;
   background: #524c4c;
+}
+
+.flexslider{
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+}
+.slides img{
+  width: 50%;
+  height: 100px;
+  object-fit: cover;
 }
 
 /*========= 画像使う時に使えるかも ===============*/

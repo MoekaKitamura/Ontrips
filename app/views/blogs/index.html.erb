@@ -7,7 +7,9 @@
   <%= f.submit '検索', class:"btntextchange search" %>
 <% end %>
 
-<h5><i class="fas fa-pencil-alt"></i> <%= link_to '投稿する', new_blog_path %></h5>
+<%= link_to new_blog_path do %>
+  <h5><i class="fas fa-pencil-alt"></i> 投稿する</h5>
+<% end %>
 
 <hr>
 

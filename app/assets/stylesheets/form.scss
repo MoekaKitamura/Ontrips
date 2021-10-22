@@ -29,7 +29,7 @@ input,textarea,select{
   width: 600px;
   height: 50px;
   margin-bottom: 20px;
-  padding: 20px;/*中に余裕ができる*/
+  padding: 10px;/*中に余裕ができる*/
   font-size: 16px;
   border: 1px solid #6F4C5B;
   color: #6F4C5B;
@@ -38,6 +38,13 @@ input,textarea,select{
 
 textarea{
   height: 200px;
+}
+
+#trip_flexible{
+  display: block;
+  width: 5rem;
+  height: 30px;
+  margin: 20px auto 30px 0;
 }
 
 .gender_area label{
@@ -51,6 +58,7 @@ textarea{
   height: 50px;
   line-height: 50px;
   float: left;
+  margin-right: 10px;
 }
 
 .birthday_area select{

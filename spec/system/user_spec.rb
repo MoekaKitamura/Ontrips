@@ -92,13 +92,11 @@ RSpec.describe User, type: :system do
       end
     end
     context 'ログアウトした場合' do
-      it 'ログイン画面へ遷移' do
-        visit root_path
-        click_on "MENU"
-        click_on "ログアウト"
-        sleep 1.0
+      it 'ログイン画面へ遷移', js: true do
+        visit trips_path
+        find("button").click
+        find("#logout").click
         page.driver.browser.switch_to.alert.accept
-        expect(current_path).to eq root_path
         expect(page).to have_content 'ログアウトしました'
         expect(page).to have_content 'Log in'
       end
@@ -127,7 +125,6 @@ RSpec.describe User, type: :system do
         click_on 'アカウント削除'
         sleep 1.0
         page.driver.browser.switch_to.alert.accept
-        expect(current_path).to eq root_path
         expect(page).to have_content 'アカウントを削除しました。またのご利用をお待ちしております。'
         expect(page).to have_content 'Log in'
       end

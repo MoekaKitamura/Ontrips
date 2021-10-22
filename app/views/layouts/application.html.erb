@@ -21,23 +21,37 @@
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.5/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.5/dist/js/uikit-icons.min.js"></script>
+    <!---スライドショー --->
+    <script type="text/javascript" charset="utf-8">
+      $(window).load(function() {
+        $('.flexslider').flexslider({
+          animation: "fade",
+          slideshow: true,
+          slideshowSpeed: 3000,
+          animationSpeed: 1000,
+          controlNav: false,
+          randomize: true,
+        });
+      });
+    </script>
   </head>
 
   <body>
     <div class="container">
       <header>
-        <%= link_to tops_index_path do %>
-          <h1>Ontrips</h1>
+        <%= link_to tops_index_path, data: {"turbolinks" => false} do %>
+          <h1 class="app_logo">Ontrips</h1>
         <% end %>
-        <ul class="uk-iconnav uk uk-position-small uk-position-right">
-            <li><%= link_to profiles_path do %><span uk-icon="icon: user"><% end %></li>
+        <ul class="uk-iconnav uk uk-position-large uk-position-right", id="nav_list">
+            <li><%= link_to profiles_path do %><span uk-icon="icon: users"><% end %></li>
             <li><%= link_to trips_path do %><span uk-icon="icon: search"><% end %></li>
             <li><%= link_to talks_path do %><span uk-icon="icon: comment"><% end %></li>
             <li><%= link_to blogs_path do %><span uk-icon="icon: pencil"><% end %></li>
+            <% if Rails.env.test? %><li><%= link_to destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか？' } do %><span uk-icon="icon: sign-out"><% end %></li><% end %>
         </ul>
 
         <% if user_signed_in? %>
-          <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav-primary">MENU</button>
+          <button class="uk-button uk-button-default uk-margin-small-left" type="button" uk-toggle="target: #offcanvas-nav-primary" id="menu_window">MENU</button>
 
           <div id="offcanvas-nav-primary" uk-offcanvas="mode: push">
             <div class="uk-offcanvas-bar uk-flex uk-flex-column">
@@ -67,15 +81,15 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか？' } do %>
+                  <%= link_to destroy_user_session_path, method: :delete, id:"logout", data: { confirm: 'ログアウトしますか？' } do %>
                     <span class="uk-margin-small-right" uk-icon="icon: sign-out"></span>ログアウト
                   <% end %>
                 </li>
-                </ul>
+              </ul>
             </div>
           </div>
         <% end %>
-    </header>
+      </header>
     
     <% if notice %>
       <p class="alert alert-notice"><i class="fas fa-check"></i> <%= notice %></p>
