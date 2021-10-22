@@ -27,7 +27,7 @@ RSpec.describe Comment, type: :system do
       it '投稿したコメントが表示される' do
         visit trip_path(trip1.id)
         fill_in 'comment_content', with: 'Nice!!'
-        click_on "Comment!"
+        click_on "送信"
         expect(page).to have_content 'Nice!!'
       end
     end
@@ -36,7 +36,7 @@ RSpec.describe Comment, type: :system do
       it '送信できず、コメントが表示されない' do
         visit trip_path(trip1.id)
         fill_in 'comment_content', with: ''
-        click_on "Comment!"
+        click_on "送信"
         sleep 1.0
         comment_list = all('.comment li')
         expect(comment_list).not_to have_selector '.comment li'

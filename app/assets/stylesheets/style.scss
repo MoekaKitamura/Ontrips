@@ -3,8 +3,9 @@
 @import 'font-awesome';
 
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: #faf8f8;
+  color: #524c4c;
+  // color: #333;
   // margin-top: 33px;
   font-family: 'Noto Sans JP',sans-serif;
   font-size: 16px;
@@ -17,6 +18,11 @@ h1{ //confirmable
   margin-top: 100px;
 }
 
+h5{ //投稿するリンク
+  text-align: right;
+  margin-right: 5rem;
+  font-size: 1.5rem;
+}
 p{
   margin: 0 0 10px 0;
 }
@@ -113,6 +119,7 @@ footer{
   position: absolute;
   bottom: 0;
   display: table;
+  background: #faf8f8;
 }
 
 footer p{
@@ -124,7 +131,7 @@ footer p{
 
 .container{
   position: relative;
-  padding-bottom: 70px;
+  padding: 0 0 70px 0;
   min-height: 100vh;
   box-sizing: border-box;
   width: 100%;

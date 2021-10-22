@@ -52,7 +52,7 @@ RSpec.describe Profile, type: :system do
     context '自分のプロフィールページにアクセスした場合' do
       it 'Editリンクは出るけど、Deleteのリンクは表示されない' do
         visit profile_path(@profile1.id)
-        expect(page).to have_link 'Edit'
+        expect(page).to have_link '編集'
         expect(page).not_to have_link 'Delete'
       end
     end
@@ -76,7 +76,7 @@ RSpec.describe Profile, type: :system do
     context '他人のプロフィールページにアクセスした場合' do
       it 'Edit,Deleteのリンクが表示されない' do
         visit profile_path(@profile2.id)
-        expect(page).not_to have_link 'Edit'
+        expect(page).not_to have_link '編集'
         expect(page).not_to have_link 'Delete'
       end
     end

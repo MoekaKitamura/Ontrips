@@ -5,39 +5,53 @@
   />
 </head>
 
-<header id="header">
-  <div class="top__header">
-    <div class="animate__animated animate__bounce animate__slow animate__delay-2s">
-      <h1>Be a Traveler</h1>
-      <h4>新しい旅の形 〜あなたの旅に"交流"を〜 🌏</h4>
-    </div>
-    <p>Ontripsは、一緒に観光する仲間を探し、また、現地の方とも繋がれるアプリです。</p>
-
-    <% unless user_signed_in? %>
-      <div class="top__button">
-        <%= link_to new_user_session_path, class:"btntextchange" do %>
-          <span>Log in</span><span>ログイン</span>
-        <% end %>
-        <%= link_to new_user_registration_path, class:"btntextchange" do %>
-          <span>Sign up</span><span>新規登録</span>
-        <% end %>
-        <%= link_to users_guest_sign_in_path, class:"btntextchange", method: :post do %>
-          <span>Guest</span><span>ゲストログイン</span>
-        <% end %>
-        <%= link_to users_guest_admin_sign_in_path, class:"btntextchange", method: :post do %>
-          <span>Guest Admin</span><span>ゲスト管理者ログイン</span>
-        <% end %>
+<div class="top_main">
+  <div class="top_content">
+    <div class="top_description">
+      <div class="animate__animated animate__bounce animate__slow animate__delay-2s">
+        <h1>Be a Traveler</h1>
+        <h4>新しい旅の形 〜あなたの旅に"交流"を〜 🌏</h4>
       </div>
-    <% end %>
+      <p>Ontripsは、一緒に観光する仲間を探し、また、現地の方とも繋がれるアプリです。</p>
+
+      <% unless user_signed_in? %>
+        <div class="top__button">
+          <%= link_to new_user_session_path, class:"btntextchange" do %>
+            <span>Log in</span><span>ログイン</span>
+          <% end %>
+          <%= link_to new_user_registration_path, class:"btntextchange" do %>
+            <span>Sign up</span><span>新規登録</span>
+          <% end %>
+          <br>
+          <%= link_to users_guest_sign_in_path, class:"btntextchange", method: :post do %>
+            <span>Guest</span><span>ゲストログイン</span>
+          <% end %>
+          <%= link_to users_guest_admin_sign_in_path, class:"btntextchange", method: :post do %>
+            <span>Guest Admin</span><span>ゲスト管理者ログイン</span>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="flexslider">
+      <ul class="slides">
+        <li><%= image_tag "machupicchu.jpg" %></li>
+        <li><%= image_tag "newyork.jpg" %></li>
+        <li><%= image_tag "opera.jpg" %></li>
+        <li><%= image_tag "singapore.jpg" %></li>
+        <li><%= image_tag "santorini.jpg" %></li>
+      </ul>
+    </div>
   </div>
 
   <div class="scrolldown4"><span>Scroll</span></div>
-</header>
+</div>
 
-<div id="container">
-  <div class="top__main">
-    <div class="top__about">
-      <%= image_tag "gruop.jpg" %>
+<div class="guide_area">
+  <div class="guide_contents">
+    <div class="guide">
+      <%= image_tag "group.jpg" %>
       <div class="content">
         <h4>このアプリでは、一緒に観光する仲間、現地の方と事前に繋がることができます。</h4>
         <p>旅行が決まったら、掲示板に自分の旅の内容を投稿します。</p>
@@ -46,7 +60,7 @@
       </div>      
     </div>
 
-    <div class="top__about">
+    <div class="guide">
       <%= image_tag "topmap.jpg" %>
       <div class="content">
         <h4>旅行者としてだけでなく、ローカルとして旅に参加もできます。</h4>
@@ -58,7 +72,7 @@
       </div>
     </div>
 
-    <div class="top__about">
+    <div class="guide">
       <%= image_tag "mountain.jpg" %>
       <div class="content">
         <h4>新しい旅の形 〜あなたの旅に"交流"を〜 🌏</h4>
@@ -89,4 +103,4 @@
       <% end %>
     </div>
   <% end %>
-<!--/container--></div> 
+</div> 

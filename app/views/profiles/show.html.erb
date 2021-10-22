@@ -68,7 +68,7 @@
 
 <% if @profile.user.id == current_user.id %>
   <p>
-    <%= link_to 'Edit', edit_profile_path(@profile) %> |
-    <%= link_to 'Back', profiles_path %>
+    <%= link_to t('Edit'), edit_profile_path(@profile) %> |
+    <%= link_to t('Back'), profiles_path %>
   </p>
 <% end %>

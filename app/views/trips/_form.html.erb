@@ -1,8 +1,7 @@
 <%= form_with(model: trip, local: true) do |form| %>
   <% if trip.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
-
+      <h2><%= pluralize(trip.errors.count, "件") %>のエラーが見つかりました</h2>
       <ul>
       <% trip.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -50,7 +49,7 @@
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, :placeholder => "詳しい行き先、旅の中でしたいことなど" %>
   </div>
 
   <div class="actions">
