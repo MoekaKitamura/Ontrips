@@ -39,6 +39,7 @@
   <body>
     <div class="container">
       <header>
+        <%# <%= link_to image_tag("logo.png", alt: "logo"), trips_path %>
         <%= link_to tops_index_path, data: {"turbolinks" => false} do %>
           <h1 class="app_logo">Ontrips</h1>
         <% end %>
@@ -60,8 +61,8 @@
                 <li><%= link_to "旅を検索する", trips_path, data: {"turbolinks" => false} %></li>
                 <li><%= link_to "旅ブログを見る", blogs_path, data: {"turbolinks" => false} %></li>
                 <li><%= link_to "メッセージを見る", talks_path, data: {"turbolinks" => false} %></li>
-                <li><%= link_to "参加している旅", favorite_trips_path, data: {"turbolinks" => false} %></li>
-                <li><%= link_to "お気に入りした旅", member_trips_path, data: {"turbolinks" => false} %></li>
+                <li><%= link_to "参加している旅", member_trips_path, data: {"turbolinks" => false} %></li>
+                <li><%= link_to "お気に入りした旅", favorite_trips_path, data: {"turbolinks" => false} %></li>
                 <li class="uk-nav-divider"></li>
                 <li>
                   <%= link_to profile_path(current_user.id), data: {"turbolinks" => false} do %>
