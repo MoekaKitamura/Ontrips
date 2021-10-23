@@ -124,7 +124,7 @@
                       map: map,
                       opacity: 0.1,
                       icon: {
-                        url: "https://lab.syncer.jp/Web/API/Google_Maps/JavaScript/Marker/icon/marker.png",
+                        path: google.maps.SymbolPath.CIRCLE,
                         scaledSize: new google.maps.Size( 1, 1 ),
                       },
         });
@@ -133,7 +133,7 @@
                       position: to,
                       map: map,
                       animation: google.maps.Animation.BOUNCE,
-                });
+        });
 
         // 吹き出し表示
         var userIcon = '<%= image_tag @trip.user.profile.icon.url, class: "map_icon"%>';
