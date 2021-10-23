@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= favicon_link_tag('favicon.ico') %>
     <title>Ontrips</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -39,18 +40,16 @@
   <body>
     <div class="container">
       <header>
-        <%# <%= link_to image_tag("logo.png", alt: "logo"), trips_path %>
-        <%= link_to tops_index_path, data: {"turbolinks" => false} do %>
-          <h1 class="app_logo">Ontrips</h1>
-        <% end %>
+        <%= link_to image_tag("header_logo.png", alt: "logo"), tops_index_path, data: {"turbolinks" => false} %>    
         <ul class="uk-iconnav uk uk-position-large uk-position-right", id="nav_list">
             <li><%= link_to profiles_path do %><span uk-icon="icon: users"><% end %></li>
             <li><%= link_to trips_path do %><span uk-icon="icon: search"><% end %></li>
             <li><%= link_to talks_path do %><span uk-icon="icon: comment"><% end %></li>
             <li><%= link_to blogs_path do %><span uk-icon="icon: pencil"><% end %></li>
-            <% if Rails.env.test? %><li><%= link_to destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか？' } do %><span uk-icon="icon: sign-out"><% end %></li><% end %>
-        </ul>
+        </ul> 
+      </header>
 
+      <div class="login">
         <% if user_signed_in? %>
           <button class="uk-button uk-button-default uk-margin-small-left" type="button" uk-toggle="target: #offcanvas-nav-primary" id="menu_window">MENU</button>
 
@@ -90,31 +89,29 @@
             </div>
           </div>
         <% end %>
-      </header>
-    
-    <% if notice %>
-      <p class="alert alert-notice"><i class="fas fa-check"></i> <%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-error"><i class="fas fa-exclamation-triangle"></i> <%= alert %></p>
-    <% end %>
-    
-    <% if user_signed_in? %>
-      <div class="login">
-        <% if current_user.profile.icon? %>
-          <%= image_tag current_user.profile.icon.url%>
-        <% else %>
-          <%= image_tag asset_path("default_icon.png") %>
+
+        <% if notice %>
+          <p class="alert alert-notice"><i class="fas fa-check"></i> <%= notice %></p>
         <% end %>
-        <%= current_user.name %>
+        <% if alert %>
+          <p class="alert alert-error"><i class="fas fa-exclamation-triangle"></i> <%= alert %></p>
+        <% end %>
+                
+        <% if user_signed_in? %>
+            <% if current_user.profile.icon? %>
+              <%= image_tag current_user.profile.icon.url%>
+            <% else %>
+              <%= image_tag asset_path("default_icon.png") %>
+            <% end %>
+            <%= current_user.name %>
+        <% end %>
       </div>
-    <% end %>
 
-    <%= yield %>
+      <%= yield %>
 
-    <footer>
-      <p>Copyright ©︎ 2021 Ontrips All Rights Reserved.</p>
-    </footer>
-  </div>
+      <footer>
+        <p>Copyright ©︎ 2021 Ontrips All Rights Reserved.</p>
+      </footer>
+    </div>
   </body>
 </html>

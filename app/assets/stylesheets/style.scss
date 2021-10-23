@@ -26,7 +26,18 @@ p{
 }
 
 a {
-  color: #000;
+  color: #524c4c;
+}
+
+header img{
+  width: 200px;
+  margin-top: 10px;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #524c4c;
+  opacity: 0.9;
 }
 
 li{
@@ -140,7 +151,7 @@ footer p{
   border: solid 1px #000;
   max-width: 1000px;
   min-height: 600px;
-  margin: 0 auto;
+  margin: 30px auto;
   position: relative;
   margin-bottom: 20px;
 }
