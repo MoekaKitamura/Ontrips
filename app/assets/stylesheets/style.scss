@@ -5,8 +5,6 @@
 body {
   background-color: #faf8f8;
   color: #524c4c;
-  // color: #333;
-  // margin-top: 33px;
   font-family: 'Noto Sans JP',sans-serif;
   font-size: 16px;
   line-height: 18px;
@@ -206,7 +204,7 @@ article{
   margin: 50px;
   line-height: 3em;
   display: inline;
-  background: linear-gradient(transparent 70%, rgba(193, 255, 247, 0.76) 70%);
+  background: linear-gradient(transparent 70%, #c0e1e180 70%);
 }
 
 .trip__area p{
@@ -258,7 +256,7 @@ article{
   min-height: 150px;
   margin: 0 0 20px 50px;
   padding: 20px;
-  background-color: aliceblue;
+  background-color: #c0e1e141;
 }
 
 .list li{

@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   root 'tops#index'
   get 'tops/index'
-  resources :talks do
-    resources :messages
+  resources :talks, only: %i[index create] do
+    resources :messages, only: %i[index create]
   end
-  resources :members, only: [:create, :destroy]
-  resources :favorites, only: [:create, :destroy]
-  resources :profiles
+  resources :members, only: %i[create destroy]
+  resources :favorites, only: %i[create destroy]
+  resources :profiles, only: %i[index show edit update]
   resources :trips do
-    resources :comments
+    resources :comments, only: %i[create edit update destroy]
     member do
       post :change_goal
     end
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     end
   end
   resources :blogs
+  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users, controllers: {

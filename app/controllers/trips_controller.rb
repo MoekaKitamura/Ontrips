@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  before_action :set_trip, only: [:show, :edit, :update, :destroy, :change_goal]
+  before_action :set_trip, only: %i[show edit update destroy change_goal]
   before_action :authenticate_user!
 
   # GET /trips
@@ -10,9 +10,6 @@ class TripsController < ApplicationController
 
   # GET /trips/1
   def show
-    # show_region(@trip)
-    # show_country(@trip)
-    # show_city(@trip)
     country_or_city(@trip)
     @favorite = current_user.favorites.find_by(trip_id: @trip.id)
     @member = current_user.members.find_by(trip_id: @trip.id)
@@ -30,7 +27,6 @@ class TripsController < ApplicationController
   end
 
   def change_goal
-    #旅行を終了する
     @trip.update(goal: params[:goal])
     redirect_to @trip, notice: t('notice.change', word: t('status'))
   end
@@ -88,48 +84,28 @@ class TripsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_trip
-      @trip = Trip.find(params[:id])
+  def set_trip
+    @trip = Trip.find(params[:id])
+  end
+
+  def trip_params
+    params.require(:trip).permit(:title, :start_on, :finish_on, :flexible, :description, :goal)
+  end
+
+  def place_param
+    if params[:place][:city].present?
+      params[:place][:city]
+    elsif params[:place][:country].present?
+      params[:place][:country]
     end
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def trip_params
-      params.require(:trip).permit(:title, :start_on, :finish_on, :flexible, :description, :goal)
+  def country_or_city(table)
+    if table.place.ancestry&.include?('/')
+      @country = table.place.parent
+      @city = table.place
+    else
+      @country = table.place
     end
-
-    def place_param
-      if params[:place][:city].present?
-        params[:place][:city]
-      elsif params[:place][:country].present?
-        params[:place][:country]
-      # else params[:place][:area].present? #
-      #   params[:place][:area]
-      end
-    end
-
-    # def show_region(table)
-    #   if table.place.ancestry.nil?
-    #     @region = table.place
-    #   elsif table.place.ancestry&.length == 1
-    #     @region = table.place.parent
-    #   elsif table.place.ancestry&.include?('/')
-    #     @region = table.place.parent.parent
-    #   end
-    # end
-
-    def country_or_city(table)
-      if table.place.ancestry&.include?('/')
-        @country = table.place.parent
-        @city = table.place
-      else
-        @country = table.place
-      end
-    end
-
-    # def show_city(table)
-    #   if table.place.ancestry&.include?('/')
-    #     @city = table.place
-    #   end
-    # end
+  end
 end
