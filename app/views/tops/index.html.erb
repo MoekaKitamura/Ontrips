@@ -10,10 +10,9 @@
     <div class="top_description">
       <div class="animate__animated animate__bounce animate__slow animate__delay-2s">
         <%= image_tag "logo.png" %>
-        <%# <h4> Be a Traveler </h4> %>
       </div>
-        <h3>新しい旅の形 〜あなたの旅に"交流"を〜</h3>
-      <p>Ontripsは、一緒に観光する仲間を探し、現地の方とも繋がれるアプリです。</p>
+      <h3>新しい旅の形 〜あなたの旅に"交流"を〜</h3>
+      <p>一緒に観光する仲間を探し、現地の方とも繋がれるアプリです</p>
 
       <% unless user_signed_in? %>
         <div class="top__button">
@@ -88,11 +87,9 @@
   </div>
 
   <h3>このアプリで旅仲間を見つけ、世界中を旅しよう！！ <i class="fas fa-globe-americas"></i> <i class="fas fa-plane"></i></h3>
-
+  <%= image_tag "startyourtrip.png", class:"start_your_trip" %>
+  
   <% unless user_signed_in? %>
-    <h3 class="start_your_trip">
-      <i class="fas fa-passport"></i> Start your Trip!! <i class="fas fa-suitcase-rolling"></i> 
-    </h3>
     <div class="top__button">
       <%= link_to new_user_session_path, class:"btntextchange" do %>
         <span>Log in</span><span>ログイン</span>
