@@ -118,26 +118,30 @@
           zoom: 2,
         });
 
-        //ピンを表示(2点)
+        // ピンを表示(2点)
         var markerFrom = new google.maps.Marker({
                       position: from,
                       map: map,
+                      opacity: 0.1,
+                      icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        scaledSize: new google.maps.Size( 1, 1 ),
+                      },
         });
         
         var markerTo= new google.maps.Marker({
                       position: to,
                       map: map,
                       animation: google.maps.Animation.BOUNCE,
-                });
+        });
 
         // 吹き出し表示
         var userIcon = '<%= image_tag @trip.user.profile.icon.url, class: "map_icon"%>';
-        var userName = '<%= @trip.user.name %>';
 
         var infowindow = new google.maps.InfoWindow({
-            content: `<h6>${userIcon}${userName}</h6>`,
+            content: `${userIcon}`,
             anchor: markerFrom,
-            // disableAutoPan: true
+            disableAutoPan: true,
         });
         
       } 

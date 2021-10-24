@@ -1,9 +1,42 @@
 .top_main{
   width:100%;
-  height: 80vh;
+  height: 90vh;
   position: relative;
-} 
+}
 
+.top_content{
+  width: 100%;
+  height: 90vh;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  margin: 0;
+}
+@media screen and (max-width:480px){//画面サイズ480px以下のスマホ
+  .top_main{
+    height: 80vh;
+  } 
+}
+@media screen and (min-width:1025px){//画面サイズ1025px以上のPC
+  .top_content{
+    display: flex;
+  }
+}
+
+.top_description{
+  padding: 1% 30px 5% 30px;
+}
+
+.top_description img{
+  width: 350px;
+}
+
+.top__button{
+  margin: 50px;
+}
+
+/*------guide blue area------*/
 .guide_area{
   position: relative;
   z-index:1;
@@ -13,44 +46,15 @@
   min-height: min-content;
 }
 
-.top_content{
-  width: 100%;
-  height: 70%;
-  display: flex;
-  position: fixed;
-  top: 55%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  margin: 0;
-}
-
-.top_description{
-  padding: 100px 0 0 40px;
-}
-
-.app_logo{
-  margin: 0;
-  padding: 20px 0 50px 10px;
-  text-align: left;
-  text-decoration: none;
-}
-a:hover{
-  text-decoration: none;
-  color: #524c4c;
-  opacity: 0.9;
-}
-
-.top__button{
-  margin: 50px;
-}
-
 .guide_contents{
   max-width: 1500px;
   margin: 0 auto;
 }
 
-.guide{
-  display: flex;
+@media screen and (min-width:1024px){
+  .guide{
+    display: flex;
+  }
 }
 
 .guide .content{
@@ -75,50 +79,37 @@ a:hover{
   padding-top: 100px;
 }
 
-/*========= スクロールダウンのためのCSS ===============*/
-/*=== 9-1-4 矢印が動いてスクロールを促す  ====*/
-
-/*スクロールダウン全体の場所*/
+/*------scroll------*/
 .scrolldown4{
-  /*描画位置※位置は適宜調整してください*/
   position:absolute;
   bottom:1%;
   right:50%;
-  /*矢印の動き1秒かけて永遠にループ*/
   animation: arrowmove 1s ease-in-out infinite;
 }
 
-/*下からの距離が変化して全体が下→上→下に動く*/
 @keyframes arrowmove{
     0%{bottom:1%;}
     50%{bottom:3%;}
     100%{bottom:1%;}
 }
 
-/*Scrollテキストの描写*/
 .scrolldown4 span{
-  /*描画位置*/
   position: absolute;
   left:-20px;
   bottom:10px;
-  /*テキストの形状*/
   color: #524c4c;
   font-size: 1.2rem;
   letter-spacing: 0.05em;
-  /*縦書き設定*/
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
 }
 
-/* 矢印の描写 */
 .scrolldown4:before {
   content: "";
-  /*描画位置*/
   position: absolute;
   bottom: 0;
   right: -6px;
-  /*矢印の形状*/
   width: 1px;
   height: 20px;
   background: #524c4c;
@@ -127,48 +118,13 @@ a:hover{
 
 .scrolldown4:after{
   content:"";
-  /*描画位置*/
   position: absolute;
   bottom:0;
   right:0;
-  /*矢印の形状*/
   width:1px;
   height: 50px;
   background: #524c4c;
 }
-
-.flexslider{
-  width: 60%;
-  height: 100%;
-  margin: 0 auto;
-}
-.slides img{
-  width: 50%;
-  height: 100px;
-  object-fit: cover;
-}
-
-/*========= 画像使う時に使えるかも ===============*/
-
-// #header:before{
-// content: '';
-// position:fixed;
-// top:0;
-// left:0;
-// z-index:-1;
-// width:100%;
-// height: 100vh;
-// /*背景画像設定*/
-// // background:url("https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/9-1-4/img/01.jpg") no-repeat center;
-// background-size:cover;
-// }
-
-// @media screen and (max-width:768px){
-
-//   #header,
-//   #header:before{
-// height: 90vh;    
-//   }
   
 /*========= 手書きアニメLoadingのためのCSS ===============*/
 
@@ -184,7 +140,7 @@ a:hover{
 // color:#fff;
 // }
 
-// /* Loading画像中央配置　*/
+// /* Loading画像中央配置 */
 // #splash_logo {
 // position: absolute;
 // top: 50%;
@@ -208,25 +164,4 @@ a:hover{
 //   stroke-miterlimit:10;
 //   stroke-dasharray: 1500; /* 線の間隔を指定する */
 //   stroke-dashoffset:1500; /* 線の位置を指定する */
-// }
-
-// /*========= レイアウトのためのCSS ===============*/
-
-// #container{
-//   width:100%;
-//   height: 100vh;
-//   background: #ccc;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   text-align: center;
-// }
-
-// a{
-//   color: #333;
-// }
-
-// a:hover{
-//    text-decoration: none;   
-// }
 // }

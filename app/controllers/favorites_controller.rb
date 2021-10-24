@@ -1,5 +1,6 @@
 class FavoritesController < ApplicationController
   before_action :authenticate_user!
+
   def create
     favorite = current_user.favorites.create(trip_id: params[:trip_id])
     redirect_to trip_path(params[:trip_id]), notice: "#{favorite.trip.user.name}さんの旅をお気に入りしました"

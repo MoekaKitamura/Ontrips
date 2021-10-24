@@ -225,3 +225,7 @@ ja:
   Edit: 編集
   Delete: 削除
   prohibited this blog from being saved: 件のエラーが見つかりました
+  helpers:
+    submit:
+     create: "投稿する"
+     update: "更新する"

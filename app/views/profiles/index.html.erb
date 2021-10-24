@@ -10,12 +10,23 @@
 <% end %>
 
 <p><%= @chart_map.size %>の国と地域にあなたの旅仲間がいます！</p>
- <%= geo_chart @chart_map %>
+<br>
+ 	<%= geo_chart @chart_map,
+		id:"chart_map",
+		width:"600px",
+		height:"300px",
+		library: {
+      backgroundColor: '#faf8f8',
+      datalessRegionColor: '#F6F3EE',
+		}
+	%>
+
+<hr>
 
 <div class="scroll-list jscroll">
-	<div class="cards">
+	<ul class="cards">
 		<% @profiles.each do |profile| %>
-			<div class="profile__card">
+			<li class="profile__card">
 				<i class="fas fa-crown"></i>
 				<%= image_tag profile.icon.url %>
 				<h3><%= profile.user.name %></h3>
@@ -39,9 +50,9 @@
 					<%= profile.first_language %> <%= profile.second_language %>
 					<p><%= profile.introduction.truncate(20) if profile.introduction.present? %></p>
 				</div>
-			</div>
+			</li>
 		<% end %>
-	</div>
+	</ul>
 	<%= paginate @profiles %>
 </div>
 
