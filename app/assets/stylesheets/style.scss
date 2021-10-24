@@ -193,12 +193,7 @@ footer p{
 }
 
 div.finished{
-  @if goal{
-    background: rgba(155, 155, 155, 0.479);
-  }
-  @else{
-    background: #fff;
-  }
+  background: rgba(155, 155, 155, 0.479);
 }
 
 article{

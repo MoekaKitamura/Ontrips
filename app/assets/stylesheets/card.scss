@@ -137,12 +137,19 @@
 }
 
 .trip_status {
-	color: #F9e080;
 	position: absolute;
 	top: 30px;
 	right: 30px;
 }
 
-.trip_status .fa-child{
-  color: #9296d6;
+.fa-star{
+  color: #F9e080;
+}
+
+.fa-child{
+  color: #9293d6;
+}
+
+.fa-check-circle{
+  color: #92d6a3;
 }
