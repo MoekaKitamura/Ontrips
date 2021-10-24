@@ -10,7 +10,18 @@
 <% end %>
 
 <p><%= @chart_map.size %>の国と地域にあなたの旅仲間がいます！</p>
- <%= geo_chart @chart_map %>
+<br>
+ 	<%= geo_chart @chart_map,
+		id:"chart_map",
+		width:"600px",
+		height:"300px",
+		library: {
+      backgroundColor: '#faf8f8',
+      datalessRegionColor: '#F6F3EE',
+		}
+	%>
+
+<hr>
 
 <div class="scroll-list jscroll">
 	<ul class="cards">
