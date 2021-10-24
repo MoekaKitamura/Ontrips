@@ -39,8 +39,10 @@
 
   <body>
     <div class="container">
+    <% unless [tops_index_path, root_path].map{|page| current_page?(page)}.any? %>
       <header>
         <%= link_to image_tag("header_logo.png", alt: "logo"), tops_index_path, data: {"turbolinks" => false} %>    
+    <% end %>
         <ul class="uk-iconnav uk uk-position-large uk-position-right", id="nav_list">
             <li><%= link_to profiles_path do %><span uk-icon="icon: users"><% end %></li>
             <li><%= link_to trips_path do %><span uk-icon="icon: search"><% end %></li>
@@ -96,14 +98,16 @@
         <% if alert %>
           <p class="alert alert-error"><i class="fas fa-exclamation-triangle"></i> <%= alert %></p>
         <% end %>
-                
-        <% if user_signed_in? %>
-            <% if current_user.profile.icon? %>
-              <%= image_tag current_user.profile.icon.url%>
-            <% else %>
-              <%= image_tag asset_path("default_icon.png") %>
-            <% end %>
-            <%= current_user.name %>
+
+        <% unless [tops_index_path, root_path].map{|p| current_page?(p)}.any? %>
+          <% if user_signed_in? %>
+              <% if current_user.profile.icon? %>
+                <%= image_tag current_user.profile.icon.url%>
+              <% else %>
+                <%= image_tag asset_path("default_icon.png") %>
+              <% end %>
+              <%= current_user.name %>
+          <% end %>
         <% end %>
       </div>
 
