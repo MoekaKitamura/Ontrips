@@ -18,30 +18,30 @@
 
 <div class="col-sm-6">
   <div class=" message__area">
-  <h4><%= @to.name %>のトークルーム</h4>
-    <!---メッセージが10件以上あれば以前のメッセージへのリンクを表示する--->
-    <% if @over_ten %>
-      <%= link_to '以前のメッセージ', '?m=all' %>
-    <% end %>
-<br>
-    <% @messages.each do |message| %>
-      <% if message.content.present? %>
-          <% if message.user == current_user %>
-            <div class="fukidasi right">
-          <% else %>
-            <div class="fukidasi left">
-          <% end %>
-              <%= message.content %>
-              <div class="message__detail">
-                <p><%= message.created_at.strftime('%m/%d %H:%M') %></p>
-                <% if message.user == current_user %>
-                  <p><%= message.read ? 'read' : 'unread' %></p>
-                  <!---?の前の記述（message.read）が、trueなら : の左側の処理を実行（既読）、falseなら,: の右側の処理を実行（未読）--->
-                <% end %>
-              </div>
-            </div>
+    <h4><%= @to.name %>のトークルーム</h4>
+      <!---メッセージが10件以上あれば以前のメッセージへのリンクを表示する--->
+      <% if @over_ten %>
+        <%= link_to '以前のメッセージ', '?m=all' %>
       <% end %>
-    <% end %>
+    <br>
+      <% @messages.each do |message| %>
+        <% if message.content.present? %>
+            <% if message.user == current_user %>
+              <div class="fukidasi right">
+            <% else %>
+              <div class="fukidasi left">
+            <% end %>
+                <%= message.content %>
+                <div class="message__detail">
+                  <p><%= message.created_at.strftime('%m/%d %H:%M') %></p>
+                  <% if message.user == current_user %>
+                    <p><%= message.read ? 'read' : 'unread' %></p>
+                    <!---?の前の記述（message.read）が、trueなら : の左側の処理を実行（既読）、falseなら,: の右側の処理を実行（未読）--->
+                  <% end %>
+                </div>
+              </div>
+        <% end %>
+      <% end %>
   </div>
 
   <br>

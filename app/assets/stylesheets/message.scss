@@ -1,7 +1,7 @@
 .talking__user{
   // display: block;
   background: rgb(241, 241, 241);
-  border: solid 1px black;
+  border: solid 1px #524c4c80;
   margin: 10px;
   padding: 20px;
   text-align: left;
@@ -20,22 +20,15 @@
 }
 
 
-/*===================
-iPhoneのメッセージ風
-=====================*/
-/*フレームとフォント*/
+/*-----チャットメッセージ-----*/
 .message__area {
   width: 100%;
   padding: 10px 0;
-  border: 1px #ddd solid;
-  background: white;
+  border: 1px solid #524c4c80;
   font-size: 16px;
-  color: #333;
   line-height: 1.4;
   overflow: hidden;
   min-height: 400px;
-  // overflow-y: auto;
-  // height: 500px;
 }
 
 /*フキダシ共通*/
@@ -49,21 +42,20 @@ iPhoneのメッセージ風
   overflow-wrap: break-word;
   clear: both;
   box-sizing: content-box;/*はてな用*/
+  text-align: left;
 }
 /*フキダシ左*/
 .message__area .fukidasi.left {
   float: left;
-  background: #e9e9ed;
+  background: rgb(241, 241, 241);
 }
 /*フキダシ右*/
 .message__area .fukidasi.right {
   float: right;
-  background: #2793fa;
-  color: white;
+  background: #C0E1E1;
   position: relative;
 }
 .message__detail { //時間、既読エリア共通
-  color: #000;
   width: 80px;
   line-height: 0.9%;
   position: absolute;
@@ -95,11 +87,11 @@ iPhoneのメッセージ風
 .message__area .fukidasi.left::after {
   left: -6px;
   border-radius: 0px 0  17px 0px/ 0px 0 13px 0; 
-  box-shadow: -14px 2px 0 -3px #e9e9ed inset; 
+  box-shadow: -14px 2px 0 -3px rgb(241, 241, 241) inset; 
 }
 /*しっぽ右*/
 .message__area .fukidasi.right::after {
   right: -6px;
   border-radius: 0px 0  0 17px/ 0px 0 0 13px; 
-  box-shadow: 14px 2px 0 -3px #2793fa inset; 
+  box-shadow: 14px 2px 0 -3px #C0E1E1 inset; 
 }
