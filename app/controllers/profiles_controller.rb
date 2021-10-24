@@ -11,6 +11,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1
   def show
+    @trips = @profile.user.trips.order(updated_at: :desc).limit(4)
     @joining = @profile.user.members.order(updated_at: :desc).limit(4)
     @blogs = @profile.user.blogs.order(updated_at: :desc).limit(4)
     if @profile.place.ancestry&.include?('/')
@@ -18,7 +19,7 @@ class ProfilesController < ApplicationController
     elsif @profile.place.root?
       @code = nil
     else
-      @code = @profile.place.code.downcase 
+      @code = @profile.place.code.downcase
     end
   end
 

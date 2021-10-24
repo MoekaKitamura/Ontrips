@@ -40,6 +40,21 @@
   </div>
 
   <div class="col-sm-6">
+    <p class="count">
+      <i class="fas fa-star"></i> <%= @profile.user.favorites.count %>
+      <i class="fas fa-child"></i> <%= @profile.user.members.count %>
+    </p>
+    <p><i class="fas fa-plane"></i> <%= @profile.user.name %>さんが投稿した旅行</p>
+    <div class="list">
+      <ul>
+        <% @trips.each do |trip| %>
+          <%= link_to trip_path(trip.id), data: {"turbolinks" => false} do %>
+            <li><%= trip.title %></li>
+          <% end %>
+        <% end %>
+      </ul>  
+    </div>
+
     <p><i class="fas fa-plane"></i> <%= @profile.user.name %>さんが参加している旅行</p>
     <div class="list">
       <ul>
