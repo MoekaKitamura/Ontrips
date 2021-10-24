@@ -45,13 +45,13 @@
     <% end %>
         <ul class="uk-iconnav uk uk-position-large uk-position-right", id="nav_list">
           <% if user_signed_in? %>
-            <li><%= link_to profiles_path do %><span uk-icon="icon: users"><% end %></li>
-            <li><%= link_to trips_path do %><span uk-icon="icon: search"><% end %></li>
-            <li><%= link_to blogs_path do %><span uk-icon="icon: pencil"><% end %></li>
-            <li><%= link_to talks_path do %><span uk-icon="icon: mail"><% end %></li>
+            <li><%= link_to profiles_path, title:"旅仲間を探す" do %><span uk-icon="icon: users"><% end %></li>
+            <li><%= link_to trips_path, title:"旅を検索する" do %><span uk-icon="icon: search"><% end %></li>
+            <li><%= link_to blogs_path, title:"旅プログを見る" do %><span uk-icon="icon: pencil"><% end %></li>
+            <li><%= link_to talks_path, title:"メッセージを見る" do %><span uk-icon="icon: mail"><% end %></li>
           <% else %>
-            <li><%= link_to new_user_registration_path do %><span uk-icon="icon: user"><% end %></li>
-            <li><%= link_to new_user_session_path do %><span uk-icon="icon: sign-in"><% end %></li>
+            <li><%= link_to new_user_registration_path, title:"新規登録" do %><span uk-icon="icon: user"><% end %></li>
+            <li><%= link_to new_user_session_path, title:"ログイン" do %><span uk-icon="icon: sign-in"><% end %></li>
           <% end %>
         </ul> 
       </header>
