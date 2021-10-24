@@ -1,43 +1,7 @@
-// --------------profile----------------
-.profile__card {
-	background-color: #F6E9E2;
-	border-radius: 10px;
-	// box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
-	// color: #B3B8CD;
-	padding-top: 30px;
-	position: relative;
-	// max-width: 350px;
-  height: 400px;
-  margin: 20px 10px;
-}
-.profile__card img{
-  width: 100px;
-  height: 100px;
-}
-.fa-crown {
-	color: #FEBB0B;
-	position: absolute;
-	top: 30px;
-	right: 30px;
-}
-
-.profile__detail {
-	background-color: #F6F3EE;
-	text-align: left;
-	padding: 15px;
-	margin-top: 30px;
-  font-size: 0.9em;
-  height: 100px;
-}
-
-.profile__detail p{
-  padding: 15px;
-}
-
-// --------------trip----------------
+// カード共通
 :root {
-  --surface-color: #F6E9E2;
-  --curve: 20;
+  --surface-color: #f6e9e2bb;
+  --curve: 15;
 }
 
 * {
@@ -48,9 +12,46 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 0;
+  padding: 0 20px;
 }
 
+// --------------profile----------------
+.profile__card {
+	position: relative;
+  display: block;
+  height: 400px;
+  border: solid 1px #524c4c30;
+	border-radius: 15px;
+	padding-top: 2rem;
+}
+.profile__card img{
+  width: 100px;
+  height: 100px;
+}
+.fa-crown {
+	color: #F9e080;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+}
+
+.profile__detail {
+	background-color: #F6F3EE;
+	text-align: left;
+	padding: 15px;
+  font-size: 0.9em;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-radius: 0 0 15px 15px;
+}
+
+.profile__detail p{
+  padding: 15px;
+}
+
+// --------------trip----------------
 .card { //ひとつのカード
   position: relative;
   display: block;
@@ -132,12 +133,12 @@
 }
 
 .trip_status {
-	color: #FEBB0B;
+	color: #F9e080;
 	position: absolute;
 	top: 30px;
 	right: 30px;
 }
 
 .trip_status .fa-child{
-  color: rgb(25, 75, 141);
+  color: #9296d6;
 }

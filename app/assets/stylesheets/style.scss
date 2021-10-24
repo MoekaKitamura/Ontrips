@@ -39,6 +39,12 @@ a:hover{
 li{
   list-style: none;
 }
+
+.btn{
+  opacity: 0.8;
+  border-radius: 20px;
+}
+
 //-----エラーメッセージ----------------------------------
 .alert{
   float: left;
@@ -47,15 +53,13 @@ li{
 }
 
 .alert-notice{
-  color: green;
+  color: rgba(0, 128, 0, 0.650);
   animation: slideIn 1.5s ease 0s 1 alternate;
-  // background: linear-gradient(transparent 70%, rgba(197, 252, 183, 0.815) 70%);
 }
 
 .alert-error {
-  color: red;
+  color: rgba(255, 0, 0, 0.650);
   animation: flash 1s linear 0s 2 alternate;
-  // background: linear-gradient(transparent 70%, rgba(252, 183, 183, 0.815) 70%);
 }
 
 @keyframes slideIn {
