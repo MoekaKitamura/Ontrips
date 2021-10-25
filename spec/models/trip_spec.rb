@@ -153,5 +153,21 @@ RSpec.describe Trip, type: :model do
         expect(trip).not_to be_valid
       end
     end
+
+    context '説明が1001字以上の場合' do
+      it 'バリデーションにひっかかる' do
+        trip = Trip.new(
+          title: "タイトル",
+          start_on: Date.today << -1,
+          finish_on: "",
+          flexible: true,
+          description: Faker::Lorem.characters(number:1001),
+          goal: false,
+          user_id: @user.id,
+          place_id: @city.id
+        )
+        expect(trip).not_to be_valid
+      end
+    end
   end
 end

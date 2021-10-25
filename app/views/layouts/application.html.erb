@@ -106,12 +106,14 @@
 
         <% unless [tops_index_path, root_path].map{|p| current_page?(p)}.any? %>
           <% if user_signed_in? %>
+            <%= link_to profile_path(current_user.id), data: {"turbolinks" => false} do %>
               <% if current_user.profile.icon? %>
                 <%= image_tag current_user.profile.icon.url%>
               <% else %>
                 <%= image_tag asset_path("default_icon.png") %>
               <% end %>
               <%= current_user.name %>
+            <% end %>
           <% end %>
         <% end %>
       </div>

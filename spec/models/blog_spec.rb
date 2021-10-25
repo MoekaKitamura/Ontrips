@@ -35,6 +35,16 @@ RSpec.describe Blog, type: :model do
         expect(blog).not_to be_valid
       end
     end
+    context '内容が5001字以上の場合' do
+      it 'バリデーションにひっかかる' do
+        blog = Blog.new(
+          title: "タイトル",
+          content: Faker::Lorem.characters(number:5001),
+          user_id: @user.id,
+        )
+        expect(blog).not_to be_valid
+      end
+    end
     context 'タイトル、内容が入力された場合' do
       it 'バリデーションが通る' do
         blog = Blog.new(

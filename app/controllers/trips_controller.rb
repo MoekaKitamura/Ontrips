@@ -5,7 +5,7 @@ class TripsController < ApplicationController
   # GET /trips
   def index
     @q = Trip.ransack(params[:q])
-    @trips = @q.result(distinct: true).includes(:place).page(params[:page]).per(4)
+    @trips = @q.result(distinct: true).includes(:place).order(updated_at: :desc).page(params[:page]).per(4)
   end
 
   # GET /trips/1
@@ -17,13 +17,15 @@ class TripsController < ApplicationController
     @comments = @trip.comments
     @comment = @trip.comments.build
     @similar = Trip.where(place_id: @country.id).or(Trip.where(place_id: @country.child_ids))
-                  .where.not(id: @trip.id).order(updated_at: :desc).limit(3)
+                  .where.not(id: @trip.id).where(goal: false).order(updated_at: :desc).limit(3)
     @visiters = @members.where(as: 1).count
     @locals = @members.where(as: 2).count
     # map ---
     @from = @trip.user.profile.place
     @to = @trip.place
     @middle = Geocoder::Calculations.geographic_center([@to,@from]) #中間地点
+    # @date = Date.today.strftime('%Y%m%d').to_i - @trip.created_at.strftime('%Y%m%d').to_i
+    @duration = ((Time.zone.now - @trip.created_at) / 3600).to_i
   end
 
   def change_goal

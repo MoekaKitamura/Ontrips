@@ -1,7 +1,8 @@
 # README
 
-## 製品名 / Name
-ontrips
+![image](https://github.com/MoekaKitamura/Original_app/blob/master/app/assets/images/header_logo.png)
+
+URL: https://ontrips.herokuapp.com/
 
 ## 製品概要 / Overview
 新しい旅の形 〜あなたの旅に"交流"を〜 🌏 <br>

@@ -16,6 +16,8 @@
   <h5><i class="fas fa-pencil-alt"></i> 投稿する</h5>
 <% end %>
 
+<p><i class="fas fa-star"></i> お気に入り <i class="fas fa-child"></i> 参加中 <i class="fas fa-check-circle"></i> 終了済み</p>
+
 <hr>
 
 <div class="scroll-list jscroll">
@@ -29,6 +31,9 @@
           <% end %>
           <% if trip.members.where(user_id: current_user.id).present? %>
             <p><i class="fas fa-child"></i></p>
+          <% end %>
+          <% if trip.goal %>
+            <p><i class="fas fa-check-circle"></i></p>
           <% end %>
         </div>
           <h4 class="trip_title"><%= trip.title %></h4>

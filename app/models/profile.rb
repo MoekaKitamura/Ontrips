@@ -6,6 +6,7 @@ class Profile < ApplicationRecord
   belongs_to :place
 
   enum gender: { 男性: 1, 女性: 2, その他: 3 }
+  validates :introduction, length: { maximum: 1000 }
 
   # enum first_language: [
   #   "Icelandic",
