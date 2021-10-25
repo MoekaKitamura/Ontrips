@@ -24,7 +24,7 @@ ja:
         introduction: 自己紹介
       trip:
         title: タイトル
-        place: 行き先
+        place: 目的地
         start_on: 出発日
         finish_on: 到着日
         flexible: 日程変更可能

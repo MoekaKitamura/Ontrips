@@ -1,6 +1,7 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: %i[show edit update destroy change_goal]
   before_action :authenticate_user!
+  before_action :set_place, only: %i[new create edit update]
 
   # GET /trips
   def index
@@ -44,7 +45,6 @@ class TripsController < ApplicationController
   # GET /trips/new
   def new
     @trip = Trip.new
-    @regions = Place.where(ancestry: nil)
   end
 
   # GET /trips/1/edit
@@ -52,7 +52,6 @@ class TripsController < ApplicationController
     unless @trip.user == current_user
       redirect_to @trip, alert: "投稿者以外は編集できません"
     end
-    @regions = Place.where(ancestry: nil)
   end
 
   # POST /trips
@@ -63,8 +62,7 @@ class TripsController < ApplicationController
     if @trip.save
       redirect_to @trip, notice: t('notice.create', model: t('trip'))
     else
-      redirect_to new_trip_path, alert: "#{@trip.errors.full_messages.join('。')}。"
-      # render :new
+      render :new
     end
   end
 
@@ -74,8 +72,7 @@ class TripsController < ApplicationController
     if @trip.update(trip_params)
       redirect_to @trip, notice: t('notice.update', model: t('trip'))
     else
-      redirect_to edit_trip_path, alert: "#{@trip.errors.full_messages.join('。')}。"
-      # render :edit
+      render :edit
     end
   end
 
@@ -92,6 +89,10 @@ class TripsController < ApplicationController
 
   def trip_params
     params.require(:trip).permit(:title, :start_on, :finish_on, :flexible, :description, :goal)
+  end
+
+  def set_place
+    @regions = Place.where(ancestry: nil)
   end
 
   def place_param
