@@ -1,3 +1,12 @@
+header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #faf8f8;
+  z-index: 5;
+  height: 115px;
+}
+
 header img{
   width: 200px;
   margin-top: 10px;
@@ -5,7 +14,7 @@ header img{
 
 .login {
   text-align: right;
-  margin: 10px 20px;
+  margin: 10px 2%;
 }
 
 .login img{
@@ -21,7 +30,7 @@ header img{
 }
 
 #menu_window{
-  z-index: 1;
+  z-index: 10;
   position: relative;
   float: left;
 }
