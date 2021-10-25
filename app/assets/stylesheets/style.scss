@@ -203,7 +203,7 @@ div.finished{
 }
 
 article{
-  min-height: 1000px;
+  min-height: 1100px;
 }
 
 .trip__area .col-sm-6{
@@ -224,6 +224,11 @@ article{
   line-height: 1.5em;
   padding-right: 10px;
   text-align: left;
+}
+
+.trip__area .content{
+  max-height: 230px;
+  overflow: auto;
 }
 
 .trip_icon{

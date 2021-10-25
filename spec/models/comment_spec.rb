@@ -22,6 +22,17 @@ RSpec.describe Comment, type: :model do
       end
     end
 
+    context 'コメント内容が601文字以上の場合' do
+      it 'バリデーションにひっかかる' do
+        comment = Comment.new(
+          content: Faker::Lorem.characters(number:601),
+          trip_id: @trip.id,
+          user_id: @user.id
+        )
+        expect(comment).not_to be_valid
+      end
+    end
+
     context 'コメントが入力された場合' do
       it 'バリデーションが通る' do
         comment = Comment.new(
