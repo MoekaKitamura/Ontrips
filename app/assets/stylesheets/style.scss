@@ -154,6 +154,7 @@ footer p{
   margin: 30px auto;
   position: relative;
   margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .user__area{
@@ -168,6 +169,12 @@ footer p{
   width: 60%;
   height: 110px;
   line-height: 1.5em;
+}
+
+.date_blog{
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
 }
 
 .blog__area .content{
@@ -185,15 +192,14 @@ footer p{
 .trip__area{
   border: solid 1px #524c4c80;
   max-width: 1600px;
-  // min-height: 600px;
-  // height: auto;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 div.finished{
-  background: rgba(155, 155, 155, 0.479);
+  background: rgba(155, 155, 155, 0.4);
 }
 
 article{
@@ -201,7 +207,6 @@ article{
 }
 
 .trip__area .col-sm-6{
-  min-height: min-content;
   text-align: left;
   padding: 30px 0;
 }
@@ -228,13 +233,14 @@ article{
   border: solid 0.5px #524c4c80;
 }
 
-.similar_area{
-  margin-top: 50px;
+.date_trip{
+  position: absolute;
+  bottom: 5%;
+  right: 25%;
 }
 
-.comment__area{
-  width: 60%;
-  margin: 0 auto;
+.similar_area{
+  margin-top: 50px;
 }
 
 .comment{
@@ -243,13 +249,28 @@ article{
 
 .comment li{
   text-align: left;
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.comment p{
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 1px 10px 0 #524c4c0c;
+  margin: 0;
+}
+
+.date_comment{
+  font-size: 0.8em;
 }
 
 .comment img{
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  border: solid 0.5px rgb(160, 160, 160);
 }
 
 #comment_content{

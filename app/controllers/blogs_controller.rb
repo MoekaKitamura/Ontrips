@@ -8,6 +8,7 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @date = Date.today.strftime('%Y%m%d').to_i - @blog.created_at.strftime('%Y%m%d').to_i
   end
 
   def new

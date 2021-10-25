@@ -7,6 +7,9 @@
     <p><%= image_tag @blog.user.profile.icon.url %></p>
     <p><%= @blog.user.name %></p>
   </div>
+
+ <!--English ver. <p class="date_blog"><%= pluralize(@date, "day", locale: :en) %> ago</p>-->
+  <p class="date_blog"><i class="far fa-clock"></i> <%= @date %>日前</p>
 </div>
 
 <% if @blog.user.id == current_user.id %>

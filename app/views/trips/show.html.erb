@@ -91,6 +91,8 @@
           <% end %>
         <% end %>
       </p>
+      <!-- English ver. <p class="date_trip"><%= pluralize(@date, "day", locale: :en) %> ago</p> -->
+      <p class="date_trip"><i class="far fa-clock"></i> <%= @date %>日前</p>
 
     </div>
 
