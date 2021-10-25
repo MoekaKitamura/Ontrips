@@ -9,7 +9,13 @@
   </div>
 
  <!--English ver. <p class="date_blog"><%= pluralize(@date, "day", locale: :en) %> ago</p>-->
-  <p class="date_blog"><i class="far fa-clock"></i> <%= @date %>日前</p>
+  <p class="date_blog"><i class="far fa-clock"></i>
+    <% if @duration <= 24 %>
+      <%= "#{@duration}時間前" %>
+    <% else %>
+      <%= "#{@duration/24}日前" %>
+    <% end %>
+  </p>
 </div>
 
 <% if @blog.user.id == current_user.id %>

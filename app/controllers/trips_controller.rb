@@ -24,7 +24,8 @@ class TripsController < ApplicationController
     @from = @trip.user.profile.place
     @to = @trip.place
     @middle = Geocoder::Calculations.geographic_center([@to,@from]) #中間地点
-    @date = Date.today.strftime('%Y%m%d').to_i - @trip.created_at.strftime('%Y%m%d').to_i
+    # @date = Date.today.strftime('%Y%m%d').to_i - @trip.created_at.strftime('%Y%m%d').to_i
+    @duration = ((Time.zone.now - @trip.created_at) / 3600).to_i
   end
 
   def change_goal

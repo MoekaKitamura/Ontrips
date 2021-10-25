@@ -8,7 +8,8 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @date = Date.today.strftime('%Y%m%d').to_i - @blog.created_at.strftime('%Y%m%d').to_i
+    # @date = Date.today.strftime('%Y%m%d').to_i - @blog.created_at.strftime('%Y%m%d').to_i
+    @duration = ((Time.zone.now - @blog.created_at) / 3600).to_i
   end
 
   def new
