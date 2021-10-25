@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[show edit update]
   before_action :authenticate_user!
+  before_action :set_place, only: %i[edit update]
 
   # GET /profiles
   def index
@@ -28,7 +29,6 @@ class ProfilesController < ApplicationController
     unless @profile.user == current_user
       redirect_to @profile, alert: "ユーザー本人以外は編集できません"
     end
-    @regions = Place.where(ancestry: nil)
   end
 
   # PATCH/PUT /profiles/1
@@ -37,8 +37,7 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params)
       redirect_to @profile, notice: t('notice.update', model: t('profile'))
     else
-      redirect_to edit_profile_path, alert: "国名が未入力です！！"
-      # render :edit
+      render :edit
     end
   end
 
@@ -49,14 +48,6 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile).permit(:icon, :icon_cache, :gender, :birthday, :first_language, :second_language, :introduction)
-  end
-
-  def place_param
-    if params[:place][:city].present?
-      params[:place][:city]
-    elsif params[:place][:country].present?
-      params[:place][:country]
-    end
   end
 
 end

@@ -91,18 +91,6 @@ class TripsController < ApplicationController
     params.require(:trip).permit(:title, :start_on, :finish_on, :flexible, :description, :goal)
   end
 
-  def set_place
-    @regions = Place.where(ancestry: nil)
-  end
-
-  def place_param
-    if params[:place][:city].present?
-      params[:place][:city]
-    elsif params[:place][:country].present?
-      params[:place][:country]
-    end
-  end
-
   def country_or_city(table)
     if table.place.ancestry&.include?('/')
       @country = table.place.parent
