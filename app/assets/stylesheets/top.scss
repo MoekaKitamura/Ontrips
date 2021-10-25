@@ -15,7 +15,7 @@
 }
 @media screen and (max-width:480px){//画面サイズ480px以下のスマホ
   .top_main{
-    height: 50vh;
+    height: 70vh;
   } 
 }
 @media screen and (min-width:1025px){//画面サイズ1025px以上のPC
@@ -25,7 +25,12 @@
 }
 
 .top_description{
-  padding: 1% 30px 5% 30px;
+  padding: 1% 2% 4% 2%;
+}
+
+.top_description p{
+  font-size: 0.9em;
+  line-height: 1.7em;
 }
 
 .top_description img{
@@ -35,6 +40,13 @@
 .top__button{
   margin: 50px;
 }
+
+.top__button .btntextchange{
+  border-radius: 15px;
+  min-width: 150px;
+  margin: 0px 1% 2% 1%;
+}
+
 
 /*------guide blue area------*/
 .guide_area{
