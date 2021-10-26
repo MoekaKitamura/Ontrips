@@ -25,7 +25,9 @@ $(document).on('turbolinks:load', function() {
      var selectedTemplate1 = $("#country-of-region_" + regionVal);
      //デフォルトで入っていた子要素のセレクトボックスを削除
      $('#place_country').remove();
+     $('#place_city').remove();
      $('#place_region').after(selectedTemplate1.html());
+     $('#place_country').after(defaultCitySelect);
     }else {
      //親要素のセレクトボックスが変更されてvalueに値が入っていない場合（include_blankの部分を選択している場合）
      $('#place_country').remove();
