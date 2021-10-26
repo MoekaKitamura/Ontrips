@@ -26,6 +26,10 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+    # 居住地がcityだったら
+    params[:place] = {"region"=>@profile.place.root.id, "country"=>@profile.place.parent.id, "city"=>@profile.place.id} if @profile.place.ancestry&.include?('/')
+    # 居住地がcountryだったら
+    params[:place] = {"region"=>@profile.place.root.id, "country"=>@profile.place.id} if @profile.place.root == @profile.place.parent  
     unless @profile.user == current_user
       redirect_to @profile, alert: "ユーザー本人以外は編集できません"
     end
