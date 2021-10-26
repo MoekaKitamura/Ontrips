@@ -34,4 +34,10 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { in: 2..25 }
 
+  after_create :create_profile
+
+  def create_profile
+    create_profile!(id: id, place_id: 651)
+  end
+
 end
