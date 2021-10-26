@@ -49,6 +49,10 @@ class TripsController < ApplicationController
 
   # GET /trips/1/edit
   def edit
+    # 目的地がcityだったら
+    params[:place] = {"region"=>@trip.place.root.id, "country"=>@trip.place.parent.id, "city"=>@trip.place.id} if @trip.place.ancestry&.include?('/')
+    # 目的地がcountryだったら
+    params[:place] = {"region"=>@trip.place.root.id, "country"=>@trip.place.id} if @trip.place.root == @trip.place.parent  
     unless @trip.user == current_user
       redirect_to @trip, alert: "投稿者以外は編集できません"
     end
@@ -70,7 +74,7 @@ class TripsController < ApplicationController
   def update
     @trip.place_id = place_param if place_param.present?
     if @trip.update(trip_params)
-      if params[:place][:region].present?
+      if params[:place][:region].present? && place_param.nil?
         flash.now[:alert]= "エリアしか選択されていません"
         render :edit
       else
