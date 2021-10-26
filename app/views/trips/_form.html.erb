@@ -15,6 +15,14 @@
     <%= form.text_field :title, autofocus: true, :placeholder => "タイトル（35文字以内）" %>
   </div>
 
+  <% unless current_page?(new_trip_path) %>
+    <h4><i class="fas fa-map-marker-alt"></i>
+      現在の目的地: <span class="current_place"><%= @trip.place.name_jp %> 
+      <i class="flag-icon flag-icon-<%= @trip.place.code.downcase %>"></i><span>
+    </h4>
+    <h4>変更する際は選択 <i class="fas fa-chevron-circle-down"></i></h4>
+  <% end %>
+
   <div class="field">
     <%= form.label "目的地（国名まで必須）" %>
     <%= collection_select :place, :region, @regions, :id, :name_jp, include_blank: "エリアを選択してください" %>

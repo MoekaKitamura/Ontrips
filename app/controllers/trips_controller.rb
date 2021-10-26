@@ -68,9 +68,14 @@ class TripsController < ApplicationController
 
   # PATCH/PUT /trips/1
   def update
-    @trip.place_id = place_param
+    @trip.place_id = place_param if place_param.present?
     if @trip.update(trip_params)
-      redirect_to @trip, notice: t('notice.update', model: t('trip'))
+      if params[:place][:region].present?
+        flash.now[:alert]= "エリアしか選択されていません"
+        render :edit
+      else
+        redirect_to @trip, notice: t('notice.update', model: t('trip'))
+      end
     else
       render :edit
     end
