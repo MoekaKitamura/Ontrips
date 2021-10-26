@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import url('https://fonts.cdnfonts.com/css/gistesy');
 
 body {
   background-color: #faf8f8;
@@ -10,6 +11,11 @@ body {
   line-height: 18px;
   min-height: 100%;
   text-align: center;
+}
+
+.gistesy{
+  font-family: 'Gistesy', sans-serif;
+  font-size: 2em;
 }
 
 h1{ //confirmable

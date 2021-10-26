@@ -1,5 +1,17 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def set_place
+    @regions = Place.where(ancestry: nil)
+  end
+
+  def place_param
+    if params[:place][:city].present?
+      params[:place][:city]
+    elsif params[:place][:country].present?
+      params[:place][:country]
+    end
+  end
   
   protected
   def configure_permitted_parameters
