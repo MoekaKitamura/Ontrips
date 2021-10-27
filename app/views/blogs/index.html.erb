@@ -18,24 +18,28 @@
 <div class="scroll-list jscroll">
   <% @blogs.each do |blog| %>
     <div class="col-md-6">
-      <%= link_to blog do %>
-        <div class="blog__area index">
-          <h1 class="blog_title"><%= blog.title.truncate(22) %></h1>
+      <div class="uk-animation-toggle" tabindex="0">
+        <div class="uk-animation-slide-top-small">
+          <%= link_to blog do %>
+            <div class="blog__area index">
+              <h1 class="blog_title"><%= blog.title.truncate(22) %></h1>
 
-          <p class="content"><%= blog.content.truncate(200) %></p>
+              <p class="content"><%= blog.content.truncate(200) %></p>
 
-          <div class="user__area">
-            <p>
-              <% if blog.user.profile.icon? %>
-                <%= image_tag blog.user.profile.icon.url %>
-              <% else %>
-                <%= image_tag asset_path("default_icon.png") %>
-              <% end %>
-            </p>
-            <p><%= blog.user.name %></p>
-          </div>
+              <div class="user__area">
+                <p>
+                  <% if blog.user.profile.icon? %>
+                    <%= image_tag blog.user.profile.icon.url %>
+                  <% else %>
+                    <%= image_tag asset_path("default_icon.png") %>
+                  <% end %>
+                </p>
+                <p><%= blog.user.name %></p>
+              </div>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
   <% end %>
 	<%= paginate @blogs %>

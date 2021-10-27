@@ -6,9 +6,9 @@
   <div class="user__area">
     <p>
       <% if @blog.user.profile.icon? %>
-        <%= image_tag @blog.user.profile.icon.url %>
+        <%= link_to image_tag(@blog.user.profile.icon.url), profile_path(@blog.user.profile.id) %>
       <% else %>
-        <%= image_tag asset_path("default_icon.png") %>
+        <%= link_to image_tag(asset_path("default_icon.png")), profile_path(@blog.user.profile.id)  %>
       <% end %>
     </p>
     <p><%= @blog.user.name %></p>
