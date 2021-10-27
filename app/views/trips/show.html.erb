@@ -7,7 +7,9 @@
 
       <p>
         <i class="fas fa-map-marker-alt"></i>
-        <%= @country.name_jp %> / <%= @city.name_jp if @city.present? %>
+        <%= @country.name_jp %>
+        <% if @city.present? %> / <% end %>
+        <%= @city.name_jp if @city.present? %>
       </p>
 
       <p>

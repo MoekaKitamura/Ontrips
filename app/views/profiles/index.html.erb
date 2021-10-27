@@ -36,7 +36,7 @@
 				<h6>
 					<%= profile.place.name_jp unless profile.place.ancestry&.include?('/') %>
 					<%= profile.place.parent.name_jp if profile.place.ancestry&.include?('/') %>
-					/ 
+					<% if profile.place.ancestry&.include?('/') %> / <% end %>
 					<%= profile.place.name_jp if profile.place.ancestry&.include?('/') %>
 				</h6>
 				<p>

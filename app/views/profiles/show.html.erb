@@ -12,20 +12,21 @@
       <% if  @profile.birthday.present? %> 
         <%= (Date.today.strftime('%Y%m%d').to_i - @profile.birthday.strftime('%Y%m%d').to_i) / 10000 %>歳 
       <% end %>
-      / <%= @profile.gender %>
+      <% if @profile.gender.present? %> / <% end %>
+      <%= @profile.gender %>
     </p>
 
     <p>
       <i class="fas fa-globe-americas"></i>
       <%= @profile.place.name_jp unless @profile.place.ancestry&.include?('/') %>
       <%= @profile.place.parent.name_jp if @profile.place.ancestry&.include?('/') %>
-       / 
+      <% if @profile.place.ancestry&.include?('/') %> / <% end %>
       <%= @profile.place.name_jp if @profile.place.ancestry&.include?('/') %>
     </p>
 
     <p>
       <i class="far fa-comments"></i>
-      <%= @profile.first_language %> / <%= @profile.second_language %>
+      <%= @profile.first_language %><% if @profile.second_language.present? %> / <% end %><%= @profile.second_language %>
     </p>
 
 

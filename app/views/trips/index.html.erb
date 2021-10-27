@@ -40,7 +40,7 @@
           <div class="place">
             <%= trip.place.name_jp unless trip.place.ancestry&.include?('/') %>
             <%= trip.place.parent.name_jp if trip.place.ancestry&.include?('/') %>
-             / 
+            <% if trip.place.ancestry&.include?('/') %> / <% end %>
             <%= trip.place.name_jp if trip.place.ancestry&.include?('/') %>
           </div>
           <p><%= trip.start_on %> ~ <%= trip.finish_on %></p>
@@ -53,11 +53,12 @@
                 <span class="card__status">
                   <%= trip.user.profile.place.name_jp unless trip.user.profile.place.ancestry&.include?('/') %>
                   <%= trip.user.profile.place.parent.name_jp if trip.user.profile.place.ancestry&.include?('/') %>
-                   / <%= trip.user.profile.place.name_jp if trip.user.profile.place.ancestry&.include?('/') %>
+                  <% if trip.user.profile.place.ancestry&.include?('/') %> / <% end %>
+                  <%= trip.user.profile.place.name_jp if trip.user.profile.place.ancestry&.include?('/') %>
                 </span>
               </div>
             </div>
-            <p class="card__description"><%= trip.user.profile.first_language %>, <%= trip.user.profile.second_language %></p>
+            <p class="card__description"><%= trip.user.profile.first_language %> <%= trip.user.profile.second_language %></p>
           </div>
         <% end %>   
       </li>
