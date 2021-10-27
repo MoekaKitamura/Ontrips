@@ -6,7 +6,7 @@ class TripsController < ApplicationController
   # GET /trips
   def index
     @q = Trip.ransack(params[:q])
-    @trips = @q.result(distinct: true).includes(:place).order(updated_at: :desc).page(params[:page]).per(4)
+    @trips = @q.result(distinct: true).includes(:place).order(updated_at: :desc).page(params[:page]).per(12)
   end
 
   # GET /trips/1
@@ -49,6 +49,10 @@ class TripsController < ApplicationController
 
   # GET /trips/1/edit
   def edit
+    # 目的地がcityだったら
+    params[:place] = {"region"=>@trip.place.root.id, "country"=>@trip.place.parent.id, "city"=>@trip.place.id} if @trip.place.ancestry&.include?('/')
+    # 目的地がcountryだったら
+    params[:place] = {"region"=>@trip.place.root.id, "country"=>@trip.place.id} if @trip.place.root == @trip.place.parent  
     unless @trip.user == current_user
       redirect_to @trip, alert: "投稿者以外は編集できません"
     end
@@ -70,7 +74,7 @@ class TripsController < ApplicationController
   def update
     @trip.place_id = place_param
     if @trip.update(trip_params)
-      redirect_to @trip, notice: t('notice.update', model: t('trip'))
+        redirect_to @trip, notice: t('notice.update', model: t('trip'))
     else
       render :edit
     end

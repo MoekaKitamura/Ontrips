@@ -12,7 +12,7 @@
           <div class="place">
             <%= favorite.trip.place.name_jp unless favorite.trip.place.ancestry&.include?('/') %>
             <%= favorite.trip.place.parent.name_jp if favorite.trip.place.ancestry&.include?('/') %>
-             / 
+            <% if favorite.trip.place.ancestry&.include?('/') %> / <% end %>
             <%= favorite.trip.place.name_jp if favorite.trip.place.ancestry&.include?('/') %>
           </div>
           <p><%= favorite.trip.start_on %> ~ <%= favorite.trip.finish_on %></p>
@@ -25,11 +25,12 @@
                 <span class="card__status">
                   <%= favorite.trip.user.profile.place.name_jp unless favorite.trip.user.profile.place.ancestry&.include?('/') %>
                   <%= favorite.trip.user.profile.place.parent.name_jp if favorite.trip.user.profile.place.ancestry&.include?('/') %>
-                   / <%= favorite.trip.user.profile.place.name_jp if favorite.trip.user.profile.place.ancestry&.include?('/') %>
+                  <% if favorite.trip.user.profile.place.ancestry&.include?('/') %> / <% end %>
+                  <%= favorite.trip.user.profile.place.name_jp if favorite.trip.user.profile.place.ancestry&.include?('/') %>
                 </span>
               </div>
             </div>
-            <p class="card__description"><%= favorite.trip.user.profile.first_language %>, <%= favorite.trip.user.profile.second_language %></p>
+            <p class="card__description"><%= favorite.trip.user.profile.first_language %> <%= favorite.trip.user.profile.second_language %></p>
           </div>
         <% end %>   
       </li>

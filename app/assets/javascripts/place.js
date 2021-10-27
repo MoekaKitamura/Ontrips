@@ -20,13 +20,21 @@ $(document).on('turbolinks:load', function() {
 
   $(document).on('change', '#place_region', function() {
     var regionVal = $('#place_region').val();
+    var countryVal = $('#place_country').val();
     //親要素のセレクトボックスが変更されてvalueに値が入った場合の処理
     if (regionVal !== "") {
      var selectedTemplate1 = $("#country-of-region_" + regionVal);
      //デフォルトで入っていた子要素のセレクトボックスを削除
      $('#place_country').remove();
+     $('#place_city').remove();
      $('#place_region').after(selectedTemplate1.html());
-    }else {
+     $('#place_country').after(defaultCitySelect);
+      if (countryVal !== ""){
+      var selectedTemplate2 = $("#city-of-country_" + countryVal);
+      $('#place_city').remove();
+      $('#place_country').after(selectedTemplate2.html());
+     }
+    } else {
      //親要素のセレクトボックスが変更されてvalueに値が入っていない場合（include_blankの部分を選択している場合）
      $('#place_country').remove();
      $('#place_city').remove();

@@ -31,16 +31,16 @@
 
   <div class="field">
     <%= form.label "居住地（国名まで必須）" %>
-    <%= collection_select :place, :region, @regions, :id, :name_jp, include_blank: "エリアを選択してください" %>
+    <%= collection_select :place, :region, @regions, :id, :name_jp, include_blank: "エリアを選択してください", selected: params.dig(:place, :region) %>
     <%= select :place, :country, [], include_blank: "国を選択してください", class: "default-country-select" %>
     <%= select :place, :city, [], include_blank: "都市を選択してください", class: "default-city-select" %>
       <% @regions.each do |region| %>
         <template id="country-of-region_<%= region.id %>">
-          <%= collection_select :place, :country, region.children, :id, :name_jp, include_blank: "国を選択してください" %>
+          <%= collection_select :place, :country, region.children, :id, :name_jp, include_blank: "国を選択してください", selected: params.dig(:place, :country) %>
         </template>
           <% region.children.each do |country| %>
             <template id="city-of-country_<%= country.id %>">
-              <%= collection_select :place, :city, country.children, :id, :name_jp, include_blank: "都市を選択してください" %>
+              <%= collection_select :place, :city, country.children, :id, :name_jp, include_blank: "都市を選択してください", selected: params.dig(:place, :city) %>
             </template>
           <% end %>
       <% end %>
