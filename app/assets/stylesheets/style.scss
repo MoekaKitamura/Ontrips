@@ -187,6 +187,10 @@ footer p{
   margin: 50px;
   text-align: left;
   line-height: 1.7em;
+  white-space: pre-line;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: 1.1em;
 }
 
 .blog__area img{
