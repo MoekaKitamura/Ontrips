@@ -67,7 +67,18 @@ textarea{
   float: left;
 }
 
-#profile_icon{
+// #profile_icon{
+//   border: none;
+// }
+
+#img_prev{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#user_img{
+  margin-top: 10px;
   border: none;
 }
 

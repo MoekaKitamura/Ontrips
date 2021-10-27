@@ -10,11 +10,29 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
     <%= form.label :icon %>
-    <%= image_tag(profile.icon.url) if profile.icon && profile.icon.url %>
-    <%= form.file_field :icon %>
+    <%= image_tag profile.icon.url, id: "img_prev" %>
+    <%= form.hidden_field :icon_cache %>
+    <%= form.file_field :icon, id: 'user_img' %>
+
+    <script type="text/javascript">
+      $(function() {
+        function readURL(input) {
+          if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+            $('#img_prev').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+          }
+        }
+        $("#user_img").change(function(){
+            readURL(this);
+        });
+      });
+    </script>
   </div>
 
   <div class="field">
