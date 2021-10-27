@@ -42,7 +42,9 @@
       <%= @profile.introduction %>
     </p>
 
-    <% unless @profile.user_id == current_user.id %>
+    <% if @profile.user_id == current_user.id %>
+        <p><%= link_to 'プロフィールを編集する', edit_profile_path(@profile), class: "btn btn-warning" %></p>
+    <% else %>
         <p><%= link_to 'メッセージを送る', talks_path(sender_id: current_user.id, receiver_id: @profile.user.id), method: :post, class: "btn btn-warning" %></p>
     <% end %>
 

@@ -12,9 +12,11 @@
 <% end %>
 <%= sort_link(@q, :start_on, "出発日順に並び替え") %>
 
-<%= link_to new_trip_path do %>
-  <h5><i class="fas fa-pencil-alt"></i> 投稿する</h5>
-<% end %>
+<div class="animate__animated animate__bounceInRight">
+  <%= link_to new_trip_path do %>
+    <h5><i class="fas fa-pencil-alt"></i> 投稿する</h5>
+  <% end %>
+</div>
 
 <p><i class="fas fa-star"></i> お気に入り <i class="fas fa-child"></i> 参加中 <i class="fas fa-check-circle"></i> 終了済み</p>
 
