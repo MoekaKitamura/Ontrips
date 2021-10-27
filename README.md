@@ -38,6 +38,7 @@ URL: https://ontrips.herokuapp.com/
 - ancestry(多階層カテゴリ)
 - font-awesome-sass
 - kaminari + jscrollで無限スクロール(jquery-rails使用)
+- AWS S3 fog-aws
 
 ## 実行手順 / Procedure
 ```

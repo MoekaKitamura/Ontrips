@@ -44,7 +44,12 @@
   <div class="field">
     <%= form.label :birthday %>
     <div class="birthday_area clearfix">
-    <%= form.date_select :birthday, { include_blank: '----------', start_year: 1921, end_year: 2010} %></div>
+      <%= form.date_select :birthday, { 
+                  start_year:Time.now.year-100,
+                  end_year:Time.now.year,
+                  prompt:"選択してください",
+        } %>
+    </div>
   </div>
 
   <div class="field">
@@ -62,16 +67,17 @@
             </template>
           <% end %>
       <% end %>
+    <div class="hint"><i class="far fa-lightbulb"></i> 都市がない場合は、自己紹介に書こう！</div>
   </div>
 
   <div class="field">
     <%= form.label :first_language %>
-    <%= form.select :first_language,Profile.first_languages.keys, {include_blank: '----------'}%>
+    <%= form.select :first_language,Profile.first_languages.keys, {prompt:"言語を選択"}%>
   </div>
 
   <div class="field">
     <%= form.label :second_language %>
-    <%= form.select :second_language,Profile.second_languages.keys, {include_blank: '----------'}%>
+    <%= form.select :second_language,Profile.second_languages.keys, {prompt:"言語を選択"}%>
   </div>
 
   <div class="field">
