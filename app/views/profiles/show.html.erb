@@ -1,11 +1,15 @@
 <div class="trip__area">
 <article>
   <div class="col-sm-6">
-    <%= image_tag @profile.icon.url, class: "profile_icon" %> 
-    <h1>
-      <%= @profile.user.name %>
-      <i class="flag-icon flag-icon-<%= @code %>"></i>
-    </h1>
+    <div class="profile_title">
+      <%= image_tag @profile.icon.url, class: "profile_icon" %> 
+      <div class="title">
+        <h1>
+          <%= @profile.user.name %>
+          <i class="flag-icon flag-icon-<%= @code %>"></i>
+        </h1>
+      </div>
+    </div>
 
     <p>
       <i class="far fa-address-card"></i>

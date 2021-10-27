@@ -1,7 +1,9 @@
 <div class="trip__area <%= "finished" if @trip.goal %>">
   <article>
     <div class="col-sm-6">
-      <h1><%= @trip.title.truncate(35) %></h1>
+      <div class="title">
+        <h1><%= @trip.title.truncate(35) %></h1>
+      </div>
 
       <hr>
 
