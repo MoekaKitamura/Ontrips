@@ -20,7 +20,7 @@
       <% if  @profile.birthday.present? %> 
         <%= (Date.today.strftime('%Y%m%d').to_i - @profile.birthday.strftime('%Y%m%d').to_i) / 10000 %>歳 
       <% end %>
-      <% if @profile.gender.present? %> / <% end %>
+      <% if @profile.gender.present? && @profile.birthday.present? %> / <% end %>
       <%= @profile.gender %>
     </p>
 
