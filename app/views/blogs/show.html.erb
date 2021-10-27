@@ -4,7 +4,13 @@
   <p class="content"><%= @blog.content %></p>
 
   <div class="user__area">
-    <p><%= image_tag @blog.user.profile.icon.url %></p>
+    <p>
+      <% if @blog.user.profile.icon? %>
+        <%= image_tag @blog.user.profile.icon.url %>
+      <% else %>
+        <%= image_tag asset_path("default_icon.png") %>
+      <% end %>
+    </p>
     <p><%= @blog.user.name %></p>
   </div>
 

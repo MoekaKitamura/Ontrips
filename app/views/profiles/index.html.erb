@@ -31,7 +31,11 @@
 			<% if profile.user.trips.count+profile.user.members.count > 5 %>
 				<i class="fas fa-crown"></i>
 			<% end %>
-				<%= image_tag profile.icon.url %>
+				<% if profile.icon? %>
+          <%= image_tag profile.icon.url %>
+        <% else %>
+          <%= image_tag asset_path("default_icon.png") %>
+        <% end %>
 				<h3><%= profile.user.name %></h3>
 				<h6>
 					<%= profile.place.name_jp unless profile.place.ancestry&.include?('/') %>

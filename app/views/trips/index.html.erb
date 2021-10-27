@@ -47,7 +47,11 @@
           <div class="card__trip_description"><%= trip.description.truncate(47) %></div>
           <div class="card__overlay">
             <div class="card__header">
-              <%= image_tag trip.user.profile.icon.url, class:"card__icon" %>
+              <% if trip.user.profile.icon? %>
+                <%= image_tag trip.user.profile.icon.url, class:"card__icon" %>
+              <% else %>
+                <%= image_tag asset_path("default_icon.png"), class:"card__icon" %>
+              <% end %>
               <div class="card__header-text">
                 <h3 class="card__title"><%= trip.user.name %></h3>            
                 <span class="card__status">

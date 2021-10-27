@@ -2,7 +2,11 @@
 <article>
   <div class="col-sm-6">
     <div class="profile_title">
-      <%= image_tag @profile.icon.url, class: "profile_icon" %> 
+      <% if @profile.icon? %>
+        <%= image_tag @profile.icon.url, class: "profile_icon" %>
+      <% else %>
+        <%= image_tag asset_path("default_icon.png"), class: "profile_icon" %>
+      <% end %>
       <div class="title">
         <h1>
           <%= @profile.user.name %>

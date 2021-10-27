@@ -9,7 +9,11 @@
       <% if talk.target_user(current_user).present? %>
         <li class="talking__user">
           <%= link_to talk_messages_path(talk) do %>
-            <%= image_tag talk.target_user(current_user).profile.icon.url %>
+            <% if talk.target_user(current_user).profile.icon? %>
+              <%= image_tag talk.target_user(current_user).profile.icon.url %>
+            <% else %>
+              <%= image_tag asset_path("default_icon.png") %>
+            <% end %>
             <%= talk.target_user(current_user).name %>
             <span class="btn btn-danger"><%= talk.messages.where.not(user_id:current_user.id).where(read: false).count %></span>
           <% end %>

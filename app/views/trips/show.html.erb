@@ -80,7 +80,11 @@
 
       <p>
         <%= link_to profile_path(@trip.user.profile.id) do %>
-          <%= image_tag @trip.user.profile.icon.url, class: "trip_icon"%>
+          <% if @trip.user.profile.icon? %>
+            <%= image_tag @trip.user.profile.icon.url, class: "trip_icon" %>
+          <% else %>
+            <%= image_tag asset_path("default_icon.png"), class: "trip_icon" %>
+          <% end %>
           <%= @trip.user.name %>
         <% end %>
       </p>

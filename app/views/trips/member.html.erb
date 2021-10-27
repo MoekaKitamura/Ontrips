@@ -19,7 +19,11 @@
           <div class="card__trip_description"><%= join.trip.description.truncate(47) %></div>
           <div class="card__overlay">
             <div class="card__header">
-              <%= image_tag join.trip.user.profile.icon.url, class:"card__icon" %>
+              <% if join.trip.user.profile.icon? %>
+                <%= image_tag join.trip.user.profile.icon.url, class:"card__icon" %>
+              <% else %>
+                <%= image_tag asset_path("default_icon.png"), class:"card__icon" %>
+              <% end %>
               <div class="card__header-text">
                 <h3 class="card__title"><%= join.trip.user.name %></h3>
                 <span class="card__status">
