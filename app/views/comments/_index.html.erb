@@ -3,7 +3,11 @@
     <% if comment.id.present? %>
       <li>
         <h4>
-          <%= image_tag comment.user.profile.icon.url %>
+          <% if comment.user.profile.icon? %>
+            <%= image_tag comment.user.profile.icon.url %>
+          <% else %>
+            <%= image_tag asset_path("default_icon.png") %>
+          <% end %>
           <%= comment.user.name %>
         </h4>
 

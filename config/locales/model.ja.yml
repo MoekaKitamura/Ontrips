@@ -28,7 +28,7 @@ ja:
         start_on: 出発日
         finish_on: 到着日
         flexible: 日程変更可能
-        description: 詳細
+        description: 旅の詳細
         goal: 終了済み
       member:
         as: として

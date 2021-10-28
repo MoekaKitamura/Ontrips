@@ -67,7 +67,23 @@ textarea{
   float: left;
 }
 
-#profile_icon{
+#place_city{
+  margin-bottom: 0;
+}
+.hint{
+  text-align: left;
+  font-size: 0.8em;
+  margin:0.4em 0 20px 1em;
+}
+
+#img_prev{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#user_img{
+  margin-top: 10px;
   border: none;
 }
 

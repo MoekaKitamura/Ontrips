@@ -1,7 +1,7 @@
 // カード共通
 :root {
   --surface-color: #f6e9e2bb;
-  --curve: 15;
+  --curve: 8;
 }
 
 * {
@@ -125,6 +125,10 @@
   font-size: 0.8em;
 }
 
+.trip_title{
+  padding: 0 0.8em 0 0;
+  line-height: 1.5em;
+}
 .place{
   font-size: 0.9em;
   margin: 15px 0 10px 0 ;
@@ -133,7 +137,7 @@
 .card__trip_description{
   margin-top: 20px;
   font-size: 0.8em;
-  color: #D5A1A3;  
+  color: #c7888b;  
 }
 
 .trip_status {

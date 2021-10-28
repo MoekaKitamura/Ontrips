@@ -12,9 +12,11 @@
 <% end %>
 <%= sort_link(@q, :start_on, "出発日順に並び替え") %>
 
-<%= link_to new_trip_path do %>
-  <h5><i class="fas fa-pencil-alt"></i> 投稿する</h5>
-<% end %>
+<div class="animate__animated animate__bounceInRight">
+  <%= link_to new_trip_path do %>
+    <h5><i class="fas fa-pencil-alt"></i> 投稿する</h5>
+  <% end %>
+</div>
 
 <p><i class="fas fa-star"></i> お気に入り <i class="fas fa-child"></i> 参加中 <i class="fas fa-check-circle"></i> 終了済み</p>
 
@@ -47,7 +49,11 @@
           <div class="card__trip_description"><%= trip.description.truncate(47) %></div>
           <div class="card__overlay">
             <div class="card__header">
-              <%= image_tag trip.user.profile.icon.url, class:"card__icon" %>
+              <% if trip.user.profile.icon? %>
+                <%= image_tag trip.user.profile.icon.url, class:"card__icon" %>
+              <% else %>
+                <%= image_tag asset_path("default_icon.png"), class:"card__icon" %>
+              <% end %>
               <div class="card__header-text">
                 <h3 class="card__title"><%= trip.user.name %></h3>            
                 <span class="card__status">

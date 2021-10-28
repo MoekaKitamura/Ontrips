@@ -1,18 +1,26 @@
 <div class="trip__area">
 <article>
   <div class="col-sm-6">
-    <%= image_tag @profile.icon.url, class: "profile_icon" %> 
-    <h1>
-      <%= @profile.user.name %>
-      <i class="flag-icon flag-icon-<%= @code %>"></i>
-    </h1>
+    <div class="profile_title">
+      <% if @profile.icon? %>
+        <%= image_tag @profile.icon.url, class: "profile_icon" %>
+      <% else %>
+        <%= image_tag asset_path("default_icon.png"), class: "profile_icon" %>
+      <% end %>
+      <div class="title">
+        <h1>
+          <%= @profile.user.name %>
+          <i class="flag-icon flag-icon-<%= @code %>"></i>
+        </h1>
+      </div>
+    </div>
 
     <p>
       <i class="far fa-address-card"></i>
       <% if  @profile.birthday.present? %> 
         <%= (Date.today.strftime('%Y%m%d').to_i - @profile.birthday.strftime('%Y%m%d').to_i) / 10000 %>歳 
       <% end %>
-      <% if @profile.gender.present? %> / <% end %>
+      <% if @profile.gender.present? && @profile.birthday.present? %> / <% end %>
       <%= @profile.gender %>
     </p>
 
@@ -34,7 +42,9 @@
       <%= @profile.introduction %>
     </p>
 
-    <% unless @profile.user_id == current_user.id %>
+    <% if @profile.user_id == current_user.id %>
+        <p><%= link_to 'プロフィールを編集する', edit_profile_path(@profile), class: "btn btn-warning" %></p>
+    <% else %>
         <p><%= link_to 'メッセージを送る', talks_path(sender_id: current_user.id, receiver_id: @profile.user.id), method: :post, class: "btn btn-warning" %></p>
     <% end %>
 
