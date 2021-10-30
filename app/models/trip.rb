@@ -13,7 +13,7 @@ class Trip < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 35 }
   validates :description, length: { maximum: 1000 }
-  validate :not_before_today
+  validate :not_before_today, on: :create
   validate :not_before_start
   
   def not_before_today
@@ -25,5 +25,5 @@ class Trip < ApplicationRecord
       errors.add(:finish_on, 'は出発日以降で入力してください') if finish_on < start_on
     end
   end
-  
+
 end

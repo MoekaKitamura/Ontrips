@@ -41,6 +41,14 @@
   mk.update(latitude: 41.64239710419572, longitude: 21.729136413080525)
 
 # user
+admin = User.create!(
+  name:"Ontrips公式アカウント",
+  email:"ontrips@ex.com",
+  password:"111111",
+  admin: true,
+  confirmed_at: Time.now,
+)
+
   user1 = User.create!(
     name: "Moeka",
     email: "moeka@g.com",

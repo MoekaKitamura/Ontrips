@@ -49,7 +49,8 @@
           <% if user_signed_in? %>
             <li><%= link_to profiles_path, title:"旅仲間を探す" do %><span uk-icon="icon: users; ratio: 1.6"><% end %></li>
             <li><%= link_to trips_path, title:"旅を検索する" do %><span uk-icon="icon: search; ratio: 1.6"><% end %></li>
-            <li><%= link_to blogs_path, title:"旅プログを見る" do %><span uk-icon="icon: pencil; ratio: 1.6"><% end %></li>
+            <li><%= link_to new_trip_path, title:"旅を投稿する" do %><span uk-icon="icon: pencil; ratio: 1.6"><% end %></li>
+            <li><%= link_to blogs_path, title:"旅プログを見る" do %><span uk-icon="icon: file-text; ratio: 1.6"><% end %></li>
             <li><%= link_to talks_path, title:"メッセージを見る" do %><span uk-icon="icon: mail; ratio: 1.6"><% end %></li>
             <li><%= link_to talks_path, title:"未読メッセージ" do %><span class="btn btn-danger"><%= unread_messages %></span><% end %></li>
           <% else %>
@@ -70,6 +71,7 @@
               <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
                 <li><%= link_to "旅仲間を探す", profiles_path, data: {"turbolinks" => false} %></li>
                 <li><%= link_to "旅を検索する", trips_path, data: {"turbolinks" => false} %></li>
+                <li><%= link_to "旅を投稿する", new_trip_path, data: {"turbolinks" => false} %></li>
                 <li><%= link_to "旅ブログを見る", blogs_path, data: {"turbolinks" => false} %></li>
                 <li><%= link_to "メッセージを見る", talks_path, data: {"turbolinks" => false} %></li>
                 <li><%= link_to "参加している旅", member_trips_path, data: {"turbolinks" => false} %></li>

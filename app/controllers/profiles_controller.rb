@@ -5,8 +5,9 @@ class ProfilesController < ApplicationController
 
   # GET /profiles
   def index
+    admin = User.find_by(email:"ontrips@ex.com")
     @q = Profile.ransack(params[:q])
-    @profiles = @q.result(distinct: true).includes(:place).order(updated_at: :desc).page(params[:page]).per(12)
+    @profiles = @q.result(distinct: true).where.not(id: admin.profile.id).includes(:place).order(updated_at: :desc).page(params[:page]).per(12)
     @chart_map = Place.joins(:profiles).group(:code).count
   end
 
