@@ -23,6 +23,10 @@
 	%>
 <p><i class="fas fa-crown"></i>付きユーザーは、旅の投稿と参加合わせて５件以上のアクティブユーザーです</p>
 <hr>
+<% if @profiles.empty? %>
+  <br>
+  検索結果が見つかりませんでした
+<% end %>
 
 <div class="scroll-list jscroll">
 	<ul class="cards">

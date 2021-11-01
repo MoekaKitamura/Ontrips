@@ -21,6 +21,10 @@
 <p><i class="fas fa-star"></i> お気に入り <i class="fas fa-child"></i> 参加中 <i class="fas fa-check-circle"></i> 終了済み</p>
 
 <hr>
+<% if @trips.empty? %>
+  <br>
+  検索結果が見つかりませんでした
+<% end %>
 
 <div class="scroll-list jscroll">
   <ul class="cards">
