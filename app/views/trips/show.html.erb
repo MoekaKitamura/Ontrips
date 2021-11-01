@@ -90,15 +90,16 @@
       </p>
 
       <!---goal--->
-      <p>
-        <% if @trip.user.id == current_user.id %>
+      <% if @trip.user.id == current_user.id %>
+        <p>
+          <%= link_to "投稿を編集する", edit_trip_path(@trip) ,class: 'btn btn-sm btn-success' %>
           <% if @trip.goal %>
             <%= link_to "再開する", change_goal_trip_path(goal: false), method: :post, class: 'btn btn-sm btn-danger' %>
           <% else %>
             <%= link_to "旅を終了する", change_goal_trip_path(goal: true), method: :post, class: 'btn btn-sm btn-primary' %>
           <% end %>
-        <% end %>
-      </p>
+        </p>
+      <% end %>
       <!-- English ver. <p class="date_trip"><%= pluralize(@date, "day", locale: :en) %> ago</p> -->
       <p class="date_trip"><i class="far fa-clock"></i>
         <% if @duration <= 24 %>
