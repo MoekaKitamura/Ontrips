@@ -26,10 +26,8 @@
 
     <p>
       <i class="fas fa-globe-americas"></i>
-      <%= @profile.place.name_jp unless @profile.place.ancestry&.include?('/') %>
-      <%= @profile.place.parent.name_jp if @profile.place.ancestry&.include?('/') %>
-      <% if @profile.place.ancestry&.include?('/') %> / <% end %>
-      <%= @profile.place.name_jp if @profile.place.ancestry&.include?('/') %>
+			<% if city?(@profile) %><%= @profile.place.parent.name_jp %> / <% end %>
+      <%= @profile.place.name_jp %>
     </p>
 
     <p>

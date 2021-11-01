@@ -42,10 +42,8 @@
         <% end %>
 				<h3><%= profile.user.name %></h3>
 				<h6>
-					<%= profile.place.name_jp unless profile.place.ancestry&.include?('/') %>
-					<%= profile.place.parent.name_jp if profile.place.ancestry&.include?('/') %>
-					<% if profile.place.ancestry&.include?('/') %> / <% end %>
-					<%= profile.place.name_jp if profile.place.ancestry&.include?('/') %>
+					<% if city?(profile) %><%= profile.place.parent.name_jp %> / <% end %>
+          <%= profile.place.name_jp %>
 				</h6>
 				<p>
 					<%= (Date.today.strftime('%Y%m%d').to_i - profile.birthday.strftime('%Y%m%d').to_i) / 10000 if  profile.birthday.present? %>歳 

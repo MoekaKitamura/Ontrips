@@ -44,10 +44,8 @@
         </div>
           <h4 class="trip_title"><%= trip.title %></h4>
           <div class="place">
-            <%= trip.place.name_jp unless trip.place.ancestry&.include?('/') %>
-            <%= trip.place.parent.name_jp if trip.place.ancestry&.include?('/') %>
-            <% if trip.place.ancestry&.include?('/') %> / <% end %>
-            <%= trip.place.name_jp if trip.place.ancestry&.include?('/') %>
+            <% if city?(trip) %><%= trip.place.parent.name_jp %> / <% end %>
+            <%= trip.place.name_jp %>
           </div>
           <p><%= trip.start_on %> ~ <%= trip.finish_on %></p>
           <div class="card__trip_description"><%= trip.description.truncate(47) %></div>
@@ -61,10 +59,8 @@
               <div class="card__header-text">
                 <h3 class="card__title"><%= trip.user.name %></h3>            
                 <span class="card__status">
-                  <%= trip.user.profile.place.name_jp unless trip.user.profile.place.ancestry&.include?('/') %>
-                  <%= trip.user.profile.place.parent.name_jp if trip.user.profile.place.ancestry&.include?('/') %>
-                  <% if trip.user.profile.place.ancestry&.include?('/') %> / <% end %>
-                  <%= trip.user.profile.place.name_jp if trip.user.profile.place.ancestry&.include?('/') %>
+                  <% if city?(trip.user.profile) %><%= trip.user.profile.place.parent.name_jp %> / <% end %>
+                  <%= trip.user.profile.place.name_jp %>
                 </span>
               </div>
             </div>
