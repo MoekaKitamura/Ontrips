@@ -41,13 +41,13 @@
   mk.update(latitude: 41.64239710419572, longitude: 21.729136413080525)
 
 # user
-admin = User.create!(
-  name:"Ontrips公式アカウント",
-  email:"ontrips@ex.com",
-  password:"111111",
-  admin: true,
-  confirmed_at: Time.now,
-)
+  admin = User.create!(
+    name:"Ontrips公式アカウント",
+    email:"ontrips@ex.com",
+    password:"111111",
+    admin: true,
+    confirmed_at: Time.now,
+  )
 
   user1 = User.create!(
     name: "Moeka",
@@ -83,7 +83,7 @@ admin = User.create!(
 
 # profile
   profile1 = user1.build_profile(
-    id: user1.id,
+    # id: user1.id,
     icon: "profile.jpg",
     gender: "女性",
     birthday: "1994-07-11",
@@ -95,7 +95,7 @@ admin = User.create!(
   profile1.save
 
   profile2 = user2.build_profile(
-    id: user2.id,
+    # id: user2.id,
     icon: "profile.jpg",
     gender: "女性",
     birthday: "2000-07-11",
@@ -107,7 +107,7 @@ admin = User.create!(
   profile2.save
   
   profile3 = user3.build_profile(
-    id: user3.id,
+    # id: user3.id,
     icon: "profile.jpg",
     gender: "男性",
     birthday: "1988-07-11",
@@ -119,7 +119,7 @@ admin = User.create!(
   profile3.save
   
   profile4 = user4.build_profile(
-    id: user4.id,
+    # id: user4.id,
     icon: "profile.jpg",
     gender: "男性",
     birthday: "1990-07-11",
@@ -131,7 +131,7 @@ admin = User.create!(
   profile4.save
   
   profile5 = user5.build_profile(
-    id: user5.id,
+    # id: user5.id,
     icon: "profile.jpg",
     gender: "男性",
     birthday: "1988-07-11",
@@ -141,12 +141,17 @@ admin = User.create!(
     place_id: 651,  #東京
   )
   profile5.save
+
+  profile6 = admin.build_profile(
+    place_id: 651,  #東京
+  )
+  profile6.save
   
 # trip
   trip1 = Trip.create!(
     title: "初めての一人旅",
-    start_on: "2021-11-09",
-    finish_on: "2021-11-13",
+    start_on: Date.today << -1,
+    finish_on: Date.today << -5,
     flexible: true,
     description: "一人旅で、タイに行きます！🐘初めてなので、おすすめの場所あれば教えてください😆😆カオサン通り行ってみたいです！",
     goal: false,
@@ -156,8 +161,8 @@ admin = User.create!(
 
   trip2 = Trip.create!(
     title: "アメリカ横断！キャンピングカー！",
-    start_on: "2021-11-10",
-    finish_on: "2021-12-30",
+    start_on: Date.today << -10,
+    finish_on: Date.today << -15,
     flexible: true,
     description: "念願のアメリカ横断！🇺🇸🗽メンバー募集します。計画は、サンディエゴスタートで、ロサンゼルスに行き、ルート66を通ってゴールはニューヨーク！🚖年齢性別国籍関係なし！6人くらいで考えてます。アメリカ在住の方、案内してくれる方も大歓迎です！",
     goal: false,
@@ -167,8 +172,8 @@ admin = User.create!(
 
   trip3 = Trip.create!(
     title: "ドバイでラクダに乗りたい🐫",
-    start_on: "2021-12-10",
-    finish_on: "2021-12-26",
+    start_on: Date.today << -3,
+    finish_on: Date.today << -4,
     flexible: false,
     description: "ドバイに行くのですが語学できないので、英語話せる方や、ドバイにいる日本人の方と繋がりたいです！",
     goal: false,
@@ -178,19 +183,19 @@ admin = User.create!(
 
   trip4 = Trip.create!(
     title: "Trip to JAPAN!!",
-    start_on: "2021-09-04",
-    finish_on: "2021-09-26",
+    start_on: Date.today << -10,
+    finish_on: Date.today << -11,
     flexible: false,
     description: "I'm planning to go to Tokyo, Kyoto and Fukuoka!! It's first time to visit Japan (even Asia!!)",
-    goal: true,
+    goal: false,
     user_id: user3.id,
     place_id: 651
   )
 
   trip5 = Trip.create!(
     title: "クリスマスをスウェーデンで🎄🎅",
-    start_on: "2021-12-10",
-    finish_on: "2021-12-28",
+    start_on: Date.today << -20,
+    finish_on: Date.today << -21,
     flexible: false,
     description: "今回初めてヨーロッパに行きます！クリスマスを本場の北ヨーロッパで過ごしたくて、旅することに決めました！一緒にいろんな貴重な体験しましょうー！！",
     goal: false,
@@ -200,8 +205,8 @@ admin = User.create!(
 
   trip6 = Trip.create!(
     title: "アユタヤ遺跡でゾウに乗りタイ🐘",
-    start_on: "2021-11-10",
-    finish_on: "2021-11-17",
+    start_on: Date.today << -1,
+    finish_on: Date.today << -2,
     flexible: false,
     description: "パックパッカーでタイ一周します！！アユタヤでどうしても象に乗ってみたいのですが、一緒に行きませんか？",
     goal: false,
