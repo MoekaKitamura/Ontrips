@@ -13,7 +13,7 @@
 <%= sort_link(@q, :start_on, "出発日順に並び替え") %>
 
 <div class="animate__animated animate__bounceInRight">
-  <%= link_to new_trip_path do %>
+  <%= link_to new_trip_path, data: {"turbolinks" => false} do %>
     <h5><i class="fas fa-pencil-alt"></i> 投稿する</h5>
   <% end %>
 </div>

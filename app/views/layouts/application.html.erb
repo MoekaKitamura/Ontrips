@@ -55,7 +55,7 @@
           <% if user_signed_in? %>
             <li><%= link_to profiles_path, title:"旅仲間を探す" do %><span uk-icon="icon: users; ratio: 1.6"><% end %></li>
             <li><%= link_to trips_path, title:"旅を検索する" do %><span uk-icon="icon: search; ratio: 1.6"><% end %></li>
-            <li><%= link_to new_trip_path, title:"旅を投稿する" do %><span uk-icon="icon: pencil; ratio: 1.6"><% end %></li>
+            <li><%= link_to new_trip_path, title:"旅を投稿する", data: {"turbolinks" => false} do %><span uk-icon="icon: pencil; ratio: 1.6"><% end %></li>
             <li><%= link_to blogs_path, title:"旅プログを見る" do %><span uk-icon="icon: file-text; ratio: 1.6"><% end %></li>
             <li><%= link_to talks_path, title:"メッセージを見る" do %><span uk-icon="icon: mail; ratio: 1.6"><% end %></li>
             <li><%= link_to talks_path, title:"未読メッセージ" do %><span class="btn btn-danger"><%= unread_messages %></span><% end %></li>
