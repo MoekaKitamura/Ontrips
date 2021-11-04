@@ -19,7 +19,7 @@ URL: https://ontrips.herokuapp.com/
 - HTML, CSS, JavaScript, jQuery, Bootstrap
 - DB: postgreSQL
 
-## 機能　・　使用Gem / Functions　・　Gem 
+## 機能・使用Gem / Functions・Gem 
 - devise
 - rails_admin
 - cancancan
