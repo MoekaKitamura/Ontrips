@@ -43,12 +43,12 @@
 
   <div class="field">
     <%= form.label :start_on %>
-    <%= form.date_field :start_on %>
+    <%= form.text_field :start_on, class:"datepicker", :placeholder => "出発日を選択" %>
   </div>
 
   <div class="field">
     <%= form.label :finish_on %>
-    <%= form.date_field :finish_on %>
+    <%= form.text_field :finish_on, class:"datepicker", :placeholder => "到着日を選択" %>
   </div>
 
   <div class="field">
