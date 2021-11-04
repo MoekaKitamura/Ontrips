@@ -23,6 +23,10 @@
 	%>
 <p><i class="fas fa-crown"></i>付きユーザーは、旅の投稿と参加合わせて５件以上のアクティブユーザーです</p>
 <hr>
+<% if @profiles.empty? %>
+  <br>
+  検索結果が見つかりませんでした
+<% end %>
 
 <div class="scroll-list jscroll">
 	<ul class="cards">
@@ -38,10 +42,8 @@
         <% end %>
 				<h3><%= profile.user.name %></h3>
 				<h6>
-					<%= profile.place.name_jp unless profile.place.ancestry&.include?('/') %>
-					<%= profile.place.parent.name_jp if profile.place.ancestry&.include?('/') %>
-					<% if profile.place.ancestry&.include?('/') %> / <% end %>
-					<%= profile.place.name_jp if profile.place.ancestry&.include?('/') %>
+					<% if city?(profile) %><%= profile.place.parent.name_jp %> / <% end %>
+          <%= profile.place.name_jp %>
 				</h6>
 				<p>
 					<%= (Date.today.strftime('%Y%m%d').to_i - profile.birthday.strftime('%Y%m%d').to_i) / 10000 if  profile.birthday.present? %>歳 

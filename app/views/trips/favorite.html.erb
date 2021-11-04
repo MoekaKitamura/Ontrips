@@ -10,10 +10,8 @@
         <%= link_to trip_path(favorite.trip_id), data: {"turbolinks" => false}, class:"card" do %>
           <h4><%= favorite.trip.title %></h4>
           <div class="place">
-            <%= favorite.trip.place.name_jp unless favorite.trip.place.ancestry&.include?('/') %>
-            <%= favorite.trip.place.parent.name_jp if favorite.trip.place.ancestry&.include?('/') %>
-            <% if favorite.trip.place.ancestry&.include?('/') %> / <% end %>
-            <%= favorite.trip.place.name_jp if favorite.trip.place.ancestry&.include?('/') %>
+            <% if city?(favorite.trip) %><%= favorite.trip.place.parent.name_jp %> / <% end %>
+            <%= favorite.trip.place.name_jp %>
           </div>
           <p><%= favorite.trip.start_on %> ~ <%= favorite.trip.finish_on %></p>
           <div class="card__trip_description"><%= favorite.trip.description.truncate(47) %></div>
@@ -27,10 +25,8 @@
               <div class="card__header-text">
                 <h3 class="card__title"><%= favorite.trip.user.name %></h3>
                 <span class="card__status">
-                  <%= favorite.trip.user.profile.place.name_jp unless favorite.trip.user.profile.place.ancestry&.include?('/') %>
-                  <%= favorite.trip.user.profile.place.parent.name_jp if favorite.trip.user.profile.place.ancestry&.include?('/') %>
-                  <% if favorite.trip.user.profile.place.ancestry&.include?('/') %> / <% end %>
-                  <%= favorite.trip.user.profile.place.name_jp if favorite.trip.user.profile.place.ancestry&.include?('/') %>
+                  <% if city?(favorite.trip.user.profile) %><%= favorite.trip.user.profile.place.parent.name_jp %> / <% end %>
+                  <%= favorite.trip.user.profile.place.name_jp %>
                 </span>
               </div>
             </div>

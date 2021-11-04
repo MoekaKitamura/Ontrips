@@ -19,23 +19,25 @@ URL: https://ontrips.herokuapp.com/
 - HTML, CSS, JavaScript, jQuery, Bootstrap
 - DB: postgreSQL
 
-## 就職Termの技術 / Skills(in Employment Term)
+## 機能・使用Gem / Functions・Gem 
 - devise
 - rails_admin
 - cancancan
 - rexml
 - devise-i18n
 - コメント機能(Ajax)
-- ダイレクトメッセージ機能(Ajax)
-
-## カリキュラム外の技術 / Skills(out of the curriculum)
+- ダイレクトメッセージ機能
 - ransack
 - chartkick(地図機能)
+- Maps JavaScript
 - geocoder
 - ancestry(多階層カテゴリ)
 - font-awesome-sass
 - kaminari + jscrollで無限スクロール(jquery-rails使用)
 - AWS S3 fog-aws
+- carrierwave
+- mini_magick
+- mimemagic
 
 ## 実行手順 / Procedure
 ```

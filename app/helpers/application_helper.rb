@@ -8,5 +8,9 @@ module ApplicationHelper
     end
     unread_messages
   end
+
+  def city?(name)
+    name.place.ancestry&.include?('/')
+  end
   
 end
