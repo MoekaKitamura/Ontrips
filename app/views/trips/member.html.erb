@@ -3,47 +3,4 @@
 
 <hr>
 
-<div class="scroll-list jscroll">
-  <ul class="cards">
-    <% @joining.each do |join| %>
-      <li>
-        <%= link_to trip_path(join.trip_id), data: {"turbolinks" => false}, class:"card" do %>
-          <h4><%= join.trip.title %></h4>
-          <div class="place">
-            <% if city?(join.trip) %><%= join.trip.place.parent.name_jp %> / <% end %>
-            <%= join.trip.place.name_jp %>
-          </div>
-          <p><%= join.trip.start_on %> ~ <%= join.trip.finish_on %></p>
-          <div class="card__trip_description"><%= join.trip.description.truncate(47) %></div>
-          <div class="card__overlay">
-            <div class="card__header">
-              <% if join.trip.user.profile.icon? %>
-                <%= image_tag join.trip.user.profile.icon.url, class:"card__icon" %>
-              <% else %>
-                <%= image_tag asset_path("default_icon.png"), class:"card__icon" %>
-              <% end %>
-              <div class="card__header-text">
-                <h3 class="card__title"><%= join.trip.user.name %></h3>
-                <span class="card__status">
-                  <% if city?(join.trip.user.profile) %><%= join.trip.user.profile.place.parent.name_jp %> / <% end %>
-                  <%= join.trip.user.profile.place.name_jp %>
-                </span>          
-              </div>
-            </div>
-            <p class="card__description"><%= join.trip.user.profile.first_language %> <%= join.trip.user.profile.second_language %></p>
-          </div>
-        <% end %>   
-      </li>
-    <% end %>
-  </ul>
-  <%= paginate @joining %>
-</div>
-
-<%# <script>
-  $(function() {
-    $('.jscroll').jscroll({
-      contentSelector: '.scroll-list',
-      nextSelector: 'span.next:last a'
-    });
-  });
-</script> %>
+<%= render 'list', trips: @joinings %>
