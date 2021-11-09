@@ -72,12 +72,12 @@
 
   <div class="field">
     <%= form.label :first_language %>
-    <%= form.select :first_language,Profile.first_languages.keys, {prompt:"言語を選択"}%>
+    <%= form.select :first_language,Profile.languages.keys, {prompt:"言語を選択"}%>
   </div>
 
   <div class="field">
     <%= form.label :second_language %>
-    <%= form.select :second_language,Profile.second_languages.keys, {prompt:"言語を選択"}%>
+    <%= form.select :second_language,Profile.languages.keys, {prompt:"言語を選択"}%>
   </div>
 
   <div class="field">
