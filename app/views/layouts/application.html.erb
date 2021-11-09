@@ -84,7 +84,7 @@
                 <li><%= link_to "お気に入りした旅", favorite_trips_path, data: {"turbolinks" => false} %></li>
                 <li class="uk-nav-divider"></li>
                 <li>
-                  <%= link_to profile_path(current_user.id), data: {"turbolinks" => false} do %>
+                  <%= link_to profile_path(current_user.profile.id), data: {"turbolinks" => false} do %>
                     <span class="uk-margin-small-right" uk-icon="icon: user"></span>マイページ
                   <% end %>
                 </li>
@@ -119,7 +119,7 @@
 
         <% unless [tops_index_path, root_path].map{|p| current_page?(p)}.any? %>
           <% if user_signed_in? %>
-            <%= link_to profile_path(current_user.id), data: {"turbolinks" => false} do %>
+            <%= link_to profile_path(current_user.profile.id), data: {"turbolinks" => false} do %>
               <% if current_user.profile.icon? %>
                 <%= image_tag current_user.profile.icon.url%>
               <% else %>
