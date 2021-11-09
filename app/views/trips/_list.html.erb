@@ -2,30 +2,41 @@
   <ul class="cards">
     <% trips.each do |trip| %>
       <li>
-        <%= link_to trip_path(trip.trip_id), data: {"turbolinks" => false}, class:"card" do %>
-          <h4><%= trip.trip.title %></h4>
+        <%= link_to trip, data: {"turbolinks" => false}, class:"card" do %>
+        <div class="trip_status">
+          <% if trip.favorites.where(user_id: current_user.id).present? %>
+            <p><i class="fas fa-star"></i></p>
+          <% end %>
+          <% if trip.members.where(user_id: current_user.id).present? %>
+            <p><i class="fas fa-child"></i></p>
+          <% end %>
+          <% if trip.goal %>
+            <p><i class="fas fa-check-circle"></i></p>
+          <% end %>
+        </div>
+          <h4 class="trip_title"><%= trip.title %></h4>
           <div class="place">
-            <% if city?(trip.trip) %><%= trip.trip.place.parent.name_jp %> / <% end %>
-            <%= trip.trip.place.name_jp %>
+            <% if city?(trip) %><%= trip.place.parent.name_jp %> / <% end %>
+            <%= trip.place.name_jp %>
           </div>
-          <p><%= trip.trip.start_on %> ~ <%= trip.trip.finish_on %></p>
-          <div class="card__trip_description"><%= trip.trip.description.truncate(47) %></div>
+          <p><%= trip.start_on %> ~ <%= trip.finish_on %></p>
+          <div class="card__trip_description"><%= trip.description.truncate(47) %></div>
           <div class="card__overlay">
             <div class="card__header">
-              <% if trip.trip.user.profile.icon? %>
-                <%= image_tag trip.trip.user.profile.icon.url, class:"card__icon" %>
+              <% if trip.user.profile.icon? %>
+                <%= image_tag trip.user.profile.icon.url, class:"card__icon" %>
               <% else %>
                 <%= image_tag asset_path("default_icon.png"), class:"card__icon" %>
               <% end %>
               <div class="card__header-text">
-                <h3 class="card__title"><%= trip.trip.user.name %></h3>
+                <h3 class="card__title"><%= trip.user.name %></h3>            
                 <span class="card__status">
-                  <% if city?(trip.trip.user.profile) %><%= trip.trip.user.profile.place.parent.name_jp %> / <% end %>
-                  <%= trip.trip.user.profile.place.name_jp %>
+                  <% if city?(trip.user.profile) %><%= trip.user.profile.place.parent.name_jp %> / <% end %>
+                  <%= trip.user.profile.place.name_jp %>
                 </span>
               </div>
             </div>
-            <p class="card__description"><%= trip.trip.user.profile.first_language %> <%= trip.trip.user.profile.second_language %></p>
+            <p class="card__description"><%= trip.user.profile.first_language %> <%= trip.user.profile.second_language %></p>
           </div>
         <% end %>   
       </li>

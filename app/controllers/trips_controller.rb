@@ -35,11 +35,13 @@ class TripsController < ApplicationController
   end
 
   def favorite
-    @favorites = current_user.favorites.page(params[:page]).per(12)
+    favorite_trips = current_user.favorites.map(&:trip)
+    @favorites = Kaminari.paginate_array(favorite_trips).page(params[:page]).per(12)
   end
 
   def member
-    @joinings = current_user.members.page(params[:page]).per(12)
+    joining_trips = current_user.members.map(&:trip)
+    @joinings = Kaminari.paginate_array(joining_trips).page(params[:page]).per(12)
   end
 
   # GET /trips/new
