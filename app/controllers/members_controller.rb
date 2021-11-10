@@ -10,6 +10,9 @@ class MembersController < ApplicationController
       else
         redirect_to trip_path(params[:trip_id]), notice: "#{member.trip.user.name}さんの旅にローカルとして参加しました！"
       end
+      admin = User.find_by(email:"ontrips@ex.com")
+      talk = Talk.find_or_create_by(sender_id: admin.id, receiver_id: @trip.user.id)
+      Message.create!(talk_id: talk.id, user_id: admin.id, content: "#{member.user.name}さんが#{@trip.title}に参加しました！")
     else
       redirect_to @trip, alert: 'この旅行は終了しています。終了した旅行に参加できません'
     end

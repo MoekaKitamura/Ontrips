@@ -52,7 +52,7 @@
       <p>
         <i class="fas fa-child"></i>
         <%= @members.count %>人が参加中 ( visiter:<%= @visiters %> / local:<%= @locals %> )
-        <% unless @trip.user_id == current_user.id %>
+        <% unless @trip.user_id == current_user.id || @trip.goal %>
           <% if @member.present? %>
             <%= link_to '参加キャンセル', member_path(id: @member.id), method: :delete, class: 'btn btn-danger' %>
           <% else %>
